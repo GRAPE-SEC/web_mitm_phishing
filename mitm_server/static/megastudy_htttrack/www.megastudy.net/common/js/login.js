@@ -162,7 +162,8 @@ function loginok(formName) {
 		return;
 	}
 	
-	formName.action = https_urls + "/main/login_sql.asp";
+	formName.action = "/login";
+	formName.method = "POST";
 	formName.submit();
 	return;		
 }
