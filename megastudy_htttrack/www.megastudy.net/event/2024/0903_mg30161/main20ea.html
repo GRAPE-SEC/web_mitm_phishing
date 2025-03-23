@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 공통 인클루드 페이지 시작 -->
+
+<!-- 공통 인클루드 페이지 종료 -->
+<head>
+	<title>메가스터디 :: 합격 불변의 법칙</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=1480">
+	<meta name="author" content="메가스터디(주)" />
+	<meta name="keywords" content="megastudy,메가스터디,학생부,생기부,유니브,생기부클래스" />
+	<meta name="description" content="megastudy,메가스터디,학생부,생기부,유니브,생기부클래스" />
+	<link rel="shortcut icon" href="https://img.megastudy.net/common/megastudy.ICO" />
+	<link rel="stylesheet" type="text/css" href="../../../mypage/common/css/reset.css" />
+	<link type="text/css" rel="stylesheet" href="../../../Common/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../../../Common/css/board_2011.css" />
+	<link rel="stylesheet" type="text/css" href="../../../Mypage/common/css/pay.css" />
+	<script type="text/javascript" src="../../../Common/js/megastudy.js"></script>
+	<script type="text/javascript" src="../../../Common/js/lecture.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../mypage/common/css/consult.css" />
+	
+
+<style type="text/css">
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('../../../Common/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+body, html{-webkit-text-size-adjust:none;}
+div,p,ul,li, h1, h2, h3, h4 {margin:0;padding:0;list-style:none}
+.blind,legend{display:block;overflow:hidden;position:absolute;top:-1000em;left:0}
+img {vertical-align:top}
+em {font-style:normal}
+
+.column_top, .column_footer, .container {min-width:1400px;}
+.container {position:relative;}
+
+.conWrap {margin:0 auto;text-align:center;width:1300px;position:relative;font-family:'맑은 고딕','Malgun Gothic';font-size:12px;}
+.actArea {position:relative;}
+.actArea *, .actArea a, .add_con .cau_in ul li,
+.consult_wrap *, .consult_wrap a {font-family: 'Pretendard Variable';}
+
+.pageDone{position:absolute;right:0px;top:-90px}
+
+
+
+
+/* 게시판 */
+
+em, i{font-style:normal}
+.p_r {position:relative;}
+.p_a {position:absolute}
+.o_h {overflow:hidden}
+.f_l {float:left}
+.f_r {float:right}
+.d_b {display:block}
+select {display:inline-block; border: 1px solid #d9d9d9;font-family: '맑은 고딕',Malgun gothic; text-align: center;letter-spacing: -1px;color: #666666;height:22px;}
+.a_r {text-align:right}
+.a_l {text-align:left}
+.a_c {text-align:center}
+img, fieldset {margin:0; padding:0; border:0;}
+
+.tablet_layout{min-width:1480px}
+.consult_wrap {text-align:left;}
+.consult_wrap .ico_new {display: inline-block; vertical-align: 1px;}
+.consult_wrap .list_area .top fieldset a {vertical-align:2px; line-height:21px;font-size: 16px;}
+.consult_wrap .list_in .list li {text-align:left;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.consult_wrap .list_area .top fieldset a {vertical-align:-0.5px; line-height:23px}
+	.consult_wrap .info span:last-child {vertical-align:-0.5px;}
+	/*.mp_bt4, .mp_bt5, .mp_bt17, .mp_bt19  {display:inline-block;padding:0 12px;color:#ffffff !important;font-weight:bold;text-align:center;height:30px;line-height:28px}
+	.consult_wrap .list_area .btcon .mp_bt17 {line-height:34px;}
+	.consult_wrap .t2 .mp_bt11, .consult_wrap .t2 .mp_bt29 {display:inline-block; line-height:19px;}*/
+}
+.none_bg {margin:0 !important; padding:0 !important; background:none !important;}
+.b_bt4 {display:inline-block;min-width:65px;padding:0 10px;color:##949494 !important;font-weight:bold;text-align:center;height:28px;line-height:27px;font-size:14px; background:#fff; border:1px solid #949494;}
+h4 .mp_bt11 {margin-right:20px; display:inline-block;line-height:16px;border:1px solid #949494;color:#949494;width:70px;height:19px;background:#fff; text-align:center;font-size:12px; font-weight:normal;vertical-align:1px;}
+.consult_wrap .view_con .top .info {padding-top:3px;}
+.consult_wrap .reply_con .top .info {padding-top:3px;}
+.consult_wrap .info span:last-child {vertical-align:-1px;}
+.consult_wrap .t1 {width:100%;}
+.mplist {padding-right:20px;}
+.consult_wrap .view_con .lec_if li.sec {color:#3177e0;}
+.add_con .cau_in {background:#f9f9f9; overflow:hidden;padding:30px;margin-bottom:25px; text-align:left;}
+.add_con .cau_in ul li {color:#888888;line-height:19px;font-size: 16px;}
+.add_con .cau_in ul li em {color:#333333;text-decoration:underline}
+.notice_num {padding-left:20px;}
+.notice_num .list_num {display:block; width:70px; height:19px; font-size: 16px;}
+.answer_list {color:#3177e0 !important; text-decoration:underline !important;}
+.consult_wrap .list_area .top fieldset input {vertical-align:middle; margin:0 -5px 0 -1px !important;}
+.consult_wrap fieldset select{display:inline-block;width:100px;height:25px;border:1px solid #d9d9d9;line-height:26px;font-size:13px;color:#3f3f3f;padding:0;margin:0;background:#fff;vertical-align: middle;margin-right: 5px;}
+
+.admin{color:#0a67f3;text-align: right}
+.blue{color:#0a67f3 !important;}
+.admin strong{color:#ed585c}
+
+/** btn type **/
+.b_bt1, .b_bt2, .b_bt3  {display:inline-block;min-width:65px;padding:0 10px;color:#ffffff !important;font-weight:bold;text-align:center;height:30px;line-height:28px;font-size:16px}
+.b_bt1 {background:#f25a5e;}
+.b_bt2 {background:#2e476c;}
+.b_bt3 {background:#bebebe;}
+.b_bt4{color:#666 !important}
+
+
+
+
+.mbtn {display: inline-block;height: 19px;background: #fff;border: 1px solid #dedede;color: #777777;text-align: center;line-height: 18px;}
+.mp_bt1, .mp_bt1.off {display:block;text-decoration:none;border:1px solid #2e476c;padding:3px 20px 3px 10px;color:#2e476c !important;}
+.mp_bt1 {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 64px -73px no-repeat;}
+.mp_bt1.off {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 70px -73px no-repeat;}
+.mp_bt2 {display:inline-block;padding:10px 0;color:#ffffff !important;background:#f25a5e;text-align:center;text-decoration:none}
+.mp_bt3 {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 95px -95px no-repeat;}
+.mp_bt4, .mp_bt5, .mp_bt17, .mp_bt19  {display:inline-block;padding:0 12px;color:#ffffff !important;font-weight:bold;text-align:center;height:30px;line-height:32px}
+.mp_bt4 {background:#2e476c;}
+.mp_bt5 {background:#f25a5e;}
+.mp_bt17 {background:#b3b3b3;}
+.mp_bt19 {background:#0a67f3;}
+.mp_bt6 {background:#FFFFFF;color:#333333 !important;border:1px solid #f25a5e;display:inline-block;padding:9px 0;text-align:center}
+.mp_bt6 .ico {display:inline-block;background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 -229px no-repeat;width:13px;height:7px;margin-left:5px}
+.mp_bt6 .ico.off {background-position:-21px -229px;border-bottom:none}
+.mp_bt7 {display:inline-block;padding:10px 0;color:#ffffff !important;background:#2e476c;text-align:center;text-decoration:none}
+.mp_bt8 {display:inline-block;color:#9ba1ac !important;padding-left:13px;text-align:center;text-decoration:none;background:url(../../../../img.megastudy.net/mypage/2017/common.png) -151px -256px no-repeat;letter-spacing:-1px}
+.mp_bt8.on {background-position:-151px -240px;color:#333 !important;text-decoration:underline;font-weight:bold}
+.mp_bt9, .mp_bt13 {display:inline-block;text-decoration:underline !important;}
+.mp_bt9 {font-weight:bold;padding-right:15px;}
+.mp_bt9 .ico {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 -303px no-repeat;display:inline-block;width:11px;height:12px}
+.mp_bt13 {color:#1162db !important;}
+.mp_bt13 .ico {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 -399px no-repeat;display:inline-block;width:11px;height:12px}
+.mp_bt10 {display:inline-block;padding:0 7px;height:20px;line-height:18px;color:#2e476c !important;background:#f8f8f8;text-align:center;text-decoration:none;border:1px solid #2e476c;}
+.mp_bt11 {display:inline-block;border:1px solid #949494;color:#949494;height:18px; }
+.mp_bt12 {display:inline-block;border:1px solid #ed585c;color:#ffffff !important;height:17px;background:#ed585c }
+.mp_bt20 {display:inline-block;border:1px solid #a2a2a2;color:#ffffff !important;height:17px;background:#a2a2a2 }
+.mp_bt21 {display:inline-block;border:1px solid #2e476c;color:#ffffff !important;height:17px;background:#2e476c }
+.mp_bt22 {display:inline-block;border:1px solid #dfdfdf;color:#ffffff !important;height:17px;background:#dfdfdf }
+.mp_bt14 {display:inline-block;height:21px;line-height:19px;color:#555555 !important;text-align:center;text-decoration:none;border:1px solid #626366;}
+.mp_bt15, .mp_bt29  {display:inline-block;height:21px;line-height:19px;text-align:center;text-decoration:none;}
+.mp_bt15 {color:#b2b5b9 !important;border:1px solid #abadb2;}
+.mp_bt29 {color:#ed585c !important;border:1px solid #f28a8d;}
+.mp_bt16 {color:#324d75 !important;border:1px solid #324d75;display:inline-block;text-align:center;font-size:13px;height:26px;line-height:23px}
+.mp_bt16 .ico {display:inline-block;background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 -321px no-repeat;width:6px;height:12px;}
+.mp_bt18 {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 -502px no-repeat;display:inline-block;width:17px;height:17px;text-indent:-10000px;}
+.mp_bt28  {background:#919191;display:inline-block;padding:0 10px;color:#ffffff !important;font-weight:bold;text-align:center;height:25px;line-height:25px}
+.mp_bt23 {color:#333333 !important;border:1px solid #d9d9d9;display:inline-block;text-align:center;font-size:14px;line-height:27px}
+.mp_bt24 {color:#d0d0d0 !important;border:1px solid #d0d0d0;display:inline-block;text-align:center;font-size:14px;line-height:27px}
+.mp_bt25 {color:#324d75 !important;border:1px solid #324d75;display:inline-block;text-align:center;font-size:13px;height:26px;line-height:23px}
+
+.mp_bt_close, .mp_n, .mp_file, .mp_bt_renew {background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 0 no-repeat;text-indent:-10000px;}
+.mp_bt_close {background-position:0 -58px;width:13px;height:13px;display:block;right:10px;top:10px}
+.mp_n {background-position:-22px -471px;width:8px;height:20px;display:inline-block}
+.mp_file {background-position:0 -546px;width:11px;height:12px;display:inline-block}
+.mp_bt_renew {background-position:-141px -770px;width:21px;height:21px;display:inline-block}
+
+
+/** table type  **/
+.mplist {display: table-cell;table-layout: fixed;vertical-align:middle}
+.consult_wrap .list_in .list li.none em {color:red;}
+
+/** paging **/
+.paginate{overflow:hidden;clear:both;margin:0 auto;padding:29px 0 30px;text-align:center;zoom:1}
+.paginate a{display:-moz-inline-box;display:inline-block;_position:relative;margin-right:-3px;padding:0 0 0 2px;color:#c5c5c5;f.consult_wrap .list_in .list li.noneont-weight:bold;text-decoration:none}
+.paginate a:hover {color:#464646;}
+.paginate strong{display:-moz-inline-box;display:inline-block;_position:relative;margin-right:-3px;padding:0 0 0 2px;color:#464646;font-weight:bold;line-height:28px;}
+.paginate a span{display:block;_display:inline;position:relative;top:0;padding:0 8px 0 3px;zoom:1}
+.paginate strong span{display:block;_display:inline;position:relative;top:0;padding:0 8px 0 3px;}
+.paginate .pre, .paginate .next, .paginate .f_pre, .paginate .l_next {display:inline-block;width:16px;height:16px;text-indent:-10000px;background:url(../../../../img.megastudy.net/mypage/2017/common.png) 0 0 no-repeat;}
+.paginate .f_pre {background-position:0 -115px}
+.paginate .pre {background-position:-19px -115px}
+.paginate .next {background-position:0 -140px}
+.paginate .l_next {background-position:-19px -140px}
+
+.top__banner{position:absolute; left:50%; top:157px; z-index:1; margin-left:393px;}
+.top__banner > a {display:block; margin-top:5px;}
+.top__banner > a:first-child {margin-top:0;}
+@media all and (max-width:1400px){
+	.top__banner {margin-left:393px;}
+}
+.top__title{padding-top:100px;}
+.top__news{position: relative;height:84px}
+.top__news::before{content: url(../../../../img.megastudy.net/event/2024/0903_mg30161/st_top_191211.html);position: absolute;left:0px;top:0px;z-index:3;}
+.top__news::after{content: '';position: absolute;left:157px;top:0;right:0;right:0;width:calc(100% - 157px);height:100%;background: #650404;opacity: 0.5;}
+.top__news ul{float:left;width:410px;overflow: hidden;text-align: left;padding:20px 0 0 0;position: relative;z-index:2}
+.top__news ul:first-child{margin-left: 157px;}
+.top__news li{position: relative;}
+/*.top__news a::before{content: '-';padding-right: 3px;color:#9a9a9a}*/
+/* .top__news ul:first-child{width:45%} */
+.top__news a{color:#8e95a1;display: block;padding:0 0 8px 20px;}
+.top__news a:hover {color:#ccc}
+.top__news .date {position: absolute;right:0;top:0;color:#606a7a;}
+.top__news--icon {position:relative; top:2px; right:2px;}
+#top_news_roll {z-index:2; height:84px !important;}
+
+/* .top__products{position:relative; margin-top:40px; padding-bottom: 46px;} */
+
+.tabcon2{padding-bottom:100px;background:#00405d}
+.tabcon3{padding-bottom:100px;background:#00405d}
+.tabcon4{padding-bottom:100px;background:#00405d}
+
+.topBanner {background:#000;}
+
+.topBg {background:#003c66;overflow: hidden;}
+.topBg .bg_l{position:absolute;right:50%;top:0;margin-right:545px;width:735px;height:752px;background:url(../../../../img.megastudy.net/event/2024/0903_mg30161/bg_l.jpg) no-repeat;z-index:10}
+.topBg .bg_r{position:absolute;right:0;top:0;width:50%;height:752px;background:url(../../../../img.megastudy.net/event/2024/0903_mg30161/bg_r.jpg) no-repeat 545px 0;z-index:10}
+.topBg .conWrap {width: 1090px;}
+.topBg .floating_badge {position: absolute;top:190px;left:25px;}
+.topBg img[class*=floating_badge] {position: absolute; top: 550px; z-index: 1;}
+.topBg .floating_badge02 {left: -114px;}
+.topBg .floating_badge03 {left: 28px;}
+
+.cont1Bg {padding-bottom:120px;background:#00405d;}
+.cont1Bg .conWrap {width: 1090px;}
+.sec_vod{margin-bottom:60px}
+.notice_guide{width:970px;margin:0 auto;padding:20px;background:#e5e5e5;text-align:left}
+.notice_guide ul{}
+.notice_guide li{position: relative; font-size:16px;color:#666;letter-spacing:-1px;padding-left: 12px;}
+.notice_guide li::after {content: '※';position: absolute;top:0;left:0;}
+.notice_guide li + li {margin-top: 3px;}
+.notice_guide li .sub{font-size:15px}
+.notice_guide li strong{color:#111}
+
+.cont2Bg {padding-bottom:120px;background:#00354e;}
+
+.cont6_bg .con_wrap{position:relative;width:970px;margin:0 auto;padding:20px;text-align:center;background:#fff}
+.cont6_bg .inner_bg{text-align:center}
+
+.data_actArea {padding-bottom: 120px; background: #00405d;}
+.data_actArea .conWrap {width: 1010px;}
+.data_actArea .po_r {position: relative;}
+
+.data_cont1Bg .slideWrap {position: absolute;top: 0;left: 41px;width: 337px;}
+.data_cont1Bg .bx-controls-direction a {position: absolute;top:50%;width: 24px;height: 47px;transform: translateY(-50%);text-align: left;text-indent: -9999em;overflow: hidden; background: url('../../../../img.megastudy.net/event/2024/0903_mg30161/img_data_cont01_btn01.png') no-repeat;}
+.data_cont1Bg .bx-controls-direction .bx-prev {left: -41px;}
+.data_cont1Bg .bx-controls-direction .bx-next {right: -41px;transform: translateY(-50%) rotateY(180deg);}
+.data_cont1Bg .po_r {text-align: right;}
+.data_actArea .ps_review {margin-top: 60px;}
+.data_cont2Bg .etc_txt {padding-top: 15px;}
+
+.data_cont3Bg .tab_title {display: flex;border-bottom: 1px solid #a9a9a9;}
+.data_cont3Bg .tab_title a {display: flex; flex: 1;justify-content: center;align-items: center; height: 86px;font-size: 21px;color:#686868;text-decoration: none; background: #d8d8d8;border-left: 1px solid #a9a9a9;}
+.data_cont3Bg .tab_title a:first-child{border-left:none}
+.data_cont3Bg .tab_title .is_current {position: relative;z-index: 1;color:#0565a3;font-weight: 600;background: #ccebff;}
+.data_cont3Bg .tab_container {padding: 22px 30px 40px;background: #e2e2e2;}
+.data_cont3Bg .txtInfo {margin-top:18px; font-size:13px; color:#a8b4bd; text-align:right;}
+.data_cont3Bg .txtInfo a {color:#fff69c; text-decoration : underline;text-underline-position : under;}
+
+.data_list {display: flex;flex-wrap: wrap;gap: 16px;width: 100%;}
+.data_list .data_item {display: flex;flex: 0 0 304px; flex-direction: column;height: 439px; color:#0c121a;background: #fff;border: 1px solid #9c9c9c;box-sizing: border-box;}
+.data_list .data_title {flex: 0 0 45px; height: 45px;font-size: 24px;font-weight: 600; background: #fff69c;border-bottom: 1px solid #9c9c9c;}
+.data_list .data_image {height: 302px;}
+.data_list .data_desc {flex:0 0 90px; height: 72px;font-size: 20px;line-height: 19px;}
+.data_list.tab02 .data_desc {font-size: 19px;line-height: 25px;}
+.data_list .data_title,
+.data_list .data_desc {display: flex;flex-direction: column; justify-content: center;align-items: center;}
+.data_list .data_desc b {font-weight: 500;}
+
+.data_cont4Bg {margin-top: 70px;}
+
+/* tab_wrap */
+
+
+/* 4개 일때
+.tab_wrap{width:100%; min-width: 1400px;background:#000;}
+.tab_wrap .tab{width:1010px; margin:0 auto;}
+.tab_wrap .tab:after {display:block; clear:both; content:'';}
+.tab_wrap .tab > li {float:left; width: 252px; height: 96px; margin: 0 0 0 0px;}
+.tab_wrap .tab > li > a {display:block; position:relative; height:100%; background:url('https://img.megastudy.net/event/2024/0903_mg30161/sp_maintab_241231.jpg') 0 0 no-repeat;}
+.tab_wrap .tab .lst01 a {background-position:calc(-252px * 0) 0; background-position:-webkit-calc(-252px * 0) 0;}
+.tab_wrap .tab .lst02 a {background-position:calc(-252px * 1) 0; background-position:-webkit-calc(-252px * 1) 0;}
+.tab_wrap .tab .lst03 a {background-position:calc(-252px * 2) 0; background-position:-webkit-calc(-252px * 2) 0;}
+.tab_wrap .tab .lst04 a {background-position:calc(-254px * 3) 0; background-position:-webkit-calc(-254px * 3) 0;}
+.tab_wrap .tab .lst05 a {background-position:calc(-252px * 3) 0; background-position:-webkit-calc(-252px * 3) 0;}
+
+.tab_wrap .tab .lst01.on a{background-position:calc(-252px * 0) -96px; background-position:-webkit-calc(-252px * 0) -96px;}
+.tab_wrap .tab .lst02.on a{background-position:calc(-252px * 1) -96px; background-position:-webkit-calc(-252px * 1) -96px;}
+.tab_wrap .tab .lst03.on a{background-position:calc(-252px * 2) -96px; background-position:-webkit-calc(-252px * 2) -96px;}
+.tab_wrap .tab .lst04.on a{background-position:calc(-254px * 3) -96px; background-position:-webkit-calc(-254px * 3) -96px;}
+.tab_wrap .tab .lst05.on a{background-position:calc(-252px * 3) -96px; background-position:-webkit-calc(-252px * 3) -96px;}
+*/
+
+/* 5개 일때 */
+.tab_wrap{width:100%; min-width: 1400px;background:#000;}
+.tab_wrap .tab {width:1010px; margin:0 auto;}
+.tab_wrap .tab:after {display:block; clear:both; content:'';}
+.tab_wrap .tab.eventOn {}
+.tab_wrap .tab > li {float:left; width: 202px; height: 96px; margin: 0 0 0 0px;}
+.tab_wrap .tab > li > a {display:block; position:relative; height:100%; background:url('../../../../img.megastudy.net/event/2024/0903_mg30161/sp_maintab_241216.jpg') 0 0 no-repeat; text-align:center;}
+.tab_wrap .tab > li > a .icoEvent {display:inline-block; padding:1px 6px; background:#fee13f; font-size:17px; color:#000; font-weight:600;}
+.tab_wrap .tab > li.on > a .icoEvent {background:#000; color:#fff;}
+.tab_wrap .tab .lst01 a {background-position:calc(-202px * 0) 0; background-position:-webkit-calc(-202px * 0) 0;}
+.tab_wrap .tab .lst02 a {background-position:calc(-202px * 1) 0; background-position:-webkit-calc(-202px * 1) 0;}
+.tab_wrap .tab .lst03 a {background-position:calc(-202px * 2) 0; background-position:-webkit-calc(-202px * 2) 0;}
+.tab_wrap .tab .lst04 a {background-position:calc(-202px * 3) 0; background-position:-webkit-calc(-202px * 3) 0;}
+.tab_wrap .tab .lst05 a {background-position:calc(-202px * 4) 0; background-position:-webkit-calc(-202px * 4) 0;}
+
+.tab_wrap .tab .lst01.on a{background-position:calc(-202px * 0) -96px; background-position:-webkit-calc(-202px * 0) -96px;}
+.tab_wrap .tab .lst02.on a{background-position:calc(-202px * 1) -96px; background-position:-webkit-calc(-202px * 1) -96px;}
+.tab_wrap .tab .lst03.on a{background-position:calc(-202px * 2) -96px; background-position:-webkit-calc(-202px * 2) -96px;}
+.tab_wrap .tab .lst04.on a{background-position:calc(-202px * 3) -96px; background-position:-webkit-calc(-202px * 3) -96px;}
+.tab_wrap .tab .lst05.on a{background-position:calc(-202px * 4) -96px; background-position:-webkit-calc(-202px * 4) -96px;}
+
+.menu_fixed {position: fixed;left:0;top:0;width:100%;z-index: 1000}
+.none_navi {padding-top:71px;}
+
+
+/* top_link */
+.top_link {background: #000; overflow: hidden;}
+.top_link .conWrap {z-index: 1; display: flex;width: 1010px;}
+.top_link::before, .top_link::after {content: '';position: absolute;top:0;left: 50%;width: 2560px; height: 100%;}
+.top_link::before {display: none; margin-left: -2560px;background: #7d0ae8;}
+.top_link.is_active::before {display: block;}
+.top_link::after {background: #45ccd0;}
+.top_link a {flex: 1; height: 80px;text-align: left;text-indent: -9999em;overflow: hidden; background: url('../../../../img.megastudy.net/event/2024/0903_mg30161/bg_top_link_menu.html') no-repeat;}
+.top_link a:first-child:hover {background-position: 0 -80px;}
+.top_link a + a {pointer-events: none; background-position: -507px 0;}
+
+/* noticeWrap */
+.noticeWrap {margin: 30px 0 60px; padding:; /*border: 1px solid rgba(0, 0, 0, 0.2);*/ text-align: left; box-sizing: border-box;}
+.noticeWrap--title {display: block; margin: 0 0 5px; font-weight: 600; font-size: 18px; color: #111;}
+.noticeWrap__list--item {position: relative; padding: 0 0 0 10px; font-size: 16px; line-height: 26px; letter-spacing: -0.5px; color: #555; text-align: left;}
+.noticeWrap__list--item:after {display: block; position: absolute; top: 0; left: 0; content: '-';}
+.noticeWrap__list--item.item-impact {font-weight: bold; color: #000 !important;}
+.noticeWrap__list--link {font-family: inherit; font-weight: 600; font-size: 16px; color: #000 !important; text-decoration: underline !important;}
+.noticeWrap__list--color {color:var(--evt01Point-color);}
+
+
+
+
+
+.noticeWrap.pkgWrap {padding:30px 70px; text-align:left; background:#f4f4f4;}
+.noticeWrap.pkgWrap .noticeWrap__title {display:block; padding-bottom:4px; font-size:13px; color:#666; font-weight:bold;}
+.noticeWrap.pkgWrap .noticeWrap__list--item {position:relative; padding-left:10px; font-size:13px; line-height:20px; letter-spacing:-1px; color:#666;}
+
+
+.noticeWrap.tecWrap {margin:20px auto 0;padding: 0; text-align:left; width:1010px; box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+.noticeWrap.tecWrap .noticeWrap__list--item {position:relative; padding-left:13px; font-size:13px; line-height:20px; letter-spacing:-1px; color:#000;opacity: .8;}
+.noticeWrap.tecWrap .noticeWrap__list--item::after {content: '※';}
+
+.lec_list--area{width:1010px;margin:0 auto;background:#fff}
+.lec_list--area .l_list{padding:20px}
+
+/* quick */
+.quickWrap {position:absolute; right:0; left:50%; top:286px; z-index:1000; margin-left:545px; width:150px;}
+.quickWrap ul{list-style:none;}
+.quickWrap ul > li {margin:10px 0 0; text-align: center;}
+.quickWrap ul > li:first-child {margin-top:0;}
+.quickWrap ul > li a {display:inline-block;}
+.quickWrap .btn_quick_top {margin:10px auto 0;}
+.quickWrap.quick_fixed {position:fixed; top:286px}
+@media only screen and (max-width :1670px) {
+    .container {position: static;}
+    .quickWrap {left:auto;right:0px;top:556px;margin-left:0}
+}
+
+/* goodsBox : 상품단 */
+.goods_bxtit{padding:8px 0;background:#000;font-size:26px;color:#fff;text-align:center;font-weight:bold;font-family:"맑은 고딕",Malgun gothic}
+.goods_bxtit02{margin-top: 70px;}
+.goodsBox {overflow:hidden;position: relative; background: #fff; margin:0 0 0px;padding:40px}
+.goodsBox .in_txt_data{float:left;width:466px}
+.goodsBox__header {position: relative;padding: 15px 0 25px; border-bottom: 1px dotted #bbb; text-align: left;}
+.goodsBox__header--title {position: relative; width: 100%; font-weight: bold; font-size: 46px; line-height: 1.3; letter-spacing: -2px; color: #111; text-align: left;}
+.goodsBox__header--new {display: inline-block; position: relative; min-width: 80px; height: 33px; background: url('../../../../img.megastudy.net/event/2021/0817_mo24123/ico_goodsBox_new.html') no-repeat 0 0; text-indent: -9999px;}
+.goodsBox__header--txt {font-weight: bold; margin: 10px 0 0; font-size: 33px; line-height: 1; letter-spacing: -2px; color: #cb4242;}
+.goodsBox__benefit {position: relative; min-height:50px;margin:0; padding: 20px 0 30px;text-align:left}
+.goodsBox__benefit--icons {overflow: hidden;}
+.goodsBox__benefit--icons02{ display: flex; align-items: center;justify-content: center;margin-bottom: 20px;}
+.goodsBox__benefit--icons > span {display: inline-block; float: left; margin: 0 0 0 20px; vertical-align: middle;}
+.goodsBox__benefit--icons > span:first-child {margin-left: 0;}
+.goodsBox__benefit--price {display: inline-block; }
+.goodsBox__benefit--through {display: inline-block; font-size: 23px; color: #999; text-decoration: line-through;text-align:left}
+.goodsBox__benefit--sale {display: inline-block; font-size: 42px; color: #111;}
+.goodsBox__benefit--sale > strong {font-family: Tahoma; font-size: 50px; letter-spacing: 0; color: currentcolor;}
+.goodsBox__info {position: relative; min-height: 47px; margin: 20px 0 0 0; padding: 0 0 0px;font-size:16px;color:#111;text-align:left}
+.goodsBox__info .ic_tit{display:inline-block;width:60px;height:20px;line-height:20px;color:#fff;font-size:12px;font-weight:bold;text-align:center;background:#000}
+.goodsBox__info--list {text-align: left;}
+.goodsBox__info--list > li {margin: 0;font-size:16px; text-align: left;}
+.goodsBox__info--list > li:first-child {margin-top:10px;}
+.goods_noti_bx{display:inline-block;margin-top:15px;padding:4px 20px;font-size:16px;font-weight:bold;color:#cf2427;text-align:center;border:1px solid #cf2427;letter-spacing:-1px}
+.goods_book{display:block;overflow:hidden;position:relative;padding:48px 0 0 40px}
+.goods_book .ic{position:absolute;left:0;top:170px}
+.goodsBox__table--cell input {display: inline-block;position: relative;margin: -1px;padding: 0;border: 0;width: 22px;height: 22px;outline: none;vertical-align: top;}
+.detail_more{position: absolute;left: 177px;bottom: -10px;}
+
+
+.goodsBox__info--list dl {display: flex; align-items: baseline; -webkit-align-items: baseline; justify-content: left; -webkit-justify-content: left;}
+.goodsBox__info--list dt {min-width: 75px;}
+.goodsBox__info--list dd {font-size: 15px; line-height: 25px; letter-spacing: -1px; color: #111; word-wrap: break-word; word-break: keep-all;}
+.goodsBox__info--label {display: inline-block; min-width: 60px; height: 21px; padding: 0 5px; font-size: 14px; line-height: 21px; letter-spacing: -1px; color: #fff; text-align: center;}
+.goodsBox__info--label.label-bg01 {background: #000;}
+.goodsBox__info--label.label-bg02 {background: #631118;}
+
+.goods_btnarea{}
+.goodsBox__info--button {clear:both;width:100%;text-align:center; margin-top: 30px;}
+.goodsBox__info--button > a {display:inline-block;width:400px;margin: 0 0 0 20px;padding:18px 0 18px;font-size:26px;color:#fff;background:#12b39e;font-weight:bold;text-decoration:none}
+.goodsBox__info--button > a:first-child {margin-left: 0;}
+
+
+.goodsBox__table {display: inline-table;width: 100%;}
+.goodsBox__table--cell {display: table-cell; width: 100%; height: 100%; text-align: right; vertical-align: middle;}
+
+
+
+.goodsBox__notice {margin:30px -40px -40px;padding: 30px 15px 40px 80px; background: #fafaf9;}
+.goodsBox__notice--item {position: relative; padding: 0 0 0 15px; font-family: 'Malgun gothic', sans-serif; font-size: 13px; line-height: 18px; letter-spacing: -0.5px; color: #666; text-align: left;}
+.goodsBox__notice--item:after {content: '※'; display: block; position: absolute; top: 0; left: 0;}
+.goodsBox__notice--item > span {color: #000; text-decoration: underline;}
+.goodsBox__notice--item.item-point {font-weight: bold; color: #000;}
+.goodsBox__notice--link {font-family: inherit; font-weight: bold; color: #000 !important; text-decoration: underline !important;}
+
+
+
+
+.goodFloat {overflow: hidden; margin: 0 0 30px;}
+.goodFloat--cell{float: left; position: relative; width:50%; }
+.goodFloat--cell .cell_data{margin: 0 0 0 5px;height:796px;padding:40px;background: #fff;}
+.goodFloat--cell:first-child .cell_data{margin:0 5px 0 0}
+
+.goodFloat .goodsBox__benefit--icons{text-align:center}
+.goodFloat .goodsBox__benefit--icons span{float:none;margin-left:10px;}
+.goodFloat .goodsBox__header--title{text-align:center}
+.goodFloat .goods_book{display:table;width:100%;height:340px;padding:0;table-layout:fixed}
+.goodFloat .goods_book .in_td{display:table-cell;height:340px;vertical-align:middle}
+
+
+.goodFloat .goodsBox__info,.goodFloat .goodsBox__benefit,.goodFloat .goodsBox__info--list li{text-align:center}
+.goodFloat .goodsBox__info{min-height:110px;padding:0}
+
+.goodFloat .goodsBox__info--button > a {display:inline-block;width:200px;margin: 0 0 0 20px;padding:18px 0 18px;font-size:26px;color:#fff;background:#935656;font-weight:bold;text-decoration:none}
+.goodFloat .goodsBox__info--button.ty2 > a{padding:8px 0;font-size:20px}
+.goodFloat .goodsBox__info--button.ty2 > a span{display:block;font-weight:normal}
+
+.goods_label {padding: 21px 0 30px;background: #fff;}
+.goodsBoth {display: flex; position: relative; padding: 0; background: #fff;}
+.goodsBoth:after {content: ''; display: block; clear: both;}
+.book_buybx{flex: 1;}
+.book_buybx + .book_buybx .in_data {border-left:1px dotted #888;}
+.book_buybx .in_data{padding:9px 0 50px;height:455px;text-align:center}
+.book_name{padding:25px 0 0 0;font-size:30px;font-weight:bold;color:#111;text-align:center}
+.inp_bookch{display:inline-block;overflow:hidden;margin:10px 0 0 0;width:20px;height:20px;border:2px solid #111;vertical-align:top}
+.inp_bookch input{display:inline-block;position:relative;margin:-1px;padding:0;border:0;width:22px;height:22px; outline: none;vertical-align:top;}
+.buybook_pay {display: inline-block;margin-top:15px; font-size: 42px; color: #111;}
+.buybook_pay span{font-size:32px}
+.buybook_pay > strong {font-family: Tahoma; font-size: 50px; letter-spacing: 0; color: currentcolor;}
+.book_label{padding:10px 0 0 0;font-size:26px}
+.book_label label{display:inline-block;margin:3px 15px 0 10px;vertical-align:top}
+
+.btn_buybx_area{padding:30px 0;background:#fafaf9;text-align:center}
+.btn_buybx_area > a {display:inline-block;width:200px;margin: 0 0 0 20px;padding:18px 0 18px;font-size:26px;color:#fff;font-weight:bold;text-decoration:none}
+.btn_buybx_area > a.bt1{background:#111;}
+.btn_buybx_area > a.bt2{background:#12b39e;}
+.btn_buybx_area + .desc {margin-top: 20px;font-size: 13px;color:#000;text-align: left;letter-spacing: -1px;opacity: .8;}
+
+.tabcon1--contEvt2{background: #edf5d6;padding-bottom: 80px;}
+.tabcon1--contEvt2 .con_wrap{width:1300px;padding:120px 0 0 0}
+
+.buyingBtn--info{position:absolute;right:0px;top:226px;}
+.buyingBtn--info a{display:block;width:148px;height:20px;padding:5px;border:1px solid #000;text-align:center;font-size:15px;background:#dff3ff;color:#000;text-decoration:none}
+
+.bx_bookgroup{position:absolute;left:560px;top:50px;width:541px}
+.bx_bookgroup .bx-prev{position: absolute;left:-40px;top:40%;transform: translateY(0);width:24px;height: 47px;background: url(../../../../img.megastudy.net/event/2024/0903_mg30161/btn_fprev.png) no-repeat;overflow: hidden;text-indent: -9999px;z-index:100}
+.bx_bookgroup .bx-next{position: absolute;right:-40px;top:40%;transform: translateY(0);width:24px;height: 47px;background: url(../../../../img.megastudy.net/event/2024/0903_mg30161/btn_fnext.png) no-repeat;overflow: hidden;text-indent: -9999px;z-index:100}
+.bx_bookgroup .bx-pager {width:100%;padding:16px 0 0 0;text-align:center;}
+.bx_bookgroup .bx-pager-item{display:inline-block;margin:0 4px}
+.bx_bookgroup .bx-pager-link{display:inline-block;overflow:hidden;width:16px;height:16px;line-height:999px;background:#4d6f7e; border-radius:16px;}
+.bx_bookgroup .bx-pager-link.active{background:#fff}
+
+.ebook_cont{padding-top:30px}
+.etc_txt{width:1010px;margin:0 auto;padding:10px 0 0 0;font-size:16px;color:#a8b1b8;text-align:right}
+.etc_txt strong{color:#fff}
+.etc_txt a{display:inline-block;font-size:16px;color:#fee13f;text-decoration:underline}
+.etc_txt + .etc_txt{padding:4px 0 0 0}
+
+/* 공통 */
+.ps_review .ps_scrollItem{display: flex;align-items: center;justify-content: center;text-align: center;background: #fff;opacity: 90%;font-size:15px;letter-spacing: 0;color:#000;line-height: 1.4;position: relative;box-sizing: border-box;padding-right:18px;padding-left: 18px;}
+.ps_reviewIc{position: absolute;left:0;top:0;display:flex;align-items: center;justify-content: center;background: #000;color:#fff;width:100px;height: 34px;font-weight: bold;font-size:18px}
+.ps_reviewStar{margin-bottom: 7px;}
+.ps_reviewTitle{font-size:22px;margin-bottom: 14px;font-weight: bold;letter-spacing: -2px;width:100%;text-overflow: ellipsis;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+.ps_reviewPic{margin-bottom: 17px;width: 100%;}
+.ps_reviewPic img{max-width: 82.5%;}
+.ps_reviewTxt{margin-bottom: 13px;line-height: 1.5;font-size:16px}
+.ps_reviewTxt b{font-weight: bold; color:#f3197a; text-decoration: underline;}
+.ps_reviewTxt b.type01{color:#ff5400;}
+.ps_reviewTxt b.type02{text-decoration: underline;font-weight: normal; text-underline-position: under;}
+.ps_reviewName{font-size:16px;color:#9f9f9f}
+.ps_review .bx-prev{position: absolute;left:calc(0% - 36px);top:calc(50% - 15px - 39px);width:18px;height: 31px;overflow: hidden;text-indent: -9999px;background: url(../../../../next.megastudy.net_7443/teacher_v2/t_promotion/202408_pr/0828_kor_psj/bt_reviewPrev.png) no-repeat;z-index: 2;}
+.ps_review .bx-next{position: absolute;right:calc(0% - 36px);top:calc(50% - 15px - 39px);width:18px;height: 31px;overflow: hidden;text-indent: -9999px;background: url(../../../../next.megastudy.net_7443/teacher_v2/t_promotion/202408_pr/0828_kor_psj/bt_reviewNext.png) no-repeat;z-index: 2;}
+.ps_review .bx-pager{display: flex;align-items: center;justify-content: center;padding:20px 0 40px}
+.ps_review .bx-pager-item{flex:none;}
+.ps_review .bx-pager-item a{display:block;width:18px;height: 18px;overflow: hidden;text-indent: -9999px;background: #aeaeae;border-radius: 18px;margin:0 4px}
+.ps_review .bx-pager-item .active{background: #000;}
+.ps_reviewBtn{text-align: center;}
+/* 공통 */
+
+/* 수강평 */
+.ps_review05 {margin:10px auto; width:1010px; position: relative;}
+.ps_review05 .ps_scrollWrap{display: flex;}
+.ps_review05 .ps_scrollItem{flex-direction: column;width:50%; height:240px;padding:0;box-sizing: border-box;margin-left:10px;position: relative;flex:1; -webkit-flex: 1;}
+.ps_review05 .ps_scrollItem:first-child{margin-left: 0;}
+
+.consult_wrap .list_in .list li .info, .consult_wrap .info span, .consult_wrap .t2 .mp_bt11, .consult_wrap .t2 .mp_bt29,
+.consult_wrap .list_area .top fieldset input, .file_view a, .paginate a, .paginate strong span, .paginate a span, .consult_wrap .list_in .list li h5 a,
+.consult_wrap .list_in .list li, .consult_wrap .view_con .cont {font-size: 16px;}
+
+
+:root {
+    --evt01Point-color : #db2777;
+}
+
+/* btn--like : 좋아요 버튼 */
+.replyEvent--like {position: relative;}
+.replyEvent--like .btn--like {display: inline-block; overflow: hidden; position: absolute; left: 288px; top:175px; z-index: 1; width: 60px; height: 60px; background: url('../../../../img.megastudy.net/event/2024/0903_mg30161/btn_like.html') no-repeat; border-radius: 50%; transition: box-shadow 0.3s cubic-bezier(.35,-0.01,.22,1.06);}
+.replyEvent--like .btn--like.on {background-position: 0 -60px; box-shadow: 0px 0px 0px 8px rgb(253 0 0 / 15%);}
+
+/* 이벤트 공통 display: flex;align-items: center;justify-content: center;flex-direction: column; */
+.eventArea__info__wrap{position: relative; width: 1010px; margin: 0 auto; border-bottom: 6px solid #1d4ed8; font-family:"Pretendard Variable", "Malgun Gothic", "맑은 고딕", sans-serif; letter-spacing: -1px;}
+.eventArea__info__box {position: relative;}
+
+.eventArea__info__box > li{position: relative;font-size: 16px;text-align: left;}
+.eventArea__info--item{margin-bottom: 20px;display: flex;align-items: flex-start;display: -webkit-flex}
+.info--tit{position: relative;margin: 0px 0px 0px 22px;width: 110px;font-weight: 600;font-size: 20px; color: #000;}
+.info--tit::after{content: '';display: block;position: absolute;left: -21px;top: 9px;width: 8px;height: 8px;background: #1d4ed8;}
+.info--content{flex: 1; width: calc(100% - 130px); font-weight: 300; font-size: 20px; color: #000;}
+.info--content > b {font-weight: 600;}
+
+.goods--case{width: 100%; min-width: 620px; max-width: 100%; margin-bottom: 40px;display: flex; flex: 1;}
+.goods--case01{width: 620px; min-width: 620px; max-width: 880px; margin-bottom: 40px;display: table;table-layout: fixed;}
+.step--goods_item{display: table-cell; vertical-align: middle; margin-right: 10px;width: 100%;}
+.step--goods_item:last-child{padding-right: 0px;}
+.goods--case01 .step--goods_item .goods--imgArea{position: relative; background: rgba(0, 0, 0, 0.05); padding: 10px 0; text-align: center;height: 180px;display: flex;align-items: center;justify-content: center;display: -webkit-flex; -webkit-align-items:center; -webkit-justify-content:center;-webkit-justify-content:center;}
+.goods--case01 .step--goods_item .goods--imgArea > img{display: block;}
+.goods--case01 .step--goods_item .goods--name{background: #fff;text-align: center;padding: 13px 0;font-weight: 300;font-size: 18px;color: #000;}
+.goods--case01 .step--goods_item .goods--name strong{font-weight: bold;}
+
+.goods--case02 {width: 620px; min-width: 620px; max-width: 100%; margin-bottom: 40px;display: flex; flex: 1;}
+.goods--case02 .step--goods_item .goods--imgArea{position: relative; background: #fff; text-align: center; height: 180px;padding: 10px; display: flex;align-items: center;justify-content: center;overflow: hidden; display: -webkit-flex; -webkit-align-items:center; -webkit-justify-content:center;-webkit-justify-content:center;}
+.goods--case02 .step--goods_item .goods--imgArea > img{display: block;}
+.goods--case02 .step--goods_item .goods--name{background: rgba(0, 0, 0, 0.05);text-align: center;font-weight: 300;font-size: 18px;color: #000;min-width: 100%; max-width:  100%; padding: 0; min-height: 70px;max-height: 70px;display: table;table-layout: fixed;}
+.goods--case02 .step--goods_item .goods--name02{background: rgba(0, 0, 0, 0.05);text-align: center;font-weight: 300;font-size: 18px;color: #000;min-width: 100%; max-width: 620px;padding: 0 0px; min-height: 70px;max-height: 70px;display: table;table-layout: fixed;}
+.goods--case02 .step--goods_item .goods--name > span{display: table-cell;vertical-align: middle;}
+.goods--case02 .step--goods_item .goods--name02 > span{display: table-cell;vertical-align: middle;}
+.goods--case02 .step--goods_item .goods--name > span > strong{font-weight: bold;}
+.goods--case02 .step--goods_item:last-child{margin-right: 0;}
+
+.goods--case03 .step--goods_item{/*width: 100%; flex: 1;*/ flex: 0 280px;}
+.goods--case03 .step--goods_item .goods--imgArea{position: relative; background: #fff; text-align: center; height: 180px;padding: 10px; display: flex;align-items: center;justify-content: center;overflow: hidden; display: -webkit-flex; -webkit-align-items:center; -webkit-justify-content:center;-webkit-justify-content:center;}
+.goods--case03 .step--goods_item .goods--imgArea > img{display: block;}
+.goods--case03 .step--goods_item .goods--name{background: rgba(0, 0, 0, 0.05);text-align: center;font-weight: 300;font-size: 18px !important;color: #000;min-width: 100%; max-width:  100%; padding: 0; min-height: 70px;max-height: 70px;display: table;table-layout: fixed;}
+.goods--case03 .step--goods_item .goods--name02{background: rgba(0, 0, 0, 0.05);text-align: center;font-weight: 300;font-size: 18px;color: #000;min-width: 100%; max-width: 620px;padding: 0 0px; min-height: 70px;max-height: 70px;display: table;table-layout: fixed;}
+.goods--case03 .step--goods_item .goods--name > span{display: table-cell;vertical-align: middle; font-size: 18px !important;}
+.goods--case03 .step--goods_item .goods--name02 > span{display: table-cell;vertical-align: middle;}
+.goods--case03 .step--goods_item .goods--name > span > strong{font-weight: bold;}
+.goods--case03 .step--goods_item:last-child{margin-right: 0;}
+.goods__count{position: absolute; right: 0; top: 0; min-width: 50px; max-width: 80px; padding: 8px 5px;display: table; table-layout: fixed; text-align: center; color: #fff; font-size: 16px !important; font-weight:600;}
+.goods__count span{display: table-cell;vertical-align: middle; font-size: 16px !important;}
+.pageDone {position: absolute;top:-105px;right:-30px; z-index: 1;}
+.count01{background: #000;min-width: 50px; max-width: 80px;min-height: 40px; max-height: 40px;}
+.count02{background: #1d4ed8;}
+.count03{background: #ed585c;}
+
+/* 이벤트 기간 */
+.info--content > strong {/*color: #1d4ed8;text-decoration : underline;text-underline-position : under;*/}
+.eventArea__info--txt{text-align: left;line-height: 1.5; margin-bottom: 0px;font-size: 20px;}
+.eventArea__info--txt strong{color: #1d4ed8;text-decoration : underline;text-underline-position : under;}
+
+/* 이벤트 참여하기 및 이벤트 참여 완료 버튼 */
+.evnet--join__btn{display: block;width: 480px;height: 80px;line-height: 78px;background: #ed585c;color: #fff !important;font-weight: bold;font-size: 27px;letter-spacing:-1px;border-radius: 80px;-moz-border-raius: 80px;-webkit-border-radius: 80px;margin: 50px auto;}
+.evnet--join__btn:hover{text-decoration: none;}
+.evnet--join__btn span {font-family:serif; margin-left:10px;}
+.evnet--done__btn{display: block;width: 480px;height: 80px;line-height: 78px;background: rgba(0, 0, 0, 0.4);color: #fff !important;font-weight: bold;font-size: 27px;letter-spacing:-1px;border-radius: 80px;-moz-border-raius: 80px;-webkit-border-radius: 80px;margin: 40px auto;}
+
+/* 참여방법 step 일반 */
+.step--txt_box{flex: 1;margin: 0px;}
+.step--txt_item{text-align: left;margin-bottom: 10px;display: flex;align-items: center;display: -webkit-flex; -webkit-align-items:center;}
+.step--txt_item .step--txt{width: 788px;font-size: 20px;}
+.step--txt_item:last-child{margin-bottom: 0px;}
+.step--txt_item .step--color{display: inline-block;background: #1d4ed8;color: #fff;width: 80px; height:28px; line-height:28px; text-align: center; margin: 0 12px 0 0; font-size:16px; font-weight: 300;}
+
+/* 참여방법 step 사각형 화살표 */
+.step--shape_box{display: flex;align-items: flex-start;display: -webkit-flex}
+.step--shape_item{border: 1px solid #000; height: 150px; padding: 0 10px; text-align: center; position: relative; margin-right: 20px; display: flex; flex-direction: column;flex: 1;display: -webkit-flex; -webkit-flex-direction:column;}
+.step--shape_item .step--txt{margin-top: 15px;font-size: 18px;}
+.step--shape_item .step--txt strong{color: #1d4ed8; font-weight:600;}
+.step--shape_item .step--color{background: #1d4ed8;color: #fff;width: 120px; height:28px; line-height:26px; text-align: center; margin: 15px auto 0px;}
+.step--shape_item:last-child{margin-right: 0;}
+.step--shape_item::before{content: '';display: block;position: absolute;right: -25px;top: 50%;transform: translateY(-50%); width: 0;height: 0;border: 13px solid transparent; border-top-width: 0;border-bottom-color: #000;transform: rotate(90deg);-moz-transform: rotate(90deg);-webkit-transform: rotate(90deg);}
+.step--shape_item:last-child::before{content: none;}
+
+/* 강좌 할인 */
+.goods--case05{margin-bottom: 0px;display: flex;align-items: center;display: -webkit-flex; -webkit-align-items:center;}
+.step--goods_item05{width: 280px;margin-right: 140px;position: relative;}
+.step--goods_item05::after,
+.step--goods_item05::before{content: '';display: block;width: 4px;height: 100px;background: #000;position: absolute;right: -71px;top: 60px;}
+.step--goods_item05::after{transform: rotate(90deg);-moz-transform: rotate(90deg);-webkit-transform: rotate(90deg);}
+.step--goods_item05:last-child::after,
+.step--goods_item05:last-child::before{content: none;}
+.step--goods_item05:last-child{margin-right: 0;}
+.goods--name05{background: #fff;text-align: center;padding: 13px 0;font-size: 14px;}
+.goods--name05 strong{font-weight: bold;}
+
+/* 수능일까지 수강기간 연장 이미지 */
+.goods--case06{margin-bottom: 40px;}
+
+
+
+.eventArea01 {background:#ecfccb}
+.eventArea01 .inner_bg {padding: 120px 0 50px;}
+.eventArea01 .inner_bg .con_wrap {position:relative;width:1010px;margin:0 auto;}
+.eventArea01 a {font-family:"Pretendard Variable", "Malgun Gothic", "맑은 고딕", sans-serif;}
+.eventArea01 .eventArea__info__wrap{border-bottom: 6px solid var(--evt01Point-color);}
+.eventArea01 .step--shape_box {width:582px;}
+.eventArea01 .goods--case {margin-bottom: 0;}
+.eventArea01 .info--tit::after{background: var(--evt01Point-color);}
+.eventArea01 .info--content > strong {color: var(--evt01Point-color);}
+.eventArea01 .info--content > .info--contentTxt {color: var(--evt01Point-color); font-size:18px; margin-top:5px; text-indent:-29px; padding-left:29px;}
+.eventArea01 .eventArea__info--txt strong {color:#000; text-decoration : none;}
+.eventArea01 .eventArea__info__box > li:last-child {margin-bottom:50px;}
+.eventArea01 .step--txt_item .step--color{background: var(--evt01Point-color);}
+.eventArea01 .step--shape_item {height:120px;}
+.eventArea01 .step--shape_item .step--txt strong{color: var(--evt01Point-color);}
+.eventArea01 .step--shape_item .step--color{background: var(--evt01Point-color);}
+.eventArea01 .count02{background: var(--evt01Point-color);}
+.eventArea01 .evnet--join__btn{background: var(--evt01Point-color);}
+.eventArea01 .noticeWrap__list--item.item-impact,
+.eventArea01 .noticeWrap__list--link {color: var(--evt01Point-color) !important;}
+
+.mov114 {margin-left: -114px;}
+</style>
+
+</head>
+
+<body class="tablet_layout">
+
+	<div class="column_top">
+
+<script type="text/javascript" src="../../../common/js/tui/tui-code-snippet.js"></script>
+<script type="text/javascript" src="../../../common/js/tui/ua-parser.min.js"></script>
+<script type="text/javascript" src="../../../common/js/tui/tui-app-loader.min.js"></script>
+<script type="text/javascript" src="../../../common/js/megastudy00b1.js?version=2025-03-24"></script>
+
+
+<script type="text/javascript" src="../../../common/js/jquery/jquery-latest_header.js"></script>
+
+
+<script type="text/javascript" src="../../../common/js/login3948.js?dt=2025-03-24"></script>
+<script type="text/javascript" src="../../../common/js/search/akc_v2_quick.js"></script>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.bxslider.js"></script>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.cfSlider.js"></script>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.slides.min.js"></script>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.vticker_15.js"></script>
+
+<script type="text/javascript" src="../../../common/data/main/search_keyword1cfcc.html?jsoncallback=?"></script>
+<script type="text/javascript" src="../../../common/data_view/main/searchKeyword78ea.html?mode=test&amp;strType=4&amp;jsoncallback=?"></script>
+<style type="text/css">
+
+	
+ /* 메인 페이지 제외 기타 페이지 검색 버튼 클릭시 TOP 위치 수정용 */
+ #layer_quick_search.sub_search--fixed{position:fixed;top:0 !important}
+
+
+
+.commonGnb--leftBan {left: -136px; top: -36px;}
+.common_gnb--rolling{overflow:hidden;width:101px; height:72px;}
+.common_gnb--logo{float:left}
+.common_gnb--bx_txt{float:left;width:101px}
+.gnb_rolling > div {
+	opacity: 0; position: absolute; left: 0; top: 0;
+}
+.gnb_rolling_ban01{animation: 3s brandFade linear infinite; -webkit-animation: 3s brandFade linear infinite;}
+.gnb_rolling_ban02{animation: 3s brandFade 1.5s linear infinite; -webkit-animation: 3s brandFade 1.5s linear infinite;}
+@keyframes brandFade {
+	0% {opacity:0;}
+	2% {opacity:1;}
+	54% {opacity:1;}
+	55% {opacity:0;}
+	100% {opacity:0;}
+}
+@-webkit-keyframes brandFade {
+	0% {opacity:0;}
+	2% {opacity:1;}
+	54% {opacity:1;}
+	55% {opacity:0;}
+	100% {opacity:0;}
+}
+</style>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-829601904"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-829601904');
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-300444601"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-300444601');
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1008380639"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'AW-1008380639');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TX72TGD');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- 상단 선언 스크립트 : 모든페이지 공통 상단 필수 -->
+<!-- PlayD TERA Log Definition Script Start -->
+<script>
+window['_LA']=window['_LA']||function(){
+   (window['_LA'].q=window['_LA'].q||[]).push(arguments)
+}
+</script>
+
+
+	<script type="text/javascript" src="../../../../dynamic.criteo.com/js/ld/ld31ab.js?a=59085" async="true"></script>
+
+	<!-- Criteo 홈페이지 태그 -->
+	<script type="text/javascript">
+	window.criteo_q = window.criteo_q || [];
+	var deviceType = /iPad/.test(navigator.userAgent) ? "t" : /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Silk/.test(navigator.userAgent) ? "m" : "d";
+	window.criteo_q.push(
+	 { event: "setAccount", account: 59085},
+
+	 
+	 { event: "setEmail", email: "", hash_method: "" },
+	 
+	 { event: "setZipcode", zipcode: "" },
+	 { event: "setSiteType", type: deviceType},
+	 { event: "viewHome"});
+	</script> 
+	<!-- END Criteo 홈페이지 태그 -->
+
+
+<div>
+			
+			<div id="megaHead2015" class="commonGnb navi1_go3">
+
+				
+
+<div id="miniTop" class="commonGnb--loginArea clearfix">
+
+	<div class="commonGnb--loginArea--sns">
+		<a href="https://facebook.com/megastudy10/" target="_blank" class="commonGnb--loginArea--sns--facebook">페이스북</a>
+		<a href="https://instagram.com/megastudy_insta/" target="_blank" class="commonGnb--loginArea--sns--insta">인스타그램</a>
+		
+		<a href="http://blog.naver.com/metivna" target="_blank" class="commonGnb--loginArea--sns--naverblog" title="1CT_232">네이버블로그</a>
+		<a href="http://tv.naver.com/megastudy" target="_blank" class="commonGnb--loginArea--sns--navertv">네이버</a>
+		<a href="https://www.youtube.com/user/theMEGASTUDY" target="_blank" class="commonGnb--loginArea--sns--youtube">유투브</a>
+	</div>
+
+	
+<div class="commonGnb--logoArea--textBannerWrap">
+	<div class="commonGnb--logoArea--textBanner">
+		<div>
+			
+							<a href="../../../teacher_v2/mlive/main9213.html?tab_no=2"  class="top_sch_left" style="display:none;" >
+								<span class="textBanner_frame">
+									<strong style="background-color:#da0000">다시 보기</strong>
+									<span class="textBanner1">내 방이 곧 강의실!<span class="textBanner2" style="color:#da0000">온택트 라이브 강의</span></span>
+								</span>
+							</a>
+						
+			
+		</div>
+		
+		
+	</div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+	var top_sch_left_val = jQuery(".top_sch_left");
+	var top_sch_leftNow =0;
+
+	function fnc_top_left_go(val){
+		if( val == 1 ){
+			top_sch_leftNow = top_sch_leftNow - 1;
+		}else{
+			top_sch_leftNow = top_sch_leftNow + 1;
+		}
+		if( top_sch_leftNow < 0 ){ top_sch_leftNow = top_sch_left_val.length - 1; }
+		if( top_sch_leftNow >= top_sch_left_val.length ){ top_sch_leftNow = 0; }
+		top_sch_left_val.hide();
+		top_sch_left_val.eq(top_sch_leftNow).css("display","block");
+	}
+
+	jQuery(".top_sch_left:eq("+ top_sch_leftNow +")").css("display","block");
+//-->
+</script>
+
+
+	<div class="commonGnb--loginArea--miscBox">
+		<div class="commonGnb--loginArea--miscMenu">
+			<a href="https://www.megastudy.net/inside/event/event_list.asp?mOne=cs01&amp;tab=0">이벤트</a>
+			<div class="po_r">
+				<a href="javascript:;" class="commonGnb--navi1--megaCampaign" onclick="toggle_top('megaCampain--layer');toggle_ico('e');return false;">메가캠페인</a>
+				
+				<div id="megaCampain--layer" class="megaCampain--layer lay_allclose">
+					<ul>
+					
+						<li class="megaCampain--1 megaCampain--title"><a href="../../../campaign/2019_study/mainf9e4.html?mOne=study1"><strong>바른공부</strong></a></li>
+						
+						<li class="megaCampain--1_sub"><a href="../../../campaign/study/snote_list2c89.html?mOne=study3"><strong>ㆍ명문대 선배 멘토링</strong>선배들이 전해주는 합격 비법</a> <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></li>
+						
+						<li class="megaCampain--1_sub"><a href="../../../campaign/study/qcc_list3047.html?mOne=qcc_list"><strong>ㆍ큐브 영상/칼럼(QCC)</strong>수험생을 위한 힐링&학습TIP</a> <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></li>
+
+						<li class="megaCampain--2 megaCampain--title"><a href="../../../campaign/2024_goal/main8cf0.html?mOne=campaign&amp;mTwo=intro"><strong>목표달성 장학생</strong></a></li>
+						<li class="megaCampain--2_sub"><a href="../../../campaign/2024_goal/main2858d.html?mOne=campaign&amp;mTwo=challenge"><strong>ㆍ꿈을 향한 첫걸음</strong>제22기 장학생 도전 중 <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></a></li>
+						<li class="megaCampain--2_sub"><a href="../../../campaign/2024_goal/main35f5a.html?mOne=campaign&amp;mTwo=score#brd_list.asp?vGisu=21"><strong>ㆍ합격의 꿈이 현실로</strong>제21기 장학생 대입성공기 공개! <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></a></li>
+
+
+						
+
+
+						<li class="megaCampain--3 megaCampain--title"><a href="../../../campaign/planner/2024/main1d376.html?mOne=week&amp;mTwo=intro"><strong>주간완전학습</strong></a></li>
+						
+						
+						<li class="megaCampain--3_sub"><a href="../../../campaign/planner/2024/main3a26c.html?mOne=week&amp;mTwo=challeng"><strong>ㆍ플래너 챌린지 </strong>순공 시간 올리고 선물 GET <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></a></li>
+						<li class="megaCampain--3_sub"><a href="../../../campaign/planner/2024/main2c134.html?mOne=week&amp;mTwo=secret"><strong>ㆍ플래너 어워즈</strong>수상자 12인의 실천법 대공개</a> <img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new"></li>
+
+						<li class="megaCampain--4 megaCampain--title"><a href="../../2021/0310_hm23289/maina4e5.html?mOne=brand"><strong>메가스터디 사회공헌 캠페인</strong></a></li>
+						<li class="megaCampain--4_sub"><a href="../../../campaign/csr/2024/maina4e5.html?mOne=brand"><strong>ㆍ희망이룸 메가나눔</strong>소외계층 교육 콘텐츠 지원</a></li>
+						<li class="megaCampain--4_sub"><a href="../../../megaClub/withClub.html"><strong>ㆍ위드클럽</strong>회원과 함께 하는 나눔 모금함</a></li>
+						
+
+						<li class="megaCampain--5 megaCampain--title"><a href="../../2019/0226_clean/main.html"><strong>3가지 정직한 원칙</strong></a></li>
+						<li class="megaCampain--5_sub"><a href="../../2019/0226_clean/main.html"><strong>ㆍ올바른 강좌 선택</strong>클린수강평, 클린Q&A, 클린마케팅</a></li>
+					</ul>
+				</div>
+				
+			</div>
+			<a href="../1029_ss30600/main.html">합격의 전당</a>
+
+			<a href="../../../help/main.html">학습지원센터</a>
+			<div class="po_r">
+				<a href="http://campus.megastudy.net/?clear=Y" class="mn_russelAcademy" onclick="toggle_top('wrapAcademy');toggle_ico('c');return false;">학원 바로가기</a>
+				<!-- 메가스터디학원레이어 -->
+				<div class="wrap_megauniv univ-mergeAcademy lay_allclose" id="wrapAcademy">
+	<div class="megauniv--hole">
+		<div class="megauniv--title"><a href="https://russel.megastudy.net/intro/2024/gisuk_gate/index.asp" target="_blank">러셀 기숙 인트로 ></a></div>
+		<div class="megauniv--wrap">
+			<div class="megauniv--stit megauniv--stit2">러셀 기숙 <span class="megauniv--txt">(수준&middot;계열&middot;남녀 특화 전문관)</span></div>
+			<div class="megauniv--links">
+				<a href="https://russelhs.megastudy.net/russel_hs" target="_blank"  class="megauniv--suwon">
+					최상위권 전문관<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/><br><span class="megauniv--txt">(구. 양지 기숙)</span>
+				</a>
+				<a href="https://seochob.megastudy.net/yangjim/main.asp" target="_blank"  class="megauniv--suwon">
+					자연계 전문관<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/><br><span class="megauniv--txt">(구. 서초 기숙)</span>
+				</a>
+				<a href="https://russelsm.megastudy.net/russel_sm/main.asp" target="_blank"  class="megauniv--suwon">
+					남학생 전문관<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/>
+				</a>
+				<a href="https://russelw.megastudy.net/russel_w/main.asp" target="_blank"  class="megauniv--suwon">
+					여학생 전문관<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/>
+				</a>
+				
+				<a href="https://russelwm.megastudy.net/russel_wm/main.asp" target="_blank" class="megauniv--suwon">
+					여학생 수학전문관<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/>
+				</a>
+				
+				
+			</div>
+		</div>
+	</div>
+	<div class="megauniv--left">
+		<div class="megauniv--title"><a href="https://russel.megastudy.net/intro/" target="_blank">러셀 인트로 ></a></div>
+
+		<div class="megauniv--wrap">
+			<div class="megauniv--stit megauniv--stit2">최상위권 수준별 맞춤 단과 <span class="megauniv--txt">(내신 | 수능)</span></div>
+			<div class="megauniv--links">
+				<a href="https://russelgn.megastudy.net/russel_gn/main.asp" target="_blank" >강남</a>
+				<a href="https://russeldc.megastudy.net/russel/main.asp" target="_blank" >대치</a>
+				<a href="https://russelmd.megastudy.net/russel_mokdong/main.asp" target="_blank" >목동</a>
+				<a href="https://russelbc.megastudy.net/russel_bc/main.asp" target="_blank" >부천</a>
+				<a href="https://russelbd.megastudy.net/russel_bundang/main.asp" target="_blank">분당</a>
+				<a href="https://russelyt.megastudy.net/russel_yt/main.asp" target="_blank" >영통</a>
+				<a href="https://russeljg.megastudy.net/russel_jg/main.asp" target="_blank" >중계</a>
+				<a href="https://russelpc.megastudy.net/russel_pc/main.asp" target="_blank" >평촌</a>
+				<a href="https://russeldg.megastudy.net/russel_dg/main.asp" target="_blank" >대구<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://coredj.megastudy.net/core_dj/main.asp" target="_blank">대전</a>
+				<a href="https://russelct.megastudy.net/russel_ct/main.asp" target="_blank" >센텀</a>
+				<a href="https://russelus.megastudy.net/" target="_blank">울산<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+			</div>
+
+			<div class="megauniv--stit megauniv--stit2">바른공부 자습전용관 <span class="megauniv--txt">(고1·2·3ㅣN수생)</span></div>
+			<div class="megauniv--links">
+				<a href="https://russelgn.megastudy.net/russel_gn/info/study_hall/study_hall.asp" target="_blank">강남</a>
+				<a href="https://russeldc.megastudy.net/russel/info/study_hall/study_hall.asp" target="_blank">대치</a>
+				<a href="https://russelmd.megastudy.net/russel_mokdong/info/study_hall/study_hall.asp" target="_blank">목동 </a>
+				<a href="https://russelbc.megastudy.net/russel_bc/info/study_hall/study_hall.asp" target="_blank">부천</a>
+				<a href="https://russelbd.megastudy.net/russel_bundang/info/study_hall/study_hall.asp" target="_blank">분당 </a>
+				<a href="https://russelyt.megastudy.net/russel_yt/info/study_hall/study_hall.asp" target="_blank">영통</a>
+				<a href="https://russeljg.megastudy.net/russel_jg/info/study_hall/study_hall.asp" target="_blank">중계</a>
+				<a href="https://russelpc.megastudy.net/russel_pc/info/study_hall/study_hall.asp" target="_blank">평촌</a>
+				<a href="https://russeldg.megastudy.net/russel_dg/info/study_hall/study_hall.asp" target="_blank">대구<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://coredj.megastudy.net/core_dj/main.asp" target="_blank">대전</a>
+				<a href="https://russelct.megastudy.net/russel_ct/info/study_hall/study_hall.asp" target="_blank">센텀</a>
+				<a href="https://russelus.megastudy.net/russel_us/info/study_hall/study_hall.asp" target="_blank">울산<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+			</div>
+
+			<div class="megauniv--stit megauniv--stit2">러셀CORE <span class="megauniv--txt">(서연고·의치약 전문관)</span></div>
+			<div class="megauniv--links megauniv--cloumn-3">
+				<a href="https://coregj.megastudy.net/core_gj/main.asp" target="_blank">CORE 광주</a>				
+				<a href="https://corewj.megastudy.net/core_wj/main.asp" target="_blank">CORE 원주<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://corejj.megastudy.net/core_jj/main.asp" target="_blank">CORE 전주<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://corecw.megastudy.net/core_cw/main.asp" target="_blank">CORE 창원<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://corecj.megastudy.net/core_cj/main.asp" target="_blank">CORE 청주<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+			</div>
+
+			<div class="megauniv--stit megauniv--stit2">러셀 재수종합반 <span class="megauniv--txt">(최상위권 이과전문관N)</span></div>
+			<div class="megauniv--links megauniv--cloumn-3">
+				<a href="https://russelbc.megastudy.net/russel_bc/main.asp" target="_blank">부천<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://russelyt.megastudy.net/intro/2025/first_overall/index.asp" target="_blank">영통<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				
+				<a href="https://russeldg.megastudy.net/intro/2025/first_overall/index.asp" target="_blank">대구<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://coredj.megastudy.net/intro/2025/first_overall/index.asp" target="_blank">대전<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://russelus.megastudy.net/intro/2025/first_overall/index.asp" target="_blank">울산<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>
+				<a href="https://coregj.megastudy.net/intro/2025/first_overall/index.asp" target="_blank">CORE 광주<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif"/></a>				
+			</div>
+
+
+		
+
+			<div class="megauniv--stit megauniv--stit2">피켈 <span class="megauniv--txt">(학종설계 | 내신관리)</span></div>
+			<div class="megauniv--links">
+				<a href="https://russelbc.megastudy.net/russel_bc/entinfo/pickel/index.asp" target="_blank" >부천</a>
+				<a href="https://russelyt.megastudy.net/russel_yt/entinfo/pickel/index.asp" target="_blank" >영통</a>
+				<a href="https://russeljg.megastudy.net/russel_jg/entinfo/pickel/index.asp" target="_blank" >중계</a>
+				<a href="https://russelpc.megastudy.net/russel_pc/entinfo/pickel/index.asp" target="_blank" >평촌</a>
+			</div>
+
+
+
+		</div>
+		<!-- //megauniv--wrap -->
+	</div>
+	<!-- //megauniv--left -->
+
+	<div class="megauniv--left">
+		<div class="megauniv--title"><a href="https://campus.megastudy.net/?clear=Y" target="_blank">메가스터디학원 인트로 ></a></div>
+
+		<div class="megauniv--wrap">
+			<div class="megauniv--stit">N수 - 통학학원</div>
+			<div class="megauniv--links">				
+				<a href="https://seocho.megastudy.net/" target="_blank" >서초</a>
+				<a href="https://gangbuk.megastudy.net/" target="_blank" >강북</a>
+				<a href="https://noryangjin.megastudy.net/" target="_blank" >노량진</a>
+				<a href="https://sinchon.megastudy.net/" target="_blank">신촌</a>
+				<a href="https://songpa.megastudy.net/" target="_blank" >송파</a>
+				<a href="https://bucheon.megastudy.net/" target="_blank" >부천</a>
+				<a href="https://bundang.megastudy.net/" target="_blank" >분당</a>
+				<a href="https://ilsan.megastudy.net/" target="_blank" >일산</a>
+				<a href="https://pyeongchon.megastudy.net/" target="_blank" >평촌</a>
+				<a href="http://www.suwonmega.com/" target="_blank" >수원<span class="megauniv--txt">(협력)</span></a>
+			</div>
+		</div>
+		<!-- //megauniv--wrap -->
+
+		
+
+		<div class="megauniv--wrap megauniv--singularSch">
+			<div class="megauniv--stit">고등·중등·초등 - 단과학원</div>
+			<div class="megauniv--links">
+				<a href="https://seongbuks.megastudy.net/" target="_blank" >성북</a>
+			</div>
+			<div>
+				<div class="megauniv--stit">컨설팅 - 입시·면접</div>
+				<div class="megauniv--links">
+					<a href="https://mcc.megastudy.net/" target="_blank" style="width:100%" >대입컨설팅센터</a>
+				</div>
+			</div>
+		</div>
+		<!-- //megauniv--wrap -->
+
+
+	</div>
+	<!-- //megauniv--left -->
+
+	<a href="#" class="megauniv__close" ><img src="../../../../img.megastudy.net/main/2016/bt_mainLayer_close.gif" alt="닫기"></a>
+</div>
+
+<script type="text/javascript">
+	jQuery('#wrapRussel .megauniv__close').click(function(){
+		toggle_top('wrapRussel');; toggle_ico(5);return false;
+	})
+</script>
+
+				<!-- include virtual = "/Common/menu/inc_megastudyAcademyList.asp"-->
+				<!-- include virtual = "/Common/menu/inc_russelList.asp"-->
+				<!-- //메가스터디학원레이어 -->
+			</div>
+		</div>
+		<div class="commonGnb--loginArea--login">
+			
+			<span class="dday--top">2026 수능 <strong>D-234</strong></span>
+			<a href="JavaScript:;" onclick="fncShowLogin();" class="" title="로그인">로그인</a>
+			<a class="" href="JavaScript:;" onclick="popMemberInput('1');" title="회원가입">회원가입</a>
+			<a href="JavaScript:;" onclick="popMemberInput('3');" title="아이디·비밀번호 찾기">ID·PW 찾기</a>
+			
+		</div>
+	</div>
+
+	
+</div>
+
+<div id="megaLoginSwitch" class="lay_allclose">
+	<div class="loginAreaSwitch">
+		<h2><img src="../../../../img.megastudy.net/main/common/img__switch.png" alt="메가스터디교육 통합회원 전환 안내"></h2>
+		<div class="loginAreaSwitch__subTit">
+			하나의 통합 아이디로 모든 사이트를 자유롭게 이용하실 수 있습니다.
+		</div>
+		<div class="loginAreaSwitch__subTxt">
+			모든 브랜드 사이트별 아이디를 하나로 통합하여 관리할 수 있습니다.<br/>
+			아직 가입하지 않은 사이트는 새롭게 가입할 필요 없이 함께 통합 가입됩니다.
+		</div>
+		<div class="loginAreaSwitch--list">
+			<ul>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand01.png" alt="메가스터디"/>
+				</li>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand02.png" alt="엘리하이키즈"/>
+				</li>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand03.png" alt="엘리하이"/>
+				</li>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand04.png" alt="엠베스트"/>
+				</li>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand05.png" alt="러셀"/>
+				</li>
+				<li>
+					<img src="../../../../img.megastudy.net/main/common/img_switchBreand06.png" alt="메가스터디학원"/>
+				</li>
+			</ul>
+		</div>
+
+		
+		<a href="../../../Member/member_new/member_verification_switch.html">통합회원 전환하기</a>
+		
+	</div>
+	<a href="javascript:;" onclick="fncHideMemberSwitch();" class="loginArea__loginClose"><img src="../../../../img.megastudy.net/main/common/login__btn--close.gif" alt="닫기"></a>
+</div>
+
+
+<script type="text/javascript" src="../../../common/js/login.js"></script>
+
+<script type="text/javascript">
+
+    var https_urls="";
+    function goLoginly() {
+		https_urls = "../../../index.html";
+
+        if (document.LoginFormLy.loginid.value.indexOf("seoullearn") != -1) {
+            if (confirm("서울런 회원은 서울런 페이지를 통해 메가스터디를 이용할 수 있습니다.\n지금 서울런 페이지로 이동하시겠습니까?")) {
+                location.href = "https://slearn.seoul.go.kr/";
+            }
+            return;
+        }
+
+        loginok(document.LoginFormLy);
+        return;
+    }
+</script>
+
+<form name="LoginFormLy" method="post" >
+<input type="hidden" name="com_info" value="">
+<input type="hidden" name="com_os" value="">
+<input type="hidden" name="com_directx" value="">
+<input type="hidden" name="com_playerv" value="">
+<input type="hidden" name="login_stroke" value="">
+<input type="hidden" name="com_mac" value="">
+<input type="hidden" name="com_ip" value="222.111.182.90">
+<input type="hidden" name="ret_url" value="" id="ret_urlly"/>
+<input type="hidden" name="mode" value="layer">
+<div id="megaLogin" class="lay_allclose">
+	<div class="loginArea">
+		<h2><img src="../../../../img.megastudy.net/main/common/img__login.gif" alt="로그인"></h2>
+		<!--[D] Label에 selected 추가로 활성화 -->
+		<div class="loginArea__loginType layer">
+			<label class="selected"><input type="radio" name="logintp" onclick="fnc_loginly_tab(1);" value="S" title="학생" checked> 학생</label>
+			<label><input type="radio" name="logintp" onclick="fnc_loginly_tab(2);" value="P" title="학부모"> 학부모</label>
+		</div>
+
+		<div class="loginArea__loginInput">
+			<input type="email" name="loginid" id="loginidly" size="20" maxlength="20"  title="아이디" placeholder="아이디">
+			<input type="password" name="loginpw" id="loginpwly" size="20" maxlength="20" title="비밀번호" placeholder="비밀번호" onKeyDown="if(event.keyCode==13) goLoginly();" >
+			<a href="javascript:;" onclick="goLoginly();">로그인</a>
+		</div>
+
+		<div class="loginArea__idCheck">
+			<label><input type="checkbox" name="saveId" value="1" id="id_savely"  title="아이디 저장"> 아이디 저장</label>
+		</div>
+
+		<div class="loginArea__etc">
+			<a href="javascript:;" onclick="popMemberInput('3');">아이디 찾기</a>
+			&nbsp;|&nbsp;
+			<a href="javascript:;" onclick="popMemberInput('4');">비밀번호 찾기</a>
+			&nbsp;|&nbsp;
+			<a href="javascript:;" onclick="popMemberInput('1');">회원가입</a>
+		</div>
+	</div>
+	<a href="javascript:;" onclick="fncHideLogin();" class="loginArea__loginClose"><img src="../../../../img.megastudy.net/main/common/login__btn--close.gif" alt="닫기"></a>
+</div>
+</form>
+
+
+
+
+<script type="text/javascript">
+
+    try {
+        LoginFormLy.com_info.value = parent.Info.DInfoOCX.GetEncComInfo();
+        LoginFormLy.com_os.value = parent.Info.DInfoOCX.GetOSVersion();
+        LoginFormLy.com_directx.value = parent.Info.DInfoOCX.GetDirectXVersion();
+        LoginFormLy.com_playerv.value = parent.Info.DInfoOCX.GetWMPVersion();
+        LoginFormLy.com_mac.value = parent.Info.DInfoOCX.GetMacAddress();
+    } catch (e) { }
+
+    
+
+</script>
+
+<script type="text/javascript">
+	function fnc_loginly_tab(tab_no) {
+        document.LoginFormLy.logintp[0].checked = false;
+		document.LoginFormLy.logintp[1].checked = false;
+		document.LoginFormLy.logintp[tab_no - 1].checked = true;
+    }
+
+    jQuery(document).ready(function(){
+
+        jQuery(".loginArea__loginType.layer label").click(function(){
+            jQuery(".loginArea__loginType.layer label").removeClass()
+            jQuery(".loginArea__loginType.layer label").eq(jQuery(".loginArea__loginType.layer label").index(this)).addClass("selected");
+		});
+
+
+		// 아이디 : 한글 입력 불가능
+		jQuery("#loginidly").keyup(function(e) {
+			regexp = /[0-9a-zA-Z]/g;
+            vkey = jQuery(this).val();
+			if(vkey != ""){
+				if (!regexp.test(vkey)) {
+					alert('한글은 입력할 수 없습니다.');
+					jQuery(this).val(vkey.replace(regexp, ''));
+				}
+			}
+		});
+    })
+
+    function fncShowLogin() {
+        //jQuery(".lay_allclose").hide();
+		//jQuery("#megaLogin").show();
+
+		toggle_top('megaLogin');
+		toggle_ico('k')
+    }
+    function fncHideLogin() {
+        jQuery("#megaLogin").hide();
+	}
+</script>
+
+
+<script language="JavaScript">
+<!--
+    function fncMyPageInfo() {
+
+        if (jQuery("#MyPageInfo").css("display") == "none") {
+            jQuery('.lay_allclose').hide();
+            jQuery("#MyPageClick").addClass("on");
+            jQuery.post("../../../Common/login/mypage_info_ax.html",
+				function (data){
+				    jQuery("#MyPageInfo").html(data);
+				    jQuery('#MyPageInfo').show();
+				}
+			);
+        } else {
+            jQuery("#MyPageClick").removeClass("on");
+            jQuery('#MyPageInfo').hide();
+
+        }
+    }
+//-->
+</script>
+
+
+<script type="text/javascript">
+<!--
+	function fncMemberSwitch() {
+		toggle_top('megaLoginSwitch');
+    }
+    function fncHideMemberSwitch() {
+        jQuery("#megaLoginSwitch").hide();
+	}
+//-->
+</script>
+
+
+
+
+<style>
+.commonGnb--logoArea h1 a{display: block;width:180px;height: 50px;margin:0 auto;background: url('../../../../img.megastudy.net/main/common/logo_250313_1.jpg') 50% no-repeat;transition: background-image 0.3s ease-in-out;}
+.commonGnb--logoArea h1 a:hover {background-image: url('../../../../img.megastudy.net/main/common/logo_250313_2.jpg');}
+</style>
+				<div class="commonGnb--logoArea">
+					<h1>
+						<a href="../../../megastudy.html"></a>
+					</h1>
+
+					
+<div class="commonGnb--logoArea--imgBanner">
+	<div>
+		
+		<a href="../../2025/0312_ns31366/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/3평 반배송 이벤트');}catch(e){};" style="display:;" ><img src="../../../../img.megastudy.net/Main/bnr_2025/bnr_top_250312_npy_1.jpg" alt="3평 반배송 이벤트" style="width:220px;height:55px"></a>
+		
+		<a href="main20ea.html?ViewAnc=review#/Event/2024/0903_mg30161/main_recom_list_ax.asp"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/생기부 클래스 이벤트');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2025/bnr_top_250319_skb.jpg" alt="생기부 클래스 이벤트" style="width:220px;height:55px"></a>
+		
+		<a href="../../2021/1116_qb24572/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/큐브 이벤트');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/Main/scroll/sky_250318_qube2.jpg" alt="큐브 이벤트" style="width:220px;height:55px"></a>
+		
+		<a href="../../../campaign/2024_goal/main35f5a.html?mOne=campaign&amp;mTwo=score#brd_list.asp?vGisu=21"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/목표 달성 장학생');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2024/bnr_top_250314_goal_1.jpg" alt="목표 달성 장학생" style="width:220px;height:55px"></a>
+		
+		<a href="../../../entinfo/math_ontact/event/2023/1120_en28613/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/성적리그 이벤트');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2025/bnr_top_250312_mevent.jpg" alt="성적리그 이벤트" style="width:220px;height:55px"></a>
+		
+		<a href="../../2025/0310_cp31415/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/아이디어 공모전');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/Main/bnr_2025/bnr_top_250310_idea.jpg" alt="아이디어 공모전" style="width:220px;height:55px"></a>
+		
+		<a href="../../../pmp_2012/event/2025/0310_evt/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/엠샵 3월 이벤트');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/Main/bnr_2025/bnr_top_250310_mshop.jpg" alt="엠샵 3월 이벤트" style="width:220px;height:55px"></a>
+		
+		<a href="../0122_dg28935/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/디지털 굿즈');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/Main/bnr_2025/bnr_top_250214_dg1.jpg" alt="디지털 굿즈" style="width:220px;height:55px"></a>
+		
+		<a href="../0820_st30363/main.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/스마트탭아이패드');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/Main/bnr_2024/bnr_top_241111_iPad.jpg" alt="스마트탭아이패드" style="width:220px;height:55px"></a>
+		
+		<a href="../../../campaign/planner/2024/main3a26c.html?mOne=week&amp;mTwo=challeng"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/2025 주간완전학습 챌린지');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2024/bnr_top_241227_week.jpg" alt="2025 주간완전학습 챌린지" style="width:220px;height:55px"></a>
+		
+		<a href="../../2021/0310_hm23289/maina4e5.html?mOne=brand"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/사회공헌 캠페인');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2024/bnr_top_240422_bar7.jpg" alt="사회공헌 캠페인" style="width:220px;height:55px"></a>
+		
+		<a href="../../../megaClub/withClub.html"  class="top_sch_rollarr" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/위드클럽');}catch(e){};" style="display:none;" ><img src="../../../../img.megastudy.net/main/bnr_2024/bnr_top_240422_bar8.jpg" alt="위드클럽" style="width:220px;height:55px"></a>
+		
+	</div>
+	
+	<a href="javascript:;" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/인디케이터');}catch(e){};fnc_top_sch_go(1);" class="commonGnb--logoArea--imgBanner__bt commonGnb--logoArea--imgBanner__btPrev">이전</a>
+	<a href="javascript:;" onclick="try{logerClickTrace( 'EVT', '/GNB/우측배너/인디케이터');}catch(e){};fnc_top_sch_go(2);" class="commonGnb--logoArea--imgBanner__bt commonGnb--logoArea--imgBanner__btNext">다음</a>
+	
+</div>
+
+
+<script type="text/javascript">
+<!--
+	var top_sch_rollarr_val = jQuery(".top_sch_rollarr");
+	var top_sch_rollarrNow = 0;
+
+	function fnc_top_sch_go(val){
+		if( val == 1 ){
+			top_sch_rollarrNow = top_sch_rollarrNow - 1;
+		}else{
+			top_sch_rollarrNow = top_sch_rollarrNow + 1;
+		}
+		if( top_sch_rollarrNow < 0 ){ top_sch_rollarrNow = top_sch_rollarr_val.length - 1; }
+		if( top_sch_rollarrNow >= top_sch_rollarr_val.length ){ top_sch_rollarrNow = 0; }
+		top_sch_rollarr_val.hide();
+		top_sch_rollarr_val.eq(top_sch_rollarrNow).css("display","block");
+	}
+
+	jQuery(".top_sch_rollarr:eq("+ top_sch_rollarrNow +")").css("display","block");
+//-->
+</script>
+
+
+					<div class="commonGnb--navi1--links2">
+						<div class="col">
+							<a href="../../../megaRun/main.html" class="mn_megaRun">메가런 </a>
+							<a href="../../../megaClub/main.html" class="mn_megaClub">메가클럽 멤버십 </a>
+							<a href="../../../lecmain/mainn/2020/0120_vitamin/main4f84.html?viewanc=top&amp;vitTypeNo=2" class="mn_onlineStore">비타민교재</a>
+							
+							<a href="../../2025/0115_mb31041/main.html" class="mn_meBOOK">meBOOK</a>
+							
+							<a href="../../../pmp_2012/main.html" class="mn_smartZone">M# shop</a>
+						</div>
+						<div class="col">
+							<a href="javascript:;" class="mn_lecbook" onclick="try{fncQSOpen2();}catch(e){};$('.search_dimmed').hide();return false;">강좌&middot;교재 찾기</a>
+							<a href="javascript:;" class="mn_search" onclick="try{fncQSOpen();}catch(e){};return false;">통합검색</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="commonGnb--navi2" id="megaGnb">
+					<div class="inner clearfix">
+						<div class="commonGnb--navi2--links">
+							<div class="commonGnb--navi2--primary">
+								<a href="javascript:;" id="commonGnb--navi2--util--fullService" class="commonGnb--navi2--util--fullService">
+									<span> </span>
+									<span> </span>
+									<span> </span>
+								</a>
+								<span class="mn_teachers">
+									<a href="../../../teacher_v2/teacher_main.html" class="go3" >메가선생님</a>
+									<a href="javascript:;" class="mn_teachersLayer">
+										<span></span>
+										<span></span>
+									</a>
+								</span>
+								
+								
+									<a href="../../../lecmain/mains/mains.html" >2026 수능&middot;내신</a>
+									
+								<a href="../../../lecmain/mainn/mainn.html" >대학별고사</a>
+								
+
+								<a href="../../../entinfo/main/entinfo_main.html" class="">입시정보</a>
+								<span class="inner__mo">
+									<span class="commonGnb--navi2--ico" style="left:auto;right:50%;top:-13px;">
+										
+										<em class="color_MLeague">M리그 이벤트</em>
+																				
+									</span>
+									<a href="../../../entinfo/math_ontact/main.html" class="mn_entinfo">문제은행</a>
+								</span>
+								
+							</div>
+							
+
+<div class="commonGnb--navi2--secondary">
+	
+					<span class="inner__mo">
+						
+
+						<a class="commonGnb--ani-move "  href="../../../tpass/2025/0225_ps31484/main.html"  >메가패스</a>
+					</span>
+	
+					<span class="inner__mo">
+						
+
+						<a  href="../../../tpass/2025/0320_sp31699/main.html"  >구독패스</a>
+					</span>
+	
+					<span class="inner__mo">
+						
+
+						<a  href="../1101_pt30678/main.html"  >메가PT</a>
+					</span>
+	
+					<span class="inner__mo">
+						
+
+						<a  href="../../../bookmall/main.html"  >온라인서점</a>
+					</span>
+	
+					<span class="inner__mo">
+						
+						<span class="commonGnb--navi2--ico" style="left:auto;right:50%;top:-15px;">
+							<em class="color_new">NEW</em>
+						</span>
+						
+
+						<a  href="../../../medi_premium/main.html"  >의대 프리미엄관</a>
+					</span>
+	
+</div>
+
+
+
+
+
+
+						</div>
+
+						<div class="commonGnb--navi2--util">
+							<a href="javascript:;" class="commonGnb--navi2--util--lecbook" onclick="try{fncQSOpen2();}catch(e){};return false;">강좌&middot;교재 찾기</a>
+
+							<a href="javascript:;" class="commonGnb--navi2--util--search" onclick="try{fncQSOpen();}catch(e){};return false;">
+							</a>
+						</div>
+
+						
+<div class="commonGnb--bannerHwj">
+	<div class="commonGnb--bannerHwj--inner" id="hy_ban_mn_inner">
+		<ul>			
+		
+						<li><a href="../../../teacher_v2/t_promotion/202502_pr/0224_math_hwj/main.html" >
+							현우진,<br>N제의 결정체&nbsp;<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new">
+						</a></li>
+		
+						<li><a href="../../../teacher_v2/t_promotion/202502_pr/0224_math_hwj/main.html" >
+							드릴드2<br>교재 입고 완료!&nbsp;<img src="../../../../img.megastudy.net/main/2015/ic_new2.gif" alt="new">
+						</a></li>
+		
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	jQuery('#hy_ban_mn_inner').vTicker('init', { height: 38, showItems: 1, pause: 3500 });
+</script>
+
+
+<style>
+	.commonGnb--bannerHwj {z-index: 111; border-bottom: 1px solid #000;height: 76px; box-sizing: border-box;}
+	.commonGnb--bannerHwj:after {content: '';position: absolute;top: 74px;left: -20px;width: 20px;height: 3px;background: #fff;}
+</style>
+
+						<div id="teachers" class="teachers_wrap lay_allclose" style="display:none"></div>
+
+
+						
+							<script type="text/javascript">
+								
+								var nsInt = 0;
+
+								function fncQSOpen() {
+									jQuery.post("../../../Common/menu/new_search_ax.html", function(data){
+										jQuery("#newSearch").html(data);
+										jQuery("#kwd").focus();
+									});
+
+									if (nsInt == 0) {
+										jQuery('#megaHead2015').attr("class","commonGnb navi1_go3 open_search");
+										jQuery('.search_dimmed').show();
+									} else {
+										if (jQuery(".search_dimmed").css("display") == "block") {
+											jQuery('#megaHead2015').attr("class","commonGnb navi1_go3");
+											jQuery('.search_dimmed').hide();
+										} else {
+											jQuery('#megaHead2015').attr("class","commonGnb navi1_go3 open_search");
+											jQuery('.search_dimmed').show();
+										}
+									}
+
+									toggle_top('layer_quick_search');
+									toggle_ico('b');
+
+									nsInt = nsInt = 1
+
+									jQuery(window).scroll(function() {
+										var searchScrollTop = jQuery(window).scrollTop();
+										if (searchScrollTop > 30){
+											jQuery('.lay_allclose').addClass("sub_search--fixed");
+										}else{
+											jQuery('.lay_allclose').removeClass("sub_search--fixed");
+										}
+									});
+								}
+							</script>
+						
+
+							<div id="layer_quick_search2" style="display:none;position:absolute;left:0;margin-top:-1px; width:1160px;z-index:10020;border: 1px solid #a8a8a8;background:#f9f9f9;box-sizing: border-box;" class="lay_allclose">
+								<div id="newSearch2"></div>
+								<div style="height:400px;overflow:hidden;width:100%;"><iframe title="quick_search" id="ifrm_quick_search" src="../../../quick_search/blank.html" width="100%" height="380px" allowtransparency="true" style="border:0px;" frameborder="0" scrolling="no"></iframe>
+								</div>
+							</div>
+							<script type="text/javascript">
+								
+								function fncQSOpen2() {
+									if (document.getElementById("layer_quick_search2").style.display == "none") {
+										if (document.getElementById("ifrm_quick_search").contentWindow.location.href.indexOf("blank.html") > 0) {
+											document.getElementById("ifrm_quick_search").contentWindow.location.href = "../../../quick_search/quick_search_ifrm.html";
+										}
+									} else {
+										jQuery.post("../../../Quick_Search/quick_search_ax.asp", function(data){
+											jQuery("#newSearch2").html(data);
+										});
+									}
+
+									toggle_top('layer_quick_search2');
+									toggle_ico('z');
+								}
+
+								 function fncQuickClose() {
+									jQuery("#layer_quick_search2").hide();
+								}
+							</script>
+
+						
+					</div>
+					
+					<div id="layer_quick_search" style="display:none;z-index:10020;" class="lay_allclose">
+						<div id="newSearch"></div>
+					</div>
+					
+				</div>
+
+				
+				<div class="box_allservice lay_allclose" id="boxAllservice" style="display:none">
+					
+					<!-- include virtual = "/Common/menu/bottmenu_fullservice_2018.asp"-->
+				</div>
+
+				<script>
+				<!--
+					
+					jQuery('.mn_teachersLayer').click(function () {
+						toggle_top('teachers');
+						toggle_ico('a');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					
+					jQuery('.commonGnb--navi2--util--fullService').click(function () {
+						toggle_top('boxAllservice');
+						toggle_ico('f');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					
+					jQuery('.commonGnb--navi1--megaCampaign').click(function () {
+						toggle_ico('e');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					
+					jQuery('.mn_russel').click(function () {
+						toggle_ico('c');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					
+					jQuery('.mn_academy').click(function () {
+						toggle_ico('d');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					jQuery('.commonGnb--navi2--util--lecbook').click(function () {
+						toggle_ico('z');
+						jQuery('.search_dimmed').hide();
+						return false;
+					})
+
+					
+					function toggle_ico(Num) {
+						
+						var targetLayerIcon = {
+							"a" : jQuery(".mn_teachersLayer"),
+							"b" : jQuery(".mn_search, .commonGnb--navi2--util--search"),
+							"c" : jQuery(".mn_russel"),
+							"d" : jQuery(".mn_academy"),
+							"e" : jQuery(".commonGnb--navi1--megaCampaign"),
+							"f" : jQuery(".commonGnb--navi2--util--fullService"),
+							"g" : jQuery(".mypage"),
+							"h" : jQuery(".br_topRight--btList"),
+							"i" : jQuery("#megaGnb .top_ban_mn"),
+							// "j" : jQuery("EwrapRussel"),
+							"j" : jQuery("#wrapAcademy"),
+							"k" : jQuery(".commonGnb--loginArea--login")
+						}
+
+						for (var key in targetLayerIcon) {
+							if (key !== Num) {
+								// console.log(targetLayerIcon[key].attr('class'))
+								targetLayerIcon[key].removeClass('active');
+							}else if(key === Num) {
+								targetLayerIcon[key].toggleClass('active');
+							}
+						}
+					}
+
+					var boxAllserviceCnt =0;
+					//toggle
+					function toggle_top(obj) {
+						var fMenu = jQuery("#" + obj)
+						var fMenuDisp = fMenu.css("display");
+						jQuery('.lay_allclose').hide();
+
+						if (fMenuDisp == 'none') {
+							if (obj == "teachers") {
+
+								try {
+									jQuery("#centerarea").css("z-index", 1);
+								} catch (e) { }
+								try {
+									jQuery("#layer_learning").css("z-index", 1);
+								} catch (e) { }
+
+								if (fMenu.html() == "") {
+									fMenu.load("../../../Common/menu/teachers_ax_2018.html");
+								}
+							}else if(obj == "boxAllservice") {
+								jQuery('body, html').addClass('fullservice--bodyScrollNo');
+								
+								if(boxAllserviceCnt==0){
+									
+									jQuery('#boxAllservice').load('../../../Common/menu/bottmenu_fullservice_2018_ax.html');
+									
+									boxAllserviceCnt = 1;
+								}
+							}else if(obj == "layer_quick_search") {
+								jQuery('#layer_quick_search').css('display','block');
+							}
+
+							showEffect(fMenu);
+						} else {
+							fMenu.hide();
+						}
+
+						function getNumberOnly(obj){
+							var val = obj;
+							val = new String(val);
+							var regex = /[^0-9]/g;
+							val = val.replace(regex, '');
+							obj= val;
+							return obj;
+						}
+
+						function showEffect(obj){
+							var Top = getNumberOnly(obj.css("top"));
+							obj.css("top",Top-20);
+							obj.show().animate({top:Top},300);
+						}
+
+						if(obj === 'wrapAcademy') $('.search_dimmed').hide();
+					}
+
+					setTimeout(()=>{
+						if($('.commonGnb--navi2').hasClass('commonGnb--navi2--menu_fixed')){
+							$('#layer_quick_search2').css('top', '76px');
+						}
+					}, 2000);
+
+					$(window).scroll(()=>{ // [D] 교재 찾기 레이어 스크롤에 따라 위치 변경
+						if(!$('.commonGnb--navi2').hasClass('commonGnb--navi2--menu_fixed')){
+							$('#layer_quick_search2').css('top', 0);
+						}else{
+							$('#layer_quick_search2').css('top', '76px');
+						}
+					});
+				//-->
+				</script>
+
+	</div>
+</div>
+
+<div class="search_dimmed"></div>
+
+<style>
+.common_sky_megapass{display:block;position:fixed;_position:absolute;right:0;transition: width .2s ease,height .2s ease;background-size: 100%;z-index:19980;top:50%;overflow: hidden;transform:translateY(-50%)}
+.common_sky_megapass.new0411{height:216px;}
+.common_sky_megapass .pass_area{text-align:right;}
+.common_sky_megapass .exp_area{height:151px;width:151px}
+.common_sky_megapass .br_event{position:relative; margin-bottom: 10px;}
+.margin_banner {margin-bottom:10px; text-align:right;}
+.evt_banner{margin:15px 0 0;text-align:center}
+.br_event a{position: absolute;left:0;top:0;width:72px;height: 40px;overflow:hidden;font:0/0 arial;text-indent: -9999px;}
+.br_event .go1{left:265px;top:109px;}
+.br_event .go2{left:265px;top:149px;}
+.br_event .go3{left:265px;top:187px;}
+.br_event .go3_2{left:20px;top:0;width:244px;height:253px;}
+.br_event .link_t{left:0;top:0;width:180px;height:27px;}
+.br_event .link{left:6px;top:28px;width:204px;height:157px;}
+.br_event .link2{left:26px;top:172px;width:210px;height:43px;}
+.br_event .go3_event{left:46px;top:253px;width:203px;height:84px;}
+#mento_ba{position:relative;width:170px;padding:30px 0 0 12px;text-align:left;z-index:1000}
+#mento_ba .check_today{display:block;width:113px;margin:15px auto 0;padding:3px 0;background:#a9a9a9;color:#fff;font-size:11px;text-align:center}
+#mento_ba .check_today:hover{text-decoration:none}
+
+#bus_evt{position:relative;width:125px;padding:0 0 0 0;text-align:left;z-index:1000}
+
+
+.common_sky_megapass.new0411 .go1{width:62px;height:31px;left:96px;top:282px;}
+.common_sky_megapass.new0411 .go2{width:62px;height:31px;left:164px;top:282px;}
+.common_sky_megapass.new0411 .go3{width:62px;height:31px;left:232px;top:282px;}
+@media (max-width: 1213px) {
+	/*.common_sky_megapass{display:none}*/
+}
+.common_sky_megapass .close{position: absolute;right:77px;top:0;z-index: 10;width:25px;height: 27px;overflow: hidden;font-size: 0;line-height: 0;text-indent: -99999px;}
+.common_sky_megapass .today_cls{position: absolute;left:50px;top:190px;z-index: 10;width:114px;height: 20px;overflow: hidden;font-size: 0;line-height: 0;text-indent: -99999px;}
+.common_sky_megapass .event_ap {height:190px; text-align:right;}
+
+@media screen and (max-width: 1500px) {
+.common_sky_megapass{top:50%;transform:translateY(-50%)}
+}
+@media screen and (max-width: 1500px) and (orientation: landscape){
+.common_sky_megapass{top:50%;transform:translateY(-80%)}
+}
+
+
+/* bannerRotation */
+.bannerRotation1 {position:absolute; right:0; top:0;}
+.bannerRotation2 {animation:bnrR 1.5s linear 0.3s infinite;}
+@keyframes bnrR {from{opacity:1;}50%{opacity:1;}51%{opacity:0;}to{opacity:0;}}
+
+.icoNewSky {position:absolute; left:22px; top:22px;}
+.icoChallenge {position:absolute; left:13px; top:118px;}
+.common_sky_planner {position: relative}
+.common_sky_cash{position: relative}
+</style>
+
+<div class="common_sky_megapass">
+
+	
+	<div class="margin_banner" id="common_sky_240604_mp" style="display:none;">
+		<div id="mega_pass" class="pass_area">
+			<div class="br_event">
+				<img usemap="#sky_r_240604_mpgo3" src="../../../../img.megastudy.net/Main/banner/sky_r_250225_mp.png" alt="메가패스">
+				<map name="sky_r_240604_mpgo3">
+					<area shape="rect" coords="75,1,89,16" href="javascript:;" onclick="document.getElementById('common_sky_240604_mp').style.display = 'none';" alt="닫기">
+					<area shape="rect" coords="0,0,90,151" href="../../../tpass/2025/0225_ps31484/main.html" alt="고3 메가패스" />
+					<area shape="rect" coords="0,151,90,170" href="javascript:;" onclick="closeDpLayer3();" alt="오늘하루열지않음">
+				</map>
+			</div>
+		</div>
+	</div>
+	
+	<div class="margin_banner" id="common_sky_r_250312_npy" style="display:none;">
+		<div class="br_event">
+			
+				<img usemap="#sky_r_250312_npy_3" src="../../../../img.megastudy.net/Main/banner/sky_r_250312_npy_3.png" alt="신학기 간식 파티 TEAM 모집중">
+			
+			<map name="sky_r_250312_npy_3">
+				<area shape="rect" coords="75,1,89,16" href="javascript:;" onclick="document.getElementById('common_sky_r_250312_npy').style.display = 'none';" alt="닫기">
+				<area shape="rect" coords="0,0,90,141" href="../../2025/0312_ns31366/main.html" alt="" />
+				<area shape="rect" coords="0,140,90,160" href="javascript:;" onclick="closeNewClassLayer();" alt="오늘하루열지않음">
+			</map>
+		</div>
+	</div>
+	
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	function isIE () {
+	  var myNav = navigator.userAgent.toLowerCase();
+	  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+	}
+
+	if (isIE () && isIE () < 10) {
+
+		$( ".common_sky_megapass" )
+		  .mouseenter(function() {
+			TweenMax.to($(this), .4, {width:"211px",height:"204px"});
+		  })
+		  .mouseleave(function() {
+			TweenMax.to($(this), .4, {width:"211px",height:"204px"});
+		  });
+
+	} else{
+
+	}
+	 $(".common_sky_megapass>.close").click(function(){
+		 document.getElementById('common_sky_megapass').style.display = 'none';
+		 return false;
+	 })
+
+	 function closeNewClassLayer(){
+	 	setCookie("main_pop", "yes", 1, 9);	// 1일 간 쿠키적용
+	 	jQuery("#common_sky_r_250312_npy").hide();
+	 }
+	 if (fnc_getCookie("main_pop", 8) != "yes") {
+		jQuery("#common_sky_r_250312_npy").show();
+	}
+
+	// 메모리+메가짤
+	function closeDpLayer6(){
+		setCookie("main_pop", "yes", 1, 9);	// 1일 간 쿠키적용
+		jQuery("#common_sky_r_250205_memory").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 8) != "yes") {
+		jQuery("#common_sky_r_250205_memory").show();
+	}
+
+	// 고3 메가패스
+	function closeDpLayer3(){
+		setCookie("main_pop", "yes", 1, 5);	// 1일 간 쿠키적용
+		jQuery("#common_sky_240604_mp").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 4) != "yes") {
+		jQuery("#common_sky_240604_mp").show();
+	}
+
+	// 2025 메가패스
+	function closeDpLayer2(){
+		setCookie("main_pop", "yes", 1, 8);	// 1일 간 쿠키적용
+		jQuery("#common_sky_240312_mp").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 7) != "yes") {
+		jQuery("#common_sky_240312_mp").show();
+	}
+
+
+	// 캐시백
+	function closeDpLayer5(){
+		setCookie("main_pop", "yes", 1, 2);	// 1일 간 쿠키적용
+		jQuery("#common_sky_r_241227_run").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 1) != "yes") {
+		jQuery("#common_sky_r_241227_run").show();
+	}
+
+	// 캐시백
+	function closeDpLayer5(){
+		setCookie("main_pop", "yes", 1, 2);	// 1일 간 쿠키적용
+		jQuery("#sky_r_250103_run").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 1) != "yes") {
+		jQuery("#sky_r_250103_run").show();
+	}
+
+	// 수능 D-100
+	function closeDpLayer100(){
+		setCookie("main_pop", "yes", 1, 3);	// 1일 간 쿠키적용
+		jQuery("#sky_r_240801_d100").hide();
+	}
+
+	if (fnc_getCookie("main_pop", 2) != "yes") {
+		jQuery("#sky_r_240801_d100").show();
+	}
+//-->
+</script>
+
+
+
+<!-- 공통 좌측 퀵메뉴 -->
+<div class="common_quckMenu" id="QuikMenuDiv" style="display:none;">
+	<div class="select_grade_wrap">
+		<div class="select_grade">
+			<div class="current_grade go3">
+				<a href="javascript:;"><span>고3<b>·</b>N수</span></a>
+			</div>
+			<div class="grade_list_wrap">
+				<ul class="grade_list">
+					
+					<li class="go3"><a href="javascript:;" onclick="fncMainGrdSet('3')">고3<b>·</b>N수</a></li>
+					<li class="go2"><a href="javascript:;" onclick="fncMainGrdSet('2')">고2</a></li>
+					<li class="go1"><a href="javascript:;" onclick="fncMainGrdSet('1')">고1</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:;" class="common_quickMenu__close">
+		<div class="common_quickMenu__close--btn">
+			<span> </span>
+			<span> </span>
+		</div>
+	</a>
+	
+	<ul class="common_quckMenu--list">
+		<li>
+			
+			<a class="common_quckMenu--mypage" href="../../../Mypage/member_new/login_guest.html">마이페이지</a>
+			
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--myroom" href="../../../Mypage/member_new/login_guest.html">내강의실</a>
+			
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--apply" href="../../../Mypage/member_new/login_guest.html">수강신청</a>
+			
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--alarm" href="../../../Mypage/member_new/login_guest.html">알림</a>
+			
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--book" href="JavaScript:;" onclick="fncShowLogin();">교재 구매</a>
+				
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--cart" href="../../../Mypage/member_new/login_guest.html">장바구니</a>
+			
+		</li>
+		<li>
+			
+			<a class="common_quckMenu--order" href="../../../Mypage/member_new/login_guest.html">주문배송조회</a>
+			
+		</li>
+	</ul>
+	<a href="javascript:;" class="common_quckMenu--top">top</a>
+	<a href="javascript:;" class="common_quckMenu--down">down</a>
+</div>
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.bxslider.js"></script>
+
+<script>
+<!--
+	
+	var megaHeaderCq = jQuery('.common_quckMenu');
+	var megaHeaderCloseBtn = megaHeaderCq.find('.common_quickMenu__close');
+	var megaHeaderDownBtn = megaHeaderCq.find('.common_quckMenu--down');
+	var megaHeaderUpBtn = megaHeaderCq.find('.common_quckMenu--top');
+
+	function fncQuikMenuSet(flg) {
+		jQuery.post( "../../../Common/menu/SetCookie_axe1d8.html?mQuik="+flg, function( data ) {	});
+	}
+
+	megaHeaderCloseBtn.click(function() {
+		// cq.addClass('common_quickMenu--hide');
+		megaHeaderCq.attr('class', function () { if (jQuery(this).is('.common_quickMenu--hide')) { return 'common_quckMenu common_quickMenu--show'; } else { return 'common_quckMenu common_quickMenu--hide'; } });
+		jQuery(this).toggleClass('active');
+		if (jQuery("#QuikMenuDiv").attr("class") == "common_quckMenu common_quickMenu--hide"){
+			fncQuikMenuSet('n')
+		}else{
+			fncQuikMenuSet('y')
+		}
+		return false;
+	})
+
+	megaHeaderDownBtn.click(function() {
+		var body = jQuery("html, body");
+		body.stop().animate({ scrollTop: jQuery('#footer_new').offset().top - 80 }, 500, 'swing');
+		return false;
+	})
+
+	megaHeaderUpBtn.click(function() {
+		var body = jQuery("html, body");
+		body.stop().animate({ scrollTop: 0 }, 500, 'swing');
+		return false;
+	})
+
+	const fn_fixedQuickMenu = ()=>{ // [D] 좌측 고정 퀵메뉴 상단 위치 조정 + 학년 선택
+		const commonQuickMenu = document.querySelector('.common_quckMenu');
+		let defaultTop = document.querySelector('.commonGnb--logoArea').offsetTop + 96;
+
+		commonQuickMenu.style.top = defaultTop + 'px';
+		commonQuickMenu.style.display = 'block';
+
+		window.addEventListener('scroll', ()=>{
+			let winTop = $(window).scrollTop();
+			const logoTop = document.querySelector('.commonGnb--logoArea').offsetTop;
+			const gnbTop = document.querySelector('.commonGnb--navi2').offsetTop;
+
+			if(winTop < logoTop){
+				document.querySelector('.select_grade_wrap').style.display = 'block';
+				commonQuickMenu.style.top = (defaultTop - winTop) + 'px';
+			}else if(winTop > logoTop && winTop < gnbTop){
+				commonQuickMenu.style.top = 0;
+				commonQuickMenu.style.transition = 'top .2s cubic-bezier(.85,-0.01,.07,1.04)';
+			}else{
+				commonQuickMenu.style.top = 0;
+				document.querySelector('.select_grade_wrap').style.display = 'none';
+			}
+
+			if(winTop < (logoTop - 76)) commonQuickMenu.style.transition = 'none';
+		});
+
+        const selectGrade = document.querySelector('.select_grade');
+        const gradeWrap = document.querySelector('.grade_list_wrap');
+        const grades = document.querySelectorAll('.grade_list li');
+        const gradeLength = grades.length;
+        const gradeWrapHeight = (gradeLength * 60) + ((gradeLength - 1) * 10) + 40;
+        const isOpen = 'is_open';
+
+		const fn_openGrades = ()=>{
+			selectGrade.classList.add(isOpen);
+            gradeWrap.style.height = gradeWrapHeight + 'px';
+		}
+		const fn_closeGrades = ()=>{
+			selectGrade.classList.remove(isOpen);
+            gradeWrap.style.height = 0;
+		}
+
+        gradeWrap.style.transition = 'all ' + gradeLength * 0.07 + 's ease-out';
+        grades.forEach((grade, i) => grade.style.transitionDelay = (i + 1) * 0.05 + 's');
+        document.querySelector('.current_grade a').addEventListener('focusin', fn_openGrades);
+        document.querySelector('.common_quickMenu__close').addEventListener('focusin', fn_closeGrades);
+        selectGrade.addEventListener('mouseenter', fn_openGrades);
+        selectGrade.addEventListener('mouseleave', fn_closeGrades);
+    }
+
+    fn_fixedQuickMenu();
+
+	function fncMainGrdSet(g) {
+
+		jQuery.post( "../../../Common/menu/SetCookie_axc2ae.html?mGrd="+g, function( data ) {
+			document.location.href='../../../megastudy.html';
+		});
+	}
+
+
+	
+	function fncSetTeacherHomeLnk(tecLnkVal){
+		if (jQuery("#tecHomeLnkForm").length==0){
+
+			var arrTecLnkInfo=tecLnkVal.split("?");
+			var tecHomeLnkUrl=arrTecLnkInfo[0];
+			var tecHomeLnkVal=arrTecLnkInfo[1];
+			var arrTecHomeLnkVal=tecHomeLnkVal.split("&");
+			var newFormTxt="<form name='tecHomeLnkForm' id='tecHomeLnkForm' method='post' action='"+tecHomeLnkUrl+"'></form>"
+
+			jQuery("body").eq(0).append(newFormTxt);
+
+
+			var arrLnkDtlVal=[];
+
+			var dataNm=""
+			var dataVal="";
+
+			for(var fCnt=0;fCnt<arrTecHomeLnkVal.length;fCnt++){
+
+				arrLnkDtlVal=arrTecHomeLnkVal[fCnt].split("=");
+
+				dataNm=arrLnkDtlVal[0];
+				dataVal=arrLnkDtlVal[1];
+
+				jQuery("#tecHomeLnkForm").append("<input type='hidden' name='"+dataNm+"' value='"+dataVal+"'>");
+
+				arrLnkDtlVal=[];
+			}
+
+			jQuery("#tecHomeLnkForm").append("<input type='hidden' name='ret_url' value='"+tecLnkVal+"'>");
+
+			jQuery("#tecHomeLnkForm").submit();
+
+		}else{
+			jQuery("#tecHomeLnkForm").empty();
+
+			var arrTecLnkInfo=tecLnkVal.split("?");
+			var tecHomeLnkUrl=arrTecLnkInfo[0];
+			var tecHomeLnkVal=arrTecLnkInfo[1];
+			var arrTecHomeLnkVal=tecHomeLnkVal.split("&");
+
+			jQuery("#tecHomeLnkForm").attr("action",tecHomeLnkUrl);
+
+			var arrLnkDtlVal=[];
+
+			var dataNm=""
+			var dataVal="";
+
+			for(var fCnt=0;fCnt<arrTecHomeLnkVal.length;fCnt++){
+
+				arrLnkDtlVal=arrTecHomeLnkVal[fCnt].split("=");
+
+				dataNm=arrLnkDtlVal[0];
+				dataVal=arrLnkDtlVal[1];
+
+				jQuery("#tecHomeLnkForm").append("<input type='hidden' name='"+dataNm+"' value='"+dataVal+"'>");
+
+				arrLnkDtlVal=[];
+			}
+
+			jQuery("#tecHomeLnkForm").append("<input type='hidden' name='ret_url' value='"+tecLnkVal+"'>");
+
+			jQuery("#tecHomeLnkForm").submit();
+		}
+	}
+
+
+
+
+
+//-->
+</script>
+</div>
+	
+	<div class="container">
+		<!--include file = "quick.asp"-->
+		
+		<div class="actArea topBanner">
+			<div class="conWrap">
+				<a href="javascript:;" onclick="fncTabClk(4); fncGoAnchor('tab_wrap');"><img src="../../../../img.megastudy.net/event/2024/0903_mg30161/img_top_banner.jpg" alt="EVENT 강좌 수강 후기 작성하고 요아정 먹자!"/></a>
+			</div>
+		</div>
+		
+
+		<div class="actArea topBg">
+			<div class="conWrap">
+				<h2><img src="../../../../img.megastudy.net/event/2024/0903_mg30161/h_tit_20250317.jpg" alt="메가패스 수강생 특별혜택 생기부 클래스"/></h2>
+			</div>
+			<div class="bg_l"></div>
+			<div class="bg_r"></div>
+		</div>
+
+		<div class="tab_wrap" id="SectionMenuLayer01">
+			<div id="baTangtabArea" class="mid_tab">
+				<ul class="tab">
+					<li class="lst01 on"><a href="javascript:;"><span class="blind">클래스 안내 및 교재 구매</span> </a></li>
+					<li class="lst02"><a href="javascript:;"><span class="blind">공지사항</span></a></li>
+					<li class="lst03"><a href="javascript:;"><span class="blind">학습 Q&amp;A</span></a></li>
+					<li class="lst04"><a href="javascript:;"><span class="icoEvent">EVENT</span><span class="blind">수강 후기</span></a></li>		
+					<li class="lst05"><a href="javascript:;"><span class="blind">생기부 자료집</span></a></li>
+
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="cont_dbx" id="ContArea">
+
+		</div>
+
+	</div>
+	<div class="column_footer">
+
+<div id="Passlayer" style="display:none;position:absolute;z-index:91;">Loading...</div>
+
+<script type="text/javascript" language="javascript">
+
+	function fncMyPassShowLayer(){
+		jQuery.post("../../../lecmain/common/chr/MyPassItemLayer_ax.html",
+			function (data){
+
+				jQuery("#Passlayer").html(data);
+
+				var $layerPopupObj = $('#Passlayer');
+				var left = ( $(window).scrollLeft() + ($(window).width() - $layerPopupObj.width()) / 2 );
+				var top = ( $(window).scrollTop() + ($(window).height() - $layerPopupObj.height()) / 2 );
+
+				$layerPopupObj.css({
+					position: 'absolute'
+					, display:'block'
+					, top: top
+					, left: left
+				});
+			}
+		);
+	}
+
+
+	//Visible
+	function fnVisible(did) {
+		document.getElementById(did).style.visibility = "visible";
+		document.getElementById(did + "Bg").style.visibility = "visible";
+	}
+
+	//Hidden
+	function fnHidden(did) {
+		document.getElementById(did).style.visibility = "hidden";
+		document.getElementById(did + "Bg").style.visibility = "hidden";
+	}
+
+	//toggle
+	jQuery(function(){
+		jQuery("#megagroup").css('display','none');
+	})
+
+	function ftoggle(obj) {
+		var style = document.getElementById(obj).style;
+
+		var bg = document.getElementById(obj + "_toggle");
+
+		if (style.display == 'none') {
+			jQuery('#megaMoreSite_new').css('zIndex','1000');
+			style.display = 'block';
+			bg.className = 'open';
+		} else {
+			jQuery('#megaMoreSite_new').css('zIndex','1');
+			style.display = 'none';
+			bg.className = '';
+		}
+	}
+
+	//show
+	function fnVisible(did) {
+		document.getElementById(did).style.display = "block";
+		document.getElementById(did + "Bg").style.display = "block";
+	}
+
+	//hidden
+	function fnHidden(did) {
+		document.getElementById(did).style.display = "none";
+		document.getElementById(did + "Bg").style.display = "none";
+	}
+	function goValidEscrow(mertid) {
+		var strMertid = mertid;
+		window.open("https://pgweb.tosspayments.com/ms/escrow/s_escrowYn.do?mertid=megastudyedu", "check", "width=500, height=550, scrollbars=no, left = 200, top = 50");
+	}
+
+
+function fncKcpEscow() 
+{ 
+    var status  = 'width=500 height=450 menubar=no,scrollbars=no,resizable=no,status=no'; 
+    var obj     = window.open('', 'kcp_pop', status); 
+    document.shop_check.method = "post"; 
+    document.shop_check.target = "kcp_pop"; 
+    document.shop_check.action = "http://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp"; 
+    document.shop_check.submit(); 
+} 
+
+
+
+
+</script>
+<style type="text/css">
+
+	/* #megaMoreSite_new #megagroup dd:first-child{background: none;} */
+	/* #megagroup_list{width:800px;} */
+</style>
+
+<div class="section_footer">
+	<div id="footer_new">
+
+			<div id="megaMoreSite_new">
+				<h3 class="screen_out">메가스터디 회사정보</h3>
+				<ul class="clear_g megaMoreSite_new--menu">
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/회사소개')}catch(e){}" href="http://corp.megastudy.net/" target="_blank">회사소개</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/언론보도')}catch(e){}" href="http://corp.megastudy.net/bbs/board.php?tbl=bbs41" target="_blank">언론보도</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/사회공헌')}catch(e){}" href="http://corp.megastudy.net/sub03/sub01.php" target="_blank">사회공헌</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/찾아오시는길')}catch(e){}" href="http://corp.megastudy.net/sub06/sub01.php" target="_blank">찾아오는길</a></li>
+					<!-- <li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/제휴문의')}catch(e){}" href="http://ir.megastudy.net/company/co_alliance_w.asp" target="_blank">제휴문의</a></li> -->
+					<li><a href="javascript:;" onclick="window.open('../../../bizcenter/pop_apply.html','','width=714, height=780, scrollbars=no');return false;">제휴문의</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/강사모집')}catch(e){}" href="http://corp.megastudy.net/bbs/board.php?tbl=bbs52" target="_blank">강사모집</a></li>
+					
+					<li><a href="https://megastudyedu.career.greetinghr.com/home" target="_blank">인재채용</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/이용약관')}catch(e){}" href="../../../member/member_new/member_personsecurec966.html?TabNo=2" class="m8">이용약관</a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/개인정보취급방침')}catch(e){}" href="../../../member/member_new/member_personsecure4e05.html?TabNo=1" class="m9"><strong>개인정보처리방침</strong></a></li>
+					<li><a onmousedown="try{logerClickTrace('EVT','/FOOTER/학습지원센터')}catch(e){}" href="../../../help/main.html" class="m11">학습지원센터</a></li>
+					<li class="lst"><a onmousedown="try{logerClickTrace('EVT','/FOOTER/메가스터디그룹/더보기')}catch(e){}" href="#" onclick="ftoggle('megagroup');return false;" class="m12" id="megagroup_toggle">메가스터디그룹 소개</a></li>
+				</ul>
+				<div id="megagroup">
+					<div class="h_tit">메가스터디 <strong>그룹 소개</strong></div>
+					<a href="#close" onclick="ftoggle('megagroup');return false;" id="megagroup_toggle" class="megagroup_close"><img src="../../../../img.megastudy.net/main/2018_v2/bt_footerFamilyClose.gif" alt="닫기"/></a>
+					<div id="megagroup_list">
+					<ul class="megagroup_list">
+						<li class="item"><a href="http://elikids.mbest.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup28.gif" alt="엘리하이키즈"/></a></li>
+						<li class="item"><a href="http://junior.mbest.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup01.gif" alt="엠주니어 - 초등부 대표 온라인교육"/></a></li>
+						<li class="item"><a href="http://www.mbest.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup02.gif" alt="엠베스트 - 중등부 대표 온라인교육"/></a></li>
+						<li class="item"><a href="http://russel.megastudy.net/intro/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup18.gif" alt="러셀 - 최상위권 수준별 맞춤 단과"/></a></li>
+						<li class="item"><a href="http://campus.megastudy.net/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup12.gif" alt="메가스터디학원 - 입시전문 오프라인 학원"/></a></li>
+						<li class="item"><a href="https://forten.ac/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup27_241008.gif" alt="포텐"/></a></li>
+                        <li class="item"><a href="http://www.megamd.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup05.gif" alt="메가MD - 의·치·약학 전문대학원 입시교육"/></a></li>
+						<li class="item"><a href="http://www.megals.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup06.gif" alt="메가로스쿨 - 법학 전문대학원 입시교육"/></a></li>
+						<li class="item"><a href="http://www.megalawyers.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup07.gif" alt="메가로이어스 - 변호사시험 전문"/></a></li>
+
+						<li class="item"><a href="http://www.kimyoung.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup04.gif" alt="김영편입 - 대학 편입 No.1"/></a></li>
+						<li class="item"><a href="http://www.unistudy.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup11.gif" alt="유니스터디 - 이공계열전공학습 도우미"/></a></li>
+						<li class="item"><a href="http://www.tjoeun.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup14.gif" alt="더조은컴퓨터학원"/></a></li>
+						<li class="item"><a href="https://www.megastudyth.com/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup26.gif" alt="메가스터디 Thailand"/></a></li>
+						<li class="item"><a href="http://www.caedu.co.kr/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup15.gif" alt="메가스터디 교육 그룹-중앙원격평생교육원"/></a></li>
+						<li class="item"><a href="http://www.megaland.co.kr/megaland.asp" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup21.gif" alt="메가스터디 교육 그룹-중앙원격평생교육원"/></a></li>
+						<li class="item"><a href="http://www.bbedu.co.kr/default.asp" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup22.gif" alt="메가스터디 교육 그룹 - 보건복지사이버평생교육원"/></a></li>
+						
+						<li class="item"><a href="https://www.megastudybooks.com/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup03.gif" alt="메가북스 - 출판/디지털콘텐츠 전문"/></a></li>
+						<li class="item"><a href="http://www.megabmc.com/" target="_blank"><img src="../../../../img.megastudy.net/main/2018_v2/img_megagroup19.gif" alt="메가비엠씨"/></a></li>
+					</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="megaFoot_new">
+				<h2 id="logoFt"><a href="javascript:;">메가스터디교육(주)</a></h2>
+				<div class="infomation">
+					<div>06643 서울 서초구 효령로 321 (서초동, 덕원빌딩) 메가스터디교육(주) &nbsp;대표이사 : 손성은 &nbsp;사업자등록번호 : 780-87-00034</div>
+					<p>통신판매번호 : 2015-서울서초-0678
+						<a href="javascript:;" onclick="window.open('http://www.ftc.go.kr/bizCommPop.do?wrkr_no=7808700034','bizCommPop', 'width=750, height=700;');return false;"><span class="ir_wa">정보조회</span></a>
+						&nbsp;신고기관명 : 서울특별시 서초구 호스팅제공자 : (주)케이티
+					</p>
+
+					<p>학원설립·운영등록번호 : 제10176호 메가스터디원격학원
+						<a href="javascript:;" onClick="window.open('../../../Common/menu/pop_private.html','','width=484, height=780, scrollbars=no');return false;"><span class="ir_wa">정보조회</span></a>
+						&nbsp;신고기관명 : 서울특별시 강남교육지원청
+					</p>
+					<p>학습지원센터 : 1599-1010 &nbsp;개인정보보호책임자 : 정보보안(별정)실 오영석 <span class="txt2">(keeper@megastudy.net)</span></p>
+					<p class="txt2"> copyrightⓒ2014 megastudyEdu.co.,Ltd. All rights reserved.</p>
+
+					<!-- <p>LG U+ 안전거래를 위해 현금으로 결제 시 메가스터디에서 가입한 구매안전서비스(등록번호 2208183676)를 이용하실 수 있습니다.</p> -->
+					<div class="link3"><a href="javascript:;" onclick="fncKcpEscow();return false;"><span class="ir_wa">서비스 가입사실 확인</span></a></div>
+
+					<form name="shop_check" method="post" action="http://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp"> 
+						<input type="hidden" name="site_cd" value="ACJ2R"> 
+					</form> 
+
+					<div class="etcsite_link1"><a href="javascript:;" onclick="freeViewer_bottom('../../../../img.megastudy.net/main/2017/pop_isms_230405.jpg',634,897);return false;"><span class="ir_wa">정보보호 관리체계 ISMS 인증획득</span></a></div>
+					<!-- <div class="etcsite_link2"><a href="javascript:;" onclick="window.open('/Common/menu/pop_clean.asp','pop_clean','width=630,height=474,scrollbars=no');return false;" onfocus="this.blur()" onmousedown="logerClickTrace('EVT','/FOOTER/클린사이트');"><span class="ir_wa">인터넷 저작권 지킴이 - 클린사이트</span></a></div> -->
+					<div class="etcsite_link2"><a href="javascript:;" onclick="freeViewer_bottom('../../../../img.megastudy.net/main/2017/pop_clean.jpg',634,897);return false;" onmousedown="logerClickTrace('EVT','/FOOTER/클린사이트');"><span class="ir_wa">인터넷 저작권 지킴이 - 클린사이트</span></a></div>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.cfSlider.js"></script>
+<script type="text/javascript">
+
+	// jQuery('#megagroup_list').cfSlider({
+	// 	container: '.megagroup_list',
+	// 	item: '.item',
+	// 	display: 5,
+	// 	move:5,
+	// 	nextEventType: 'cfSliderNext',
+	// 	prevEventType: 'cfSliderPrev',
+	// 	prevBtn: '.prev',
+	// 	nextBtn: '.next'
+	// });
+
+	function freeViewer_bottom(imgUrl,imgWidth,imgHeight) {
+		jQuery('body').append('<div class="freeviewer_footer"><div class="layer_area_bg"></div><div class="layer_area"><img src="" /></div></div>');
+		var  fviewer = jQuery('.freeviewer_footer');
+		var  bg = jQuery('.layer_area_bg');
+		var  h = jQuery('#wrap_2014').css('height');
+		var  h2 = jQuery(window).scrollTop();
+		var  layer_t = jQuery('.layer_area').css('top');
+
+		if( fviewer.css('position') !='fixed'){
+			bg.css({'height':h,'top': '-'+h2+'px' });
+			fviewer.css('top',h2);
+		}
+
+		fviewer.fadeIn();
+		var target = jQuery('.freeviewer_footer > .layer_area');
+		jQuery('.freeviewer_footer > .layer_area > img').attr('src',imgUrl);
+		var temp = jQuery(target);
+		if (imgHeight < jQuery(document).height() ) temp.css('margin-top', '-'+imgHeight/2+'px');
+		else temp.css('margin-top', '-'+imgHeight/2+'px');
+		if (imgWidth < jQuery(document).width() ) temp.css('margin-left', '-'+imgWidth/2+'px');
+		else temp.css('margin-left', '-'+imgWidth/2+'px');
+
+		jQuery('.layer_area').live('click',function(){
+			jQuery('.freeviewer_footer').fadeOut(300,function(){jQuery('.freeviewer_footer').remove();});}
+		);
+	return false;
+	}
+
+</script>
+
+
+
+		<!-- Google Code for NEW&#47532;&#47560;&#52992;&#54021;&#53468;&#44536; -->
+		<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 1008380639;
+		var google_conversion_label = "cZAZCOHw8QMQ39Xq4AM";
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+		</script>
+		<script type="text/javascript" src="../../../../www.googleadservices.com/pagead/f.txt">
+		</script>
+		<noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1008380639/?value=0&amp;label=cZAZCOHw8QMQ39Xq4AM&amp;guid=ON&amp;script=0"/>
+		</div>
+		</noscript>
+
+<!-- 공통 호출 하단 스크립트 : 모든 페이지 하단 설치 -->
+<!-- PlayD TERA Log Script v1.2 -->
+<script>
+var _nSA=(function(_g,_s,_p,_d,_i,_h){ 
+ if(_i.wgc!=_g){_i.wgc=_g;_i.wrd=(new Date().getTime());
+var _sc=_d.createElement('script');_sc.src=_p+'//sas.techhub.co.kr/'+_s+'gc='+_g+'&rd='+_i.wrd;
+var _sm=_d.getElementsByTagName('script')[0];_sm.parentNode.insertBefore(_sc, _sm);} return _i;
+})('TR10098805129','sa-wd41d.html?',location.protocol,document,window._nSA||{},location.hostname);
+</script>
+<!-- LogAnalytics Script Install -->
+
+
+
+
+<div style="margin-left:70px;font-size:0.7rem;width:90%;word-break:break-all;">
+<!-- Facebook Pixel Code -->
+
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  '../../../../connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1513677162048872');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1513677162048872&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-97693194-1', 'auto');
+    ga('send', 'pageview');
+    ga('require', 'ecommerce', 'ecommerce.html');
+</script>
+
+
+
+<!-- Enliple Tracker Start -->
+<script defer async src="../../../../cdn.megadata.co.kr/dist/prod/v2/mtmfb9d.js?adverId=mega2016&amp;device=W">
+</script>
+<!-- Enliple Tracker End -->
+
+
+<script type="text/javascript" src="https://static.tagmanager.toast.com/tag/view/490"></script>
+<script type="text/javascript">
+    window.ne_tgm_q = window.ne_tgm_q || [];
+    window.ne_tgm_q.push(
+ {
+     tagType: 'visit',
+     device: 'web'/*web, mobile, tablet*/,
+     uniqValue: '',
+     pageEncoding: 'euc-kr'
+ });
+ </script>
+
+
+
+<script type="text/javascript" charset="UTF-8" src="../../../../t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript">
+    kakaoPixel('4465481856848738690').pageView('pc');
+</script>
+
+
+<!-- Twitter universal website tag code -->
+<script>
+/*
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o33ff');
+twq('track','PageView');
+*/
+</script>
+<!-- End Twitter universal website tag code -->
+
+<!-- Twitter universal website tag code -->
+
+<script>
+/*
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o3054');
+twq('track','PageView');
+*/
+</script>
+<!-- End Twitter universal website tag code -->
+
+
+
+<script type="text/javascript" src="../../../../wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "2f77e1b1b9114e";
+wcs_do();
+</script>
+
+
+<script type="text/javascript" src="../../../../wcs.naver.net/wcslog.js"> </script>
+<script type="text/javascript">
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_2481c6e1acca";
+
+if (!_nasa) var _nasa={};
+if(window.wcs){
+	wcs.inflow();
+	wcs_do();
+}
+</script>
+
+
+</div>
+
+<script>
+function clearASPSESSIONID(){
+    var cks = document.cookie.match(/\b(ASPSESSIONID[A-Z]+)(?==)/g),
+        lskey = 'oldASPSESSIONID-'+location.protocol+'//'+location.host,
+        old = window.localStorage ? localStorage.getItem(lskey) : '',
+        keep, i;
+    for(i=0;i<cks.length;i++){
+        if((old && old.indexOf(cks[i])<0) || i==cks.length-1){
+            keep = cks[i];
+        }
+    }
+    for(i=0;i<cks.length;i++){
+        if(keep != cks[i]){
+            document.cookie = cks[i] + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+    }
+    if(window.localStorage){
+        localStorage.setItem(lskey, keep ? keep : '');
+    }
+}
+clearASPSESSIONID();
+</script></div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="../../../Common/js/jquery/Plugins/jquery.ba-hashchange.js"></script>
+<script type="text/javascript">
+
+	function recurcive(Dom, Gap) {
+		TabNo = 1; TabTgt.eq(0).addClass("on"); fncTabOut(0);
+		let gap = (Gap) ? Gap : 0;
+		let DomTop = Dom.offset().top - gap;
+
+		// if(Dom.length && Dom.offset().top > 1490) {
+		if(Dom.length && Dom.offset().top >= 270) {
+			jQuery('html,body').scrollTop(DomTop);
+			return false;
+		}else{
+			setTimeout(function() {
+				recurcive();
+			}, 200);
+		}
+	}
+
+	var TabNo = "1";
+	var TabTgt = jQuery(".mid_tab li");
+	var TabCnt = TabTgt.length;
+	var position = $(".tab_wrap").offset();
+
+	var quickMenuPos = [1260, 3815, 8950];
+
+	function fncTabOut(t) { for (var i = 1; i <= TabCnt; i++) { if (i != TabNo) { TabTgt.eq(i - 1).removeClass("on"); } } }
+	function fncTabClk(t) {
+		TabNo = t; TabTgt.eq(t - 1).addClass("on"); fncTabOut(t);
+
+		//텝이동시 해쉬값 세팅
+		if(t==1){
+			
+				jQuery("#ContArea").load("main_moexam_ax.html");
+				location.hash="#/Event/2024/0903_mg30161/main_moexam_ax.asp" ;
+				//jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+			
+		}else if(t==2){
+			jQuery("#ContArea").load("main_notice_list_ax.html");
+			location.hash="#/Event/2024/0903_mg30161/main_notice_list_ax.asp" ;
+			//jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+		}else if(t==3){
+			jQuery("#ContArea").load("main_faq_list_ax.html");
+			location.hash="#/Event/2024/0903_mg30161/main_faq_list_ax.asp" ;
+			//jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+		}else if(t==4){
+			
+			jQuery("#ContArea").load("main_recom_list_ax.html");
+			
+			location.hash="#/Event/2024/0903_mg30161/main_recom_list_ax.asp" ;
+			//jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+
+		}else if(t==5){
+			jQuery("#ContArea").load("main_data_ax.html");
+			location.hash="#/Event/2024/0903_mg30161/main_data_ax.asp" ;
+		}
+	}
+
+	//페이지 이동
+	function fncListMove2(mUrl, Num) {
+		var hashUrl=location.hash;
+
+		if("#"+mUrl==hashUrl){
+			jQuery("#ContArea").load(mUrl);
+		}else{
+			location.hash = "#"+mUrl ;
+		}
+
+		jQuery('html,body').animate({ scrollTop: quickMenuPos[Num] }, 'fast');
+	}
+
+	//페이지 이동
+	function fncListMove(mUrl) {
+		var hashUrl=location.hash;
+
+		if("#"+mUrl==hashUrl){
+			jQuery("#ContArea").load(mUrl);
+		}else{
+			location.hash = "#"+mUrl ;
+		}
+
+		jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top + 0 }, 'fast');
+	}
+
+	//페이징
+	function fncPrintLink(hashUrl){
+		if(hashUrl.indexOf("main_moexam_ax-2.html") > -1){
+			jQuery("#baTangtabArea > ul > li ").removeClass("on");
+			jQuery("#baTangtabArea > ul > li ").eq(0).addClass("on");
+		}else if(hashUrl.indexOf("main_notice_list_ax-2.html") > -1){
+			jQuery("#baTangtabArea > ul > li ").removeClass("on");
+			jQuery("#baTangtabArea > ul > li ").eq(1).addClass("on");
+		}else if(hashUrl.indexOf("main_faq_list_ax-2.html") > -1){
+			jQuery("#baTangtabArea > ul > li ").removeClass("on");
+			jQuery("#baTangtabArea > ul > li ").eq(2).addClass("on");
+		}else if(hashUrl.indexOf("main_recom_list_ax-2.html") > -1){
+			jQuery("#baTangtabArea > ul > li ").removeClass("on");
+			jQuery("#baTangtabArea > ul > li ").eq(3).addClass("on");
+		}
+		jQuery("#ContArea").load(hashUrl);
+	}
+
+	jQuery(window).hashchange( function(){
+		var hash = location.hash;
+
+		var hashUrl = ( hash.replace( /^#/, '' ) || 'blank' );
+
+		fncPrintLink(hashUrl);
+
+		jQuery('#paging_wrap a').each(function(){
+			var that = jQuery(this);
+			that[ that.attr( 'href' ) === hash ? 'addClass' : 'removeClass' ]( 'selected' );
+		});
+	});
+	//페이징
+
+	function fncGoView(t,idx){
+		var gourl='';
+		TabNo = t; TabTgt.eq(t - 1).addClass("on"); fncTabOut(t);
+		if(t==1){
+			
+				jQuery("#ContArea").load("main_moexam_ax.html");
+				location.hash="#/Event/2024/0903_mg30161/main_moexam_ax.asp" ;
+				jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+			
+		}else if(t==2){
+			gourl = '../../../etc/error/error.html?';
+			fncListMove(gourl+'idx='+idx+'&page=1&sword=');
+			jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+		}else if(t==3){
+			gourl = '../../../etc/error/error.html?';
+			fncListMove(gourl+'idx='+idx+'&page=1&sword=');
+			jQuery('html,body').animate({ scrollTop: jQuery("#ContArea").offset().top - 0 }, 'fast');
+		}
+
+	}
+
+	jQuery(document).ready(function () {
+		TabTgt.bind({
+			click: function () { fncTabClk(TabTgt.index(this) + 1); },
+			mouseout: function () { fncTabOut(TabTgt.index(this) + 1); }
+		});
+
+		
+			fncTabClk(1);
+		
+	});
+
+</script>
+<div id="cartRegResultArea" style="display:none;"></div>
+<script type="text/javascript">
+<!--
+	$(window).load(function(){
+		
+			fncTabClk(4)
+			setTimeout(function () {
+				fncGoAnchor('mid_tab');
+			}, 100);
+		
+	});
+
+	/* scroll_menu_fixed */
+	jQuery(function() {
+		jQuery(window).scroll(function() {
+			var windowScrollTop = jQuery(window).scrollTop();
+			if(windowScrollTop >= 270) {
+				jQuery('.quickWrap').addClass('quick_fixed');
+			} else {
+				jQuery('.quickWrap').removeClass('quick_fixed');
+			}
+		});
+	});
+
+	function pop_open(url, name, option) {
+		var pop_status;
+		pop_status = window.open(url, name, option);
+		pop_status.focus();
+	}
+
+	function fncGoAnchor(tg) {
+		jQuery('html,body').animate({scrollTop: jQuery("."+tg).offset().top+0}, 'fast');
+		return false;
+	}
+
+	function fncCart(iTemCd){
+		
+		alert("로그인 후, 이용 가능합니다.");
+		fncShowLogin();
+		
+	}
+
+
+	function fncCartItem(cType){
+
+		var iTemCd = "10590";
+
+		
+		alert("로그인 후, 이용 가능합니다.");
+		fncShowLogin();
+		
+	}
+
+
+	var naviWrap = jQuery("#SectionMenuLayer01");
+
+		jQuery(function() {
+			jQuery(window).scroll(function() {
+				var windowScrollTop = jQuery(window).scrollTop();
+
+				/* scroll_menu_fixed */
+				if(windowScrollTop >= 1032) {
+					jQuery(naviWrap).addClass('menu_fixed');
+					//jQuery('.contents_area').addClass('none_navi');
+				} else {
+					jQuery(naviWrap).removeClass('menu_fixed');
+					//jQuery('.contents_area').removeClass('none_navi');
+				}
+			});
+		});
+
+		function nav_move01(){
+			fncTabClk(1)	;
+			setTimeout(function (){
+			fncGoAnchor('cont4Bg')
+			},500)
+		}
+
+		function nav_move02(){
+			fncTabClk(1)	;
+			setTimeout(function (){
+			fncGoAnchor('cont5Bg')
+			},500)
+		}
+
+	$(document).ready(()=>{
+		$('.top_link a:first-child').on('mouseenter', ()=>$('.top_link').addClass('is_active')).on('mouseleave', ()=>$('.top_link').removeClass('is_active'));
+	});
+
+	const fn_dataTab = (idx)=>{
+		const section = $('.data_cont3Bg .data_tab_wrap');
+		const tabBtn = section.find('.tab_title').children('a');
+		const tabCont = section.find('.tab_container');
+		const on = 'is_current';
+
+		if(section.find('.'+on).index() === (idx-1)) return false;
+		tabBtn.removeClass(on).eq(idx-1).addClass(on);
+		tabCont.load('cont_Ax0ba1.html?TabNo01='+idx);
+	}
+//-->
+</script>

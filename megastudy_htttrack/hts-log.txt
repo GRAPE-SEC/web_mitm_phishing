@@ -1,0 +1,22 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 24 Mar 2025 00:15:11 at https://www.megastudy.net/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F  -%l "en, *" https://www.megastudy.net/ -O1 "C:\My Web Sites\megastudy" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:15:11	Warning: 	Note: due to https://www.megastudy.net remote robots.txt rules, links beginning with these path will be forbidden: /teacher_v2/bbs/, /inside/, /campus/, /entinfo/opinion_bbs (see in the options to disable this)
+00:15:55	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/Common/menu/SetCookie_ax.asp?mQuik=
+00:15:56	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/Common/menu/SetCookie_ax.asp?mGrd=
+00:15:57	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/Etc/PopUp/2024/0620/m_passUniSlideHis_ax.asp?openFlg=1
+00:16:37	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/m_inc/m_lecture_free_open_ax.asp?tab_no=
+00:16:46	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/m_inc/m_megaRun_slide_ax.asp
+00:18:21	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://www.megastudy.net/)
+00:18:33	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://www.megastudy.net/teacher_v2/mlive/regMem_id_ax.asp
+00:22:20	Error: 	Exit requested by shell or user
+00:22:20	Error: 	Exit requested by shell or user
+* * MIRROR ABORTED! * *
+The current temporary cache is required for any update operation and only contains data downloaded during the present aborted session.
+The former cache might contain more complete information; if you do not want to lose that information, you have to restore it and delete the current cache.
+This can easily be done here by erasing the hts-cache/new.* files]
