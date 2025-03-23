@@ -2,28 +2,28 @@ function scroll_menu()
 {
   var $doc           = $(document);
   var position       = 0;
-  var top = $doc.scrollTop(); //ÇöÀç ½ºÅ©·Ñ¹Ù À§Ä¡
-  var screenSize     = 0;        // È­¸éÅ©±â
-  var halfScreenSize = 0;    // È­¸éÀÇ ¹İ
+  var top = $doc.scrollTop(); //í˜„ì¬ ìŠ¤í¬ë¡¤ë°” ìœ„ì¹˜
+  var screenSize     = 0;        // í™”ë©´í¬ê¸°
+  var halfScreenSize = 0;    // í™”ë©´ì˜ ë°˜
 
-  /*»ç¿ëÀÚ ¼³Á¤ °ª ½ÃÀÛ*/
-  var speed          = 500;     // µû¶ó´Ù´Ò ¼Óµµ : "slow", "normal", or "fast" or numeric(´ÜÀ§:msec)
-  var easing         = 'swing'; // µû¶ó´Ù´Ï´Â ¹æ¹ı ±âº» µÎ°¡Áö linear, swing
-  var $layer         = $('#lnb'); // ·¹ÀÌ¾î ¼¿·ºÆÃ
-  var layerTopOffset = 46;   // ·¹ÀÌ¾î ³ôÀÌ »óÇÑ¼±, ´ÜÀ§:px
-  $layer.css('z-index', 10);   // ·¹ÀÌ¾î z-ÀÎµ¦½º
-  /*»ç¿ëÀÚ ¼³Á¤ °ª ³¡*/
+  /*ì‚¬ìš©ì ì„¤ì • ê°’ ì‹œì‘*/
+  var speed          = 500;     // ë”°ë¼ë‹¤ë‹ ì†ë„ : "slow", "normal", or "fast" or numeric(ë‹¨ìœ„:msec)
+  var easing         = 'swing'; // ë”°ë¼ë‹¤ë‹ˆëŠ” ë°©ë²• ê¸°ë³¸ ë‘ê°€ì§€ linear, swing
+  var $layer         = $('#lnb'); // ë ˆì´ì–´ ì…€ë ‰íŒ…
+  var layerTopOffset = 46;   // ë ˆì´ì–´ ë†’ì´ ìƒí•œì„ , ë‹¨ìœ„:px
+  $layer.css('z-index', 10);   // ë ˆì´ì–´ z-ì¸ë±ìŠ¤
+  /*ì‚¬ìš©ì ì„¤ì • ê°’ ë*/
 
-  // ½ºÅ©·Ñ ¹Ù¸¦ ³»¸° »óÅÂ¿¡¼­ ¸®ÇÁ·¹½Ã ÇßÀ» °æ¿ì¸¦ À§ÇØ
+  // ìŠ¤í¬ë¡¤ ë°”ë¥¼ ë‚´ë¦° ìƒíƒœì—ì„œ ë¦¬í”„ë ˆì‹œ í–ˆì„ ê²½ìš°ë¥¼ ìœ„í•´
   if (top > 0 )
     $doc.scrollTop(layerTopOffset+top);
   else
     $doc.scrollTop(0);
 
-  // ÃÖÃÊ ·¹ÀÌ¾î°¡ ÀÖÀ» ÀÚ¸® ¼¼ÆÃ
+  // ìµœì´ˆ ë ˆì´ì–´ê°€ ìˆì„ ìë¦¬ ì„¸íŒ…
   $layer.css('top',layerTopOffset);
 
-  //½ºÅ©·ÑÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é
+  //ìŠ¤í¬ë¡¤ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´
   $(window).scroll(function(){
     yPosition = $doc.scrollTop()+layerTopOffset;
     $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});
@@ -57,7 +57,7 @@ function tabmenu()
 	})
 }
 
-//¾Ö´Ï¸ŞÀÌ¼Ç ½ºÅ©¸³Æ® ½ÃÀÛ 
+//ì• ë‹ˆë©”ì´ì…˜ ìŠ¤í¬ë¦½íŠ¸ ì‹œì‘ 
 var AniNum = 1;
 var playFlg = true; 
 var subTid = null;
@@ -66,7 +66,7 @@ $(document).ready(function(){
 	playFlg = false;
 	fncPlay(AniNum);
 
-	//ÁÂ¿ì ¹öÆ°
+	//ì¢Œìš° ë²„íŠ¼
 	$(".prev").click(function(){
 		fncPrev();
 	}).hover(function(){
@@ -103,7 +103,7 @@ $(document).ready(function(){
 		$(this).attr("src",imgSrc.replace("_on.png",".png"));
 	});
 	
-	//left¸Ş´º ·Ñ¿À¹ö Ãß°¡
+	//leftë©”ë‰´ ë¡¤ì˜¤ë²„ ì¶”ê°€
 	$("#lnb").find("a").each(function(idx){
 		var intMenuNum = idx + 1;
 		var replaceUrl = "";
@@ -124,14 +124,14 @@ $(document).ready(function(){
 		});
 	});
 	
-	//¾ÆÀÌÇÁ·¹ÀÓ ³ôÀÌ Á¶Á¤
+	//ì•„ì´í”„ë ˆì„ ë†’ì´ ì¡°ì •
 	$("#iFrameContents").load(function(){
 		fncSetFrameHeight();
 	});
 	fncSetFrameHeight();
 });
 
-//·¹ÇÁÆ® ¸Ş´º Å¬¸¯ ÀÌº¥Æ®
+//ë ˆí”„íŠ¸ ë©”ë‰´ í´ë¦­ ì´ë²¤íŠ¸
 function fncClickLeftMenu(){
 	if(MenuNum == 7) return;
 
@@ -163,7 +163,7 @@ function fncSetFrameHeight(){
 	 if(ClickFlg) location.href = "#iFrameName";
 }
 
-//·¹ÇÁÆ® ¸Ş´º ¼¼ÆÃ..
+//ë ˆí”„íŠ¸ ë©”ë‰´ ì„¸íŒ…..
 function fncSetLeftMenu(){
 	$("#lnb").find("a").each(function(idx){
 		$(this).unbind("hover");
@@ -184,7 +184,7 @@ function fncSetLeftMenu(){
 	}); 
 }
 
-//ÁÂ¿ì ¿òÁ÷ÀÓ ¼³Á¤
+//ì¢Œìš° ì›€ì§ì„ ì„¤ì •
 function fncNext(){
 	if(playFlg) return;
 
@@ -192,7 +192,7 @@ function fncNext(){
 		AniNum++;
 		$(".next").show();
 	}else{
-		//Ã³À½ÀÏ¶§... È­»ìÇ¥ »èÁ¦..
+		//ì²˜ìŒì¼ë•Œ... í™”ì‚´í‘œ ì‚­ì œ..
 		$(".next").hide();
 	}
 
@@ -205,13 +205,13 @@ function fncPrev(){
 		AniNum--;
 		$(".prev").show();
 	}else{
-		//Ã³À½ÀÏ¶§... È­»ìÇ¥ »èÁ¦..
+		//ì²˜ìŒì¼ë•Œ... í™”ì‚´í‘œ ì‚­ì œ..
 		$(".prev").hide();
 	}
 	fncPlay(AniNum);
 }
 
-//½ÇÇà ÇÔ¼ö ¼³Á¤.
+//ì‹¤í–‰ í•¨ìˆ˜ ì„¤ì •.
 function fncPlay(pVal){
 	if(playFlg) return;
 
@@ -227,7 +227,7 @@ function fncPlay(pVal){
 	if(pVal == 6) Obj06();
 }
 
-//¾Ö´Ï ¸ŞÀÌ¼Ç ÃÊ±âÈ­
+//ì• ë‹ˆ ë©”ì´ì…˜ ì´ˆê¸°í™”
 function fncAniInit(){
 	playFlg = true;
 
@@ -262,7 +262,7 @@ function fncDivHide(pTarget){
 	});
 }
 
-//ÆäÀÌÂ¡ Ç¥Çö
+//í˜ì´ì§• í‘œí˜„
 function fncPaging(){
 	try{
 
@@ -282,7 +282,7 @@ function fncPaging(){
 	}catch(e){}
 }
 
-//ÀÚµ¿ ÆäÀÌÁö ÀüÈ¯ ½ÃÀÛ...
+//ìë™ í˜ì´ì§€ ì „í™˜ ì‹œì‘...
 var tid = "";
 
 function fncNextStart(pVal){
@@ -367,7 +367,7 @@ function Obj06(){
 		playFlg = false;
 	});
 
-	//¸ñÇ¥´Ş¼º ÀåÇĞ»ı
+	//ëª©í‘œë‹¬ì„± ì¥í•™ìƒ
 	$("#vi07_03").unbind("click");
 	$("#vi07_03").css({left:"56px"}).delay(1900).animate({width:"184px",left:"105px"},300).click(function(){
 		if(playFlg) return false;
@@ -376,7 +376,7 @@ function Obj06(){
 		Obj06_02();
 	});
 
-	//¸Ş°¡½ºÅÍµğ ÆÀÇÃ
+	//ë©”ê°€ìŠ¤í„°ë”” íŒ€í”Œ
 	$("#vi07_04").unbind("click");
 	$("#vi07_04").css({left:"250px"}).delay(1900).animate({width:"184px",left:"300px"},300).click(function(){
 		if(playFlg) return false;
@@ -387,7 +387,7 @@ function Obj06(){
 	});
 	$("#vi07_05").fadeIn(700);
 
-	//ÀçÇĞ»ı ¿¬ÇÕ¹İ
+	//ì¬í•™ìƒ ì—°í•©ë°˜
 	$("#vi07_08").click(function(){
 		//$("#vi07 span").css({display:"none"});
 		//$("#vi07").css({display:"none",zIndex:"1"});
@@ -398,7 +398,7 @@ function Obj06(){
 		return false;
 	});
 
-	//´Ü°ú¹İ
+	//ë‹¨ê³¼ë°˜
 	$("#vi07_09").click(function(){
 		//$("#vi07 span").css({display:"none"});
 		//$("#vi07").css({display:"none",zIndex:"1"});
@@ -409,7 +409,7 @@ function Obj06(){
 		return false;
 	});
 
-	//ÁßµîºÎ
+	//ì¤‘ë“±ë¶€
 	$("#vi07_10").click(function(){
 		//$("#vi07 span").css({display:"none"});
 		//$("#vi07").css({display:"none",zIndex:"1"});
@@ -421,7 +421,7 @@ function Obj06(){
 	});
 }
 
-//<!-- ÀçÇĞ»ı ¿¬ÇÕ¹İ -->
+//<!-- ì¬í•™ìƒ ì—°í•©ë°˜ -->
 function Obj06_05(){
 
 	$("#vi08_12").css({width:"1px",left:"58px"}).animate({width:"429px",left:"108px"},500);
@@ -457,7 +457,7 @@ function Obj06_05(){
 		fncSubAniEnd();
 	},3000);
 }
-//´Ü°ú¹İ
+//ë‹¨ê³¼ë°˜
 function Obj06_06(){
 
 	$("#vi08_12").css({width:"1px",left:"58px"}).animate({width:"429px",left:"108px"},500);
@@ -494,7 +494,7 @@ function Obj06_06(){
 	},3000);
 }
 
-//ÁßµîºÎ
+//ì¤‘ë“±ë¶€
 function Obj06_07(){
 
 	$("#vi08_12").css({width:"1px",left:"58px"}).animate({width:"429px",left:"108px"},500);
@@ -529,7 +529,7 @@ function Obj06_07(){
 	},3000);
 }
 
-//¸ñÇ¥´Ş¼º ÀåÇĞ»ı
+//ëª©í‘œë‹¬ì„± ì¥í•™ìƒ
 function Obj06_02(){
 	$("#vi0702_01").css({width:"1px",left:"58px"}).animate({width:"429px",left:"108px"},500);
 	$("#vi0702_08").fadeIn(200);
@@ -587,7 +587,7 @@ function Obj06_03(obj1,obj2,obj3,obj4){
 	$("#"+obj4).fadeIn(300);
 }
 
-//¸Ş°¡½ºÅÍµğ ÆÀÇÃ
+//ë©”ê°€ìŠ¤í„°ë”” íŒ€í”Œ
 function Obj07(t01,t02){
 
 	$("#vi08_12").css({width:"1px",left:"58px"}).animate({width:"429px",left:"108px"},500);

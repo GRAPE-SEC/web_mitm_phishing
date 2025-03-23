@@ -1,21 +1,21 @@
 /*
 '=======================================================================
-'¾÷ ¹« ¸í : ¸Ş°¡½ºÅÍµğ-common
-'¸ğµâ±â´É : ¸Ş°¡½ºÅÍµğ °øÅë js ÆÄÀÏ
-'ÆÄ ÀÏ ¸í : megastudy.js
-'ÀÛ¼ºÀÏÀÚ : 2004/11/10
-'ÀÛ ¼º ÀÚ : ±è¿µ¹«
+'ì—… ë¬´ ëª… : ë©”ê°€ìŠ¤í„°ë””-common
+'ëª¨ë“ˆê¸°ëŠ¥ : ë©”ê°€ìŠ¤í„°ë”” ê³µí†µ js íŒŒì¼
+'íŒŒ ì¼ ëª… : megastudy.js
+'ì‘ì„±ì¼ì : 2004/11/10
+'ì‘ ì„± ì : ê¹€ì˜ë¬´
 '-----------------------------------------------------------------------
-'º¯°æÀÏÀÚ   º¯°æÀÚ  º¯µ¿³»¿ª
+'ë³€ê²½ì¼ì   ë³€ê²½ì  ë³€ë™ë‚´ì—­
 '=======================================================================
 '
 '=======================================================================
 */
 
-// ÇÔ¼öÀÌ¸§ : mouseOver()
-// ÇÔ¼ö¼³¸í : ¸Ş´º ·Ñ¿À¹ö (Àü »çÀÌÆ®¿¡ Àû¿ë)
-// ÀÔ ·Â °ª : °´Ã¼, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : mouseOver()
+// í•¨ìˆ˜ì„¤ëª… : ë©”ë‰´ ë¡¤ì˜¤ë²„ (ì „ ì‚¬ì´íŠ¸ì— ì ìš©)
+// ì… ë ¥ ê°’ : ê°ì²´, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function mouseOver(obj, bool) {
     if (bool)
         obj.src = obj.src.replace("off", "on");
@@ -23,18 +23,18 @@ function mouseOver(obj, bool) {
         obj.src = obj.src.replace("on", "off");
 }
 
-// ÇÔ¼öÀÌ¸§ : change_img()
-// ÇÔ¼ö¼³¸í : ¸Ş´º ·Ñ¿À¹ö (Àü »çÀÌÆ®¿¡ Àû¿ë)
-// ÀÔ ·Â °ª : °´Ã¼, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : change_img()
+// í•¨ìˆ˜ì„¤ëª… : ë©”ë‰´ ë¡¤ì˜¤ë²„ (ì „ ì‚¬ì´íŠ¸ì— ì ìš©)
+// ì… ë ¥ ê°’ : ê°ì²´, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function change_img(obj, tmp_a, tmp_b) {
     obj.src = obj.src.replace(tmp_a, tmp_b);
 }
 
-// ÇÔ¼öÀÌ¸§ : change_img2()
-// ÇÔ¼ö¼³¸í : ¸Ş´º ·Ñ¿À¹ö (Àü »çÀÌÆ®¿¡ Àû¿ë)
-// ÀÔ ·Â °ª : °´Ã¼, ±³Ã¼Àü, ±³Ã¼ÈÄ
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : change_img2()
+// í•¨ìˆ˜ì„¤ëª… : ë©”ë‰´ ë¡¤ì˜¤ë²„ (ì „ ì‚¬ì´íŠ¸ì— ì ìš©)
+// ì… ë ¥ ê°’ : ê°ì²´, êµì²´ì „, êµì²´í›„
+// ë°˜ í™˜ ê°’ :
 function change_img2(obj, tmp_a, tmp_b) {
     obj.style.filter = "blendTrans(duration=0.3)";
     obj.filters.blendTrans.stop();
@@ -43,10 +43,10 @@ function change_img2(obj, tmp_a, tmp_b) {
     obj.filters.blendTrans.Play();
 }
 
-// ÇÔ¼öÀÌ¸§ : change_img3()
-// ÀÔ ·Â °ª : °´Ã¼, ±³Ã¼Àü, ±³Ã¼ÈÄ , ±³Ã¼¼Óµµ ( 0.1 ~2 )
-// ÀÔ ·Â °ª : °´Ã¼, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : change_img3()
+// ì… ë ¥ ê°’ : ê°ì²´, êµì²´ì „, êµì²´í›„ , êµì²´ì†ë„ ( 0.1 ~2 )
+// ì… ë ¥ ê°’ : ê°ì²´, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function change_img3(obj, tmp_a, tmp_b, t_speed) {
     var a = 1;
     a = t_speed;
@@ -59,18 +59,18 @@ function change_img3(obj, tmp_a, tmp_b, t_speed) {
     obj.filters.blendTrans.Play();
 }
 
-// ÇÔ¼öÀÌ¸§ : openWin()
-// ÇÔ¼ö¼³¸í : »õÃ¢ ¿­±â
-// ÀÔ ·Â °ª : url, »õÃ¢ ÀÌ¸§, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : openWin()
+// í•¨ìˆ˜ì„¤ëª… : ìƒˆì°½ ì—´ê¸°
+// ì… ë ¥ ê°’ : url, ìƒˆì°½ ì´ë¦„, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function openWin(theURL, winName, features) {
     window.open(theURL, winName, features);
 }
 
-// ÇÔ¼öÀÌ¸§ : check_id()
-// ÇÔ¼ö¼³¸í : ¾ÆÀÌµğ Ã¼Å©
-// ÀÔ ·Â °ª : ¾ÆÀÌµğ
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : check_id()
+// í•¨ìˆ˜ì„¤ëª… : ì•„ì´ë”” ì²´í¬
+// ì… ë ¥ ê°’ : ì•„ì´ë””
+// ë°˜ í™˜ ê°’ :
 function check_id(input) {
     var err_cnt = 0
     for (var i = 0; i < input.length; i++) {
@@ -115,27 +115,27 @@ function check_Pwd(input) {
 	var nNumber = 0;
 	var nSpecial = 0;
 	var bPassWordRuleChk = false;       
-	// ¼ıÀÚ Ã¼Å©
+	// ìˆ«ì ì²´í¬
 	if (input.match(/[0-9]/) != null) {
 		nNumber++;
 	}
-	//Æ¯¼ö ±âÈ£ Ã¼Å©
+	//íŠ¹ìˆ˜ ê¸°í˜¸ ì²´í¬
 	// if (input.match(/[^\w\s]/) != null) {
 	// 	nSpecial++;
 	// }
 
-    //Æ¯¼ö ±âÈ£ Ã¼Å©
+    //íŠ¹ìˆ˜ ê¸°í˜¸ ì²´í¬
 	if (input.match(/[~!@#$%^&*()_-]/) != null) {
 		nSpecial++;
 	}
 
-	//¿µ¹®ÀÚ Ã¼Å©
+	//ì˜ë¬¸ì ì²´í¬
 	if (input.match(/[a-zA-Z]/) != null) {
 		nCharacter++;
 	}
 
 
-	//ÆĞ½º¿öµå ·ê Ã¼Å© 
+	//íŒ¨ìŠ¤ì›Œë“œ ë£° ì²´í¬ 
 	if ((input.length >= 10) && ((nNumber + nSpecial + nCharacter) >= 2)) {
 		bPassWordRuleChk = true;
 	}
@@ -149,10 +149,10 @@ function check_Pwd(input) {
 
 }
 
-// ÇÔ¼öÀÌ¸§ : IsNumberCheck()
-// ÇÔ¼ö¼³¸í : ¼ıÀÚÃ¼Å© Ã¼Å©
-// ÀÔ ·Â °ª : OBJECT
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : IsNumberCheck()
+// í•¨ìˆ˜ì„¤ëª… : ìˆ«ìì²´í¬ ì²´í¬
+// ì… ë ¥ ê°’ : OBJECT
+// ë°˜ í™˜ ê°’ :
 function IsNumberCheck(obj) {
     var Chk = "0123456789"
     var j
@@ -167,7 +167,7 @@ function IsNumberCheck(obj) {
         }
     }
     if (Chk.length == j) {
-        alert('¼ıÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.');
+        alert('ìˆ«ìë§Œ ì…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤.');
         obj.value = "";
         return false;
     }
@@ -190,7 +190,7 @@ function IsNumberCheck2(obj) {
         }
     }
     if (Chk.length == j) {
-        alert('¼ıÀÚ¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.');
+        alert('ìˆ«ìë§Œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
         obj.value = "";
         return false;
     }
@@ -200,10 +200,10 @@ function IsNumberCheck2(obj) {
 }
 
 
-// ÇÔ¼öÀÌ¸§ : CheckJumim()---³»±¹ÀÎ
-// ÇÔ¼ö¼³¸í : ÁÖ¹Î¹øÈ£ Ã¼Å©
-// ÀÔ ·Â °ª : ¾ÕÀÚ¸®,µŞÀÚ¸®
-// ¹İ È¯ °ª : Á¤È®¼º¿©ºÎ
+// í•¨ìˆ˜ì´ë¦„ : CheckJumim()---ë‚´êµ­ì¸
+// í•¨ìˆ˜ì„¤ëª… : ì£¼ë¯¼ë²ˆí˜¸ ì²´í¬
+// ì… ë ¥ ê°’ : ì•ìë¦¬,ë’·ìë¦¬
+// ë°˜ í™˜ ê°’ : ì •í™•ì„±ì—¬ë¶€
 function CheckJumim(cell1, cell2) {
     var L11, L12, L13, L14, L15, L16
     var L21, L22, L23, L24, L25, L26, L27
@@ -223,7 +223,7 @@ function CheckJumim(cell1, cell2) {
     L26 = parseInt(cell2.substring(5, 6))
     L27 = parseInt(cell2.substring(6, 7))
 
-    //¿Ü±¹ÀÎÃ¼Å©
+    //ì™¸êµ­ì¸ì²´í¬
     if (L21 == 5 || L21 == 6) {
 
         var sum = 0;
@@ -254,7 +254,7 @@ function CheckJumim(cell1, cell2) {
 
         if (sum >= 10) { sum -= 10; }
 
-        if (sum != buf[12]) { alert("ÁÖ¹Îµî·Ï¹øÈ£°¡ Á¤È®ÇÏÁö ¾Ê½À´Ï´Ù."); return false; }
+        if (sum != buf[12]) { alert("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ê°€ ì •í™•í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."); return false; }
         return true;
 
     } else {
@@ -266,15 +266,15 @@ function CheckJumim(cell1, cell2) {
         if (z == L27) {
             return true;
         } else {
-            alert("ÁÖ¹Îµî·Ï¹øÈ£°¡ Á¤È®ÇÏÁö ¾Ê½À´Ï´Ù.");
+            alert("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ê°€ ì •í™•í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
             return false;
         }
     }
 }
-// ÇÔ¼öÀÌ¸§ : check_fgnno()---¿Ü±¹ÀÎ
-// ÇÔ¼ö¼³¸í : ÁÖ¹Î¹øÈ£ Ã¼Å©
-// ÀÔ ·Â °ª : ¾ÕÀÚ¸®,µŞÀÚ¸®  (13ÀÚ¸®)
-// ¹İ È¯ °ª : Á¤È®¼º¿©ºÎ
+// í•¨ìˆ˜ì´ë¦„ : check_fgnno()---ì™¸êµ­ì¸
+// í•¨ìˆ˜ì„¤ëª… : ì£¼ë¯¼ë²ˆí˜¸ ì²´í¬
+// ì… ë ¥ ê°’ : ì•ìë¦¬,ë’·ìë¦¬  (13ìë¦¬)
+// ë°˜ í™˜ ê°’ : ì •í™•ì„±ì—¬ë¶€
 function check_fgnno(fgnno) {
     var sum = 0;
     var odd = 0;
@@ -303,17 +303,17 @@ function check_fgnno(fgnno) {
     alert("aa");
     if (sum >= 10) { sum -= 10; }
 
-    if (sum != buf[12]) { alert("ÁÖ¹Îµî·Ï¹øÈ£°¡ Á¤È®ÇÏÁö ¾Ê½À´Ï´Ù."); return false; }
+    if (sum != buf[12]) { alert("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ê°€ ì •í™•í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."); return false; }
 
     return true;
 }
 
 
 
-// ÇÔ¼öÀÌ¸§ : NextFocus(obj)
-// ÇÔ¼ö¼³¸í : ÀÚµ¿Æ÷Ä¿½Ì
-// ÀÔ ·Â °ª : Æ÷Ä¿½ÌÇÒ ¿ÀºêÁ§Æ®
-// ¹İ È¯ °ª : Æ÷Ä¿½ºÀÌµ¿
+// í•¨ìˆ˜ì´ë¦„ : NextFocus(obj)
+// í•¨ìˆ˜ì„¤ëª… : ìë™í¬ì»¤ì‹±
+// ì… ë ¥ ê°’ : í¬ì»¤ì‹±í•  ì˜¤ë¸Œì íŠ¸
+// ë°˜ í™˜ ê°’ : í¬ì»¤ìŠ¤ì´ë™
 function NextFocus(obj) {
     var UAversion = parseFloat(navigator.appVersion);
     var UA = (navigator.appName);
@@ -371,10 +371,10 @@ function NextFocus(obj) {
 
 }
 
-// ÇÔ¼öÀÌ¸§ : checkChar()
-// ÇÔ¼ö¼³¸í : »ç¿ëÀÚ°¡ ¿øÇÏ´Â Æ¯¼ö¹®ÀÚÁ¸Àç¿©ºÎ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é true¸¦ ¸®ÅÏ"|^;:,'\""
-// ÀÔ ·Â °ª : ¹®ÀÚ¿­,Æ¯¼ö¹®ÀÚ("|^;:,'\")
-// ¹İ È¯ °ª : °¡´É¿©ºÎ
+// í•¨ìˆ˜ì´ë¦„ : checkChar()
+// í•¨ìˆ˜ì„¤ëª… : ì‚¬ìš©ìê°€ ì›í•˜ëŠ” íŠ¹ìˆ˜ë¬¸ìì¡´ì¬ì—¬ë¶€ í¬í•¨ë˜ì–´ ìˆìœ¼ë©´ trueë¥¼ ë¦¬í„´"|^;:,'\""
+// ì… ë ¥ ê°’ : ë¬¸ìì—´,íŠ¹ìˆ˜ë¬¸ì("|^;:,'\")
+// ë°˜ í™˜ ê°’ : ê°€ëŠ¥ì—¬ë¶€
 function checkChar(sExpression, sChar) {
     var sEngNum = sChar;
 
@@ -388,10 +388,10 @@ function checkChar(sExpression, sChar) {
     return false;
 }
 
-// ÇÔ¼öÀÌ¸§ : checkval()
-// ÇÔ¼ö¼³¸í : ¿µ¹®, ¼ıÀÚÈ¥¿ë¸¸ »ç¿ë°¡´É
-// ÀÔ ·Â °ª : ¹®ÀÚ¿­
-// ¹İ È¯ °ª : °¡´É¿©ºÎ
+// í•¨ìˆ˜ì´ë¦„ : checkval()
+// í•¨ìˆ˜ì„¤ëª… : ì˜ë¬¸, ìˆ«ìí˜¼ìš©ë§Œ ì‚¬ìš©ê°€ëŠ¥
+// ì… ë ¥ ê°’ : ë¬¸ìì—´
+// ë°˜ í™˜ ê°’ : ê°€ëŠ¥ì—¬ë¶€
 function checkval(sExpression) {
     for (i = 0; i < sExpression.length; i++) {
         if (sExpression.charAt(i) >= '0' && sExpression.charAt(i) <= '9')
@@ -407,10 +407,10 @@ function checkval(sExpression) {
     return true;
 }
 
-// ÇÔ¼öÀÌ¸§ : checkvalAll()
-// ÇÔ¼ö¼³¸í : ¿µ¹®, ¼ıÀÚ, ÇÑ±ÛÈ¥¿ë¸¸ »ç¿ë°¡´É
-// ÀÔ ·Â °ª : ¹®ÀÚ¿­
-// ¹İ È¯ °ª : °¡´É¿©ºÎ
+// í•¨ìˆ˜ì´ë¦„ : checkvalAll()
+// í•¨ìˆ˜ì„¤ëª… : ì˜ë¬¸, ìˆ«ì, í•œê¸€í˜¼ìš©ë§Œ ì‚¬ìš©ê°€ëŠ¥
+// ì… ë ¥ ê°’ : ë¬¸ìì—´
+// ë°˜ í™˜ ê°’ : ê°€ëŠ¥ì—¬ë¶€
 function checkvalAll(sExpression) {
     for (i = 0; i < sExpression.length; i++) {
         if (sExpression.charAt(i) >= '0' && sExpression.charAt(i) <= '9')
@@ -428,14 +428,14 @@ function checkvalAll(sExpression) {
     return true;
 }
 
-// ÇÔ¼öÀÌ¸§ : GetRdoVal()
-// ÇÔ¼ö¼³¸í : ¶óµğ¿À ¹öÆ°ÀÇ ¼±ÅÃµÈ °ªÀ» ³Ñ°ÜÁÜ.
-// ÀÔ ·Â °ª : object
-// ¹İ È¯ °ª : ¼±ÅÃµÈ°ª
+// í•¨ìˆ˜ì´ë¦„ : GetRdoVal()
+// í•¨ìˆ˜ì„¤ëª… : ë¼ë””ì˜¤ ë²„íŠ¼ì˜ ì„ íƒëœ ê°’ì„ ë„˜ê²¨ì¤Œ.
+// ì… ë ¥ ê°’ : object
+// ë°˜ í™˜ ê°’ : ì„ íƒëœê°’
 function GetRdoVal(oObj) {
     var j = 0;
     var sVal;
-    //¼±ÅÃÇÑ rdo¹öÆ°ÀÇ °ªÀ» ³Ñ°ÜÁÜ.
+    //ì„ íƒí•œ rdoë²„íŠ¼ì˜ ê°’ì„ ë„˜ê²¨ì¤Œ.
     for (j = 0; j < oObj.length; j++) {
         if (oObj[j].checked == true) {
             sVal = oObj[j].value;
@@ -444,10 +444,10 @@ function GetRdoVal(oObj) {
     return (sVal);
 }
 
-// ÇÔ¼öÀÌ¸§ : SetRdoVal()
-// ÇÔ¼ö¼³¸í : ¶óµğ¿À ¹öÆ°ÀÇ ¼±ÅÃ
-// ÀÔ ·Â °ª : object,¼±ÅÃ°ª
-// ¹İ È¯ °ª : ¼±ÅÃ
+// í•¨ìˆ˜ì´ë¦„ : SetRdoVal()
+// í•¨ìˆ˜ì„¤ëª… : ë¼ë””ì˜¤ ë²„íŠ¼ì˜ ì„ íƒ
+// ì… ë ¥ ê°’ : object,ì„ íƒê°’
+// ë°˜ í™˜ ê°’ : ì„ íƒ
 function SetRdoVal(oObj, val) {
     var j = 0;
 
@@ -459,21 +459,21 @@ function SetRdoVal(oObj, val) {
     }
 }
 
-// ÇÔ¼öÀÌ¸§ : onlyNumber()
-// ÇÔ¼ö¼³¸í : ¿ÀÁ÷ ¼ıÀÚ¸¸ ÀÔ·ÂµÇ°Ô ÇÔ
-// ÀÔ ·Â °ª : ¾øÀ½
-// ¹İ È¯ °ª : ¾øÀ½
-// »ç¿ë¹ı : <input type="text" onKeyPress="onlyNumber()">
+// í•¨ìˆ˜ì´ë¦„ : onlyNumber()
+// í•¨ìˆ˜ì„¤ëª… : ì˜¤ì§ ìˆ«ìë§Œ ì…ë ¥ë˜ê²Œ í•¨
+// ì… ë ¥ ê°’ : ì—†ìŒ
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‚¬ìš©ë²• : <input type="text" onKeyPress="onlyNumber()">
 function onlyNumber() {
     if (window.event.keyCode < 48 || window.event.keyCode > 57) {
         window.event.keyCode = 0;
     }
 }
 
-// ÇÔ¼öÀÌ¸§ : getCookie()
-// ÇÔ¼ö¼³¸í : ÄíÅ°°¡Á®¿À±â
-// ÀÔ ·Â °ª : ÄíÅ°¸í
-// ¹İ È¯ °ª : ¾øÀ½/ÄíÅ°°ª
+// í•¨ìˆ˜ì´ë¦„ : getCookie()
+// í•¨ìˆ˜ì„¤ëª… : ì¿ í‚¤ê°€ì ¸ì˜¤ê¸°
+// ì… ë ¥ ê°’ : ì¿ í‚¤ëª…
+// ë°˜ í™˜ ê°’ : ì—†ìŒ/ì¿ í‚¤ê°’
 function getCookie(name) {
     var nameOfCookie = name + "=";
     var x = 0;
@@ -492,13 +492,13 @@ function getCookie(name) {
 }
 
 
-//¸ŞÀÎ ÆË¾÷ »ç¿ë½Ã window.open ´ë½Å fncMainPopLoad ÇÔ¼ö »ç¿ë!!(¸ŞÀÎ·Îµù ¿Ï·áÈÄ ÆË¾÷ ·ÎµùµÇ´Â ÇÔ¼ö)
+//ë©”ì¸ íŒì—… ì‚¬ìš©ì‹œ window.open ëŒ€ì‹  fncMainPopLoad í•¨ìˆ˜ ì‚¬ìš©!!(ë©”ì¸ë¡œë”© ì™„ë£Œí›„ íŒì—… ë¡œë”©ë˜ëŠ” í•¨ìˆ˜)
 function fncMainPopLoad(pUrl, pId, pStatus) {
     setTimeout(function () { window.open(pUrl, pId, pStatus); }, 500);
 }
 
 
-//ÆË¾÷ÄíÅ° ¼¼Æ®
+//íŒì—…ì¿ í‚¤ ì„¸íŠ¸
 function setCookie(name, value, expiredays, cookie_num) {
     var todayDate = new Date();
     todayDate.setDate(todayDate.getDate() + expiredays);
@@ -516,7 +516,7 @@ function setCookie(name, value, expiredays, cookie_num) {
     document.cookie = name + "=" + escape(new_value) + ";domain=megastudy.net;path=/;expires=" + todayDate.toGMTString() + ";"
  }
 
- // ÇØ´çÀÏ 0½Ã±îÁö ¸¸·á
+ // í•´ë‹¹ì¼ 0ì‹œê¹Œì§€ ë§Œë£Œ
  function setCookie_ToDay(name, value, expiredays, cookie_num) {
  	var todayDate = new Date();
  	todayDate.setTime(todayDate.getTime() + expiredays * 24 * 60 * 60 * 1000);
@@ -542,7 +542,7 @@ function setCookie(name, value, expiredays, cookie_num) {
  	document.cookie = name + "=" + escape(new_value) + ";domain=megastudy.net;path=/;expires=" + todayDate.toGMTString() + ";"
  }
 
-//ÆË¾÷ÄíÅ° Á¤º¸ °¡Á®¿À±â
+//íŒì—…ì¿ í‚¤ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 function fnc_getCookie(name, num) {
 
     var popCookie = getCookie(name);
@@ -611,10 +611,10 @@ function fnc_getCookie(name, num) {
 
 
 
-// ÇÔ¼öÀÌ¸§ : setCookie_multi(name, value, expiredays)
-// ÇÔ¼ö¼³¸í : ÄíÅ°°¡Á®¿À±â
-// ÀÔ ·Â °ª : ÄíÅ°¸í
-// ¹İ È¯ °ª : ¾øÀ½/ÄíÅ°°ª
+// í•¨ìˆ˜ì´ë¦„ : setCookie_multi(name, value, expiredays)
+// í•¨ìˆ˜ì„¤ëª… : ì¿ í‚¤ê°€ì ¸ì˜¤ê¸°
+// ì… ë ¥ ê°’ : ì¿ í‚¤ëª…
+// ë°˜ í™˜ ê°’ : ì—†ìŒ/ì¿ í‚¤ê°’
 function setCookie_multi(name, sval, value, expiredays) {
     var todayDate = new Date();
     todayDate.setDate(todayDate.getDate() + expiredays);
@@ -640,10 +640,10 @@ function setCookie_multi(name, sval, value, expiredays) {
     document.cookie = name + "=" + escape(multiCookie) + ";domain=megastudy.net;path=/;expires=" + todayDate.toGMTString() + ";"
 }
 
-// ÇÔ¼öÀÌ¸§ : getCookie_multi()
-// ÇÔ¼ö¼³¸í : ÄíÅ°°¡Á®¿À±â
-// ÀÔ ·Â °ª : ÄíÅ°¸í
-// ¹İ È¯ °ª : ¾øÀ½/ÄíÅ°°ª
+// í•¨ìˆ˜ì´ë¦„ : getCookie_multi()
+// í•¨ìˆ˜ì„¤ëª… : ì¿ í‚¤ê°€ì ¸ì˜¤ê¸°
+// ì… ë ¥ ê°’ : ì¿ í‚¤ëª…
+// ë°˜ í™˜ ê°’ : ì—†ìŒ/ì¿ í‚¤ê°’
 function getCookie_multi(name, sval) {
     var multiCookie, arr_Cookies, arr_sval;
     var nameOfCookie = name + "=";
@@ -670,25 +670,25 @@ function getCookie_multi(name, sval) {
     return "";
 }
 
-// ÇÔ¼öÀÌ¸§ : funcgvadownload
-// ÇÔ¼ö¼³¸í : GVA °­ÀÇ ´Ù¿î·Îµå Ã¢
-// ÀÔ ·Â °ª : °æ·Î
-// ¹İ È¯ °ª : ´Ù¿î·ÎµåÃ¢
+// í•¨ìˆ˜ì´ë¦„ : funcgvadownload
+// í•¨ìˆ˜ì„¤ëª… : GVA ê°•ì˜ ë‹¤ìš´ë¡œë“œ ì°½
+// ì… ë ¥ ê°’ : ê²½ë¡œ
+// ë°˜ í™˜ ê°’ : ë‹¤ìš´ë¡œë“œì°½
 function funcgvadownload(folpath) {
     var SecWin = window.open("", "", "resizable=no,scrollbars=no,width=420,height=280");
-    var TITLE = "<HTML><HEAD><TITLE>´Ü¿ø ´Ù¿î·Îµå Ã¢</TITLE></HEAD>";
+    var TITLE = "<HTML><HEAD><TITLE>ë‹¨ì› ë‹¤ìš´ë¡œë“œ ì°½</TITLE></HEAD>";
     TITLE = TITLE + "<BODY bgcolor=white text=black leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>";
     TITLE = TITLE + "<OBJECT id=GDBDownCtrl style='LEFT: 0px; TOP: 0px' codeBase=<%=URL_main%>/include/GVADown.cab#version=1,0,0,2 classid=CLSID:efb56227-5415-45b1-be44-97b57dae20ce>";
-    TITLE = TITLE + "<PARAM NAME='URL' VALUE='" + folpath + "'><PARAM NAME='DlgTitle' VALUE='¸Ş°¡½ºÅÍµğ(ÁÖ)'></OBJECT></BODY></HTML>";
+    TITLE = TITLE + "<PARAM NAME='URL' VALUE='" + folpath + "'><PARAM NAME='DlgTitle' VALUE='ë©”ê°€ìŠ¤í„°ë””(ì£¼)'></OBJECT></BODY></HTML>";
     SecWin.document.write(TITLE);
     if (SecWin.focus)
         SecWin.focus();
 }
 
-// ÇÔ¼öÀÌ¸§ : strTrim
-// ÇÔ¼ö¼³¸í : ºó ¹®ÀÚ¿­Á¤¸®
-// ÀÔ ·Â °ª :
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : strTrim
+// í•¨ìˆ˜ì„¤ëª… : ë¹ˆ ë¬¸ìì—´ì •ë¦¬
+// ì… ë ¥ ê°’ :
+// ë°˜ í™˜ ê°’ :
 function strTrim(str) {
     //return str.replace(/(^\s*)|(\s*$)/g, "");
     //    if (!s) return false;
@@ -699,10 +699,10 @@ function strTrim(str) {
     return str.replace(/\str*$/, '');
 }
 
-// ÇÔ¼öÀÌ¸§ : CutHanStr
-// ÇÔ¼ö¼³¸í : ÇÑ±Û¹®ÀÚ¿­ Àß¶ó¿À±â
-// ÀÔ ·Â °ª :
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : CutHanStr
+// í•¨ìˆ˜ì„¤ëª… : í•œê¸€ë¬¸ìì—´ ì˜ë¼ì˜¤ê¸°
+// ì… ë ¥ ê°’ :
+// ë°˜ í™˜ ê°’ :
 function CutHanStr(str, len) {
     var l = 0;
     for (var i = 0; i < str.length; i++) {
@@ -712,20 +712,20 @@ function CutHanStr(str, len) {
     return str;
 }
 
-// ÇÔ¼öÀÌ¸§ : CutHanStr
-// ÇÔ¼ö¼³¸í : ÇÑ±Û¹®ÀÚ¿­ Àß¶ó¿À±â
-// ÀÔ ·Â °ª :
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : CutHanStr
+// í•¨ìˆ˜ì„¤ëª… : í•œê¸€ë¬¸ìì—´ ì˜ë¼ì˜¤ê¸°
+// ì… ë ¥ ê°’ :
+// ë°˜ í™˜ ê°’ :
 function GetHanStrLen(str) {
     var l = 0;
     for (var i = 0; i < str.length; i++) l += (str.charCodeAt(i) > 128) ? 2 : 1;
     return l;
 }
 
-// ÇÔ¼öÀÌ¸§ : commaNum
-// ÇÔ¼ö¼³¸í : ±İ¾× Ç¥½ÃÇÏ±â
-// ÀÔ ·Â °ª :
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : commaNum
+// í•¨ìˆ˜ì„¤ëª… : ê¸ˆì•¡ í‘œì‹œí•˜ê¸°
+// ì… ë ¥ ê°’ :
+// ë°˜ í™˜ ê°’ :
 function commaNum(num) {
 
     if (num < 0) { num *= -1; var minus = true }
@@ -774,7 +774,7 @@ function fnc_MegaDown(sUrl) {
 }
 
 function fnc_megabbs_Control() {
-    return "<OBJECT ID='objSetupCaller' onerror=fncChkDaulWebBoardInstall() CODEBASE='http://file1.megastudy.net/FileServer/NeoWeBoard/cabfilesV3/SetupCallerAX.cab#version=3,0,2009,5141' CLASSID='CLSID:91F1F5BA-866F-47D1-86A3-955EF0DD1717' standby='´Ù¿ï¼ÒÇÁÆ® ³×¿ÀÀ¥º¸µå ¼³Ä¡Áß...' width=0 height=0><PARAM name='sBannerURL' value='http://file1.megastudy.net/FileServer/NeoWeBoard/NeoWeBoardAX-1-Setup-SetupBanner.bmp' /></OBJECT>";
+    return "<OBJECT ID='objSetupCaller' onerror=fncChkDaulWebBoardInstall() CODEBASE='http://file1.megastudy.net/FileServer/NeoWeBoard/cabfilesV3/SetupCallerAX.cab#version=3,0,2009,5141' CLASSID='CLSID:91F1F5BA-866F-47D1-86A3-955EF0DD1717' standby='ë‹¤ìš¸ì†Œí”„íŠ¸ ë„¤ì˜¤ì›¹ë³´ë“œ ì„¤ì¹˜ì¤‘...' width=0 height=0><PARAM name='sBannerURL' value='http://file1.megastudy.net/FileServer/NeoWeBoard/NeoWeBoardAX-1-Setup-SetupBanner.bmp' /></OBJECT>";
 }
 
 // write document contents
@@ -787,9 +787,9 @@ function tag_flash() {
     document.write('<param name="movie" value="/common/menu/tag.swf"/>');
     document.write('<param name="quality" value="high"/>');
     document.write('<param name="bgcolor" value="#ffffff"/>');
-    //XML À§Ä¡
+    //XML ìœ„ì¹˜
     document.write('<param name="flashvars" value="hfile=http://www.megastudy.net/common/menu/tagData.asp" />');
-    //XML À§Ä¡
+    //XML ìœ„ì¹˜
     document.write('<embed src="tag.swf" quality="high" bgcolor="#ffffff" width="200" height="90" name="tag" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed/>');
     document.write('</object>');
 }
@@ -842,9 +842,9 @@ function makeArray(n) {
     return this
 }
 
-//ÇÃ·¹ÀÌ¾î////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//í”Œë ˆì´ì–´////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var MegastudyPlayer
-//»ç¿ëÀÚ ÇØ»óµµ, ºê¶ó¿ìÀú ¹öÀüÈ®ÀÎ
+//ì‚¬ìš©ì í•´ìƒë„, ë¸Œë¼ìš°ì € ë²„ì „í™•ì¸
 var UseWidth = window.screen.availWidth;
 var UseHeight = window.screen.availHeight;
 
@@ -913,7 +913,7 @@ if (navigator.userAgent.lastIndexOf('MSIE') > 0 || navigator.userAgent.lastIndex
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ebook°øÅëÃ³¸® ÇÔ¼ö
+// í•¨ìˆ˜ì„¤ëª… : ebookê³µí†µì²˜ë¦¬ í•¨ìˆ˜
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function fncEBookView(bcd) {
 
@@ -933,7 +933,7 @@ function fncEBookView(bcd) {
         var intBookCd = bcd;
     }
 
-    //20160711 ebook ÀúÀÛÅø ¹®Á¦ (flash Áö¿ø Áß´ÜµÇ¾î º¯°æ)
+    //20160711 ebook ì €ì‘íˆ´ ë¬¸ì œ (flash ì§€ì› ì¤‘ë‹¨ë˜ì–´ ë³€ê²½)
     //if (userBrowser == "IE" && parseInt(BrowserVersion) < 9) {
     //    window.open("http://cdnmega.nefficient.co.kr/ebook/" + intBookCd + "/" + bcd + "/view.htm", "e_Book", "top=0, left=0, width=1024, height=768, toolbar=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0");
 	//}else{
@@ -948,13 +948,13 @@ function isMultiTouchPoint() {
 
 
 
-//ÇÃ·¹ÀÌ¾î È£ÃâÇÔ¼öÀÇ ÆÄ¶ó¹ÌÅÍ
+//í”Œë ˆì´ì–´ í˜¸ì¶œí•¨ìˆ˜ì˜ íŒŒë¼ë¯¸í„°
 var vPlayerLnk, vPlayerParam, vPlayerOption;
 var agentInstallURL = "https://v.kr.kollus.com/pc_player_install/agent?cpk=megastudyedu";
 //------------------------------------------------------------------
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÇÃ·¹ÀÌ¾î °øÅë ½ÇÇàÇÔ¼ö (PC/¸ğ¹ÙÀÏ ÅëÇÕ)
+// í•¨ìˆ˜ì„¤ëª… : í”Œë ˆì´ì–´ ê³µí†µ ì‹¤í–‰í•¨ìˆ˜ (PC/ëª¨ë°”ì¼ í†µí•©)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_div(lnk, par, opt, kbn, app) {
     var pPlayerUrl, pSetParam, pOpt, pPlayerNm;
@@ -1065,7 +1065,7 @@ function player_div(lnk, par, opt, kbn, app) {
 				}
 				return;
 			}else{
-				if (confirm("3G/4G È¯°æ¿¡¼­´Â µ¥ÀÌÅÍ ÆĞÅ¶¿ä±İÀÌ ¹ß»ıÇÒ ¼ö ÀÖ½À´Ï´Ù.")) {
+				if (confirm("3G/4G í™˜ê²½ì—ì„œëŠ” ë°ì´í„° íŒ¨í‚·ìš”ê¸ˆì´ ë°œìƒí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.")) {
 
 					if (is_smartlearing_in_app == true) {
 						// SmartLearning in-app
@@ -1156,13 +1156,13 @@ function player_div(lnk, par, opt, kbn, app) {
 function indicateDownload() {
     var nc_app_url;
     nc_app_url = NPLAYER_SETUP_URL;
-    if (confirm('µ¿¿µ»óÀ» Àç»ıÇÏ±â À§ÇØ¼­ Àç»ıÇÃ·¹ÀÌ¾î¸¦ ¼³Ä¡ÇÏ¿©¾ß ÇÕ´Ï´Ù.\n¼³Ä¡ÇÏ½Ã°Ú½À´Ï±î?')) {
+    if (confirm('ë™ì˜ìƒì„ ì¬ìƒí•˜ê¸° ìœ„í•´ì„œ ì¬ìƒí”Œë ˆì´ì–´ë¥¼ ì„¤ì¹˜í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.\nì„¤ì¹˜í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')) {
         window.location.href = NPLAYER_SETUP_URL;
     }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : PC ´Ù¿î·Îµå °øÅë ½ÇÇàÇÔ¼ö
+// í•¨ìˆ˜ì„¤ëª… : PC ë‹¤ìš´ë¡œë“œ ê³µí†µ ì‹¤í–‰í•¨ìˆ˜
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function fncPCDown(dng_no) {
     var pcdngpath = "";
@@ -1189,7 +1189,7 @@ function fncPCDown(dng_no) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÇÃ·¹ÀÌ¾î °øÅë ½ÇÇàÇÔ¼ö (PC/¸ğ¹ÙÀÏ ÅëÇÕ T-Zone¿ë)
+// í•¨ìˆ˜ì„¤ëª… : í”Œë ˆì´ì–´ ê³µí†µ ì‹¤í–‰í•¨ìˆ˜ (PC/ëª¨ë°”ì¼ í†µí•© T-Zoneìš©)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_div_Tzone(lnk, par, opt, kbn, app,site_nm) {
 
@@ -1209,7 +1209,7 @@ function player_div_Tzone(lnk, par, opt, kbn, app,site_nm) {
     }
 
     if ((navigator.userAgent.lastIndexOf('Android') > 0 || navigator.userAgent.lastIndexOf('iPhone') > 0 || navigator.userAgent.lastIndexOf('iPad') > 0) && navigator.maxTouchPoints > 0 ) {
-        if(confirm("3G/4G È¯°æ¿¡¼­´Â µ¥ÀÌÅÍ ÆĞÅ¶¿ä±İÀÌ ¹ß»ıÇÒ ¼ö ÀÖ½À´Ï´Ù.")){
+        if(confirm("3G/4G í™˜ê²½ì—ì„œëŠ” ë°ì´í„° íŒ¨í‚·ìš”ê¸ˆì´ ë°œìƒí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.")){
             if (navigator.userAgent.lastIndexOf('Chrome') > 0) {
                 document.location.href = pPlayerUrl + pSetParam;
             } else {
@@ -1242,14 +1242,14 @@ function player_div_Tzone(lnk, par, opt, kbn, app,site_nm) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¾ÆÄí¾Æ ÇÃ·¹ÀÌ¾î - ÀÏ¹İ/½ß½ß
+// í•¨ìˆ˜ì„¤ëª… : ì•„ì¿ ì•„ í”Œë ˆì´ì–´ - ì¼ë°˜/ìŒ©ìŒ©
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function nplayer_mega_aqua(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 
     vPlayerParam = "?APP_NO=" + APP_NO + "&CHR_CD=" + CHR_CD + "&LEC_CD=" + LEC_CD + "&TEC_NM=" + TEC_NM + "&kbn=" + kbn;
 
-    if (kbn == "10" || kbn == "50") { vPlayerLnk = "L"; } //ÀÏ¹İ µ¿¿µ»ó °­ÀÇ
-    if (kbn == "20" || kbn == "60") { vPlayerLnk = "H"; } //½ß½ßÇÃ·¯½º µ¿¿µ»ó °­ÀÇ
+    if (kbn == "10" || kbn == "50") { vPlayerLnk = "L"; } //ì¼ë°˜ ë™ì˜ìƒ ê°•ì˜
+    if (kbn == "20" || kbn == "60") { vPlayerLnk = "H"; } //ìŒ©ìŒ©í”ŒëŸ¬ìŠ¤ ë™ì˜ìƒ ê°•ì˜
 
     player_div(vPlayerLnk, vPlayerParam, 'D', 'A', 'Y');
     return;
@@ -1258,14 +1258,14 @@ function nplayer_mega_aqua(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¾ÆÄí¾Æ ÇÃ·¹ÀÌ¾î - ÀÏ¹İ/½ß½ß(T-Zone¿ë)
+// í•¨ìˆ˜ì„¤ëª… : ì•„ì¿ ì•„ í”Œë ˆì´ì–´ - ì¼ë°˜/ìŒ©ìŒ©(T-Zoneìš©)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function nplayer_mega_aqua_Tzone(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM,SITE_NM) {
 
     vPlayerParam = "?APP_NO=" + APP_NO + "&CHR_CD=" + CHR_CD + "&LEC_CD=" + LEC_CD + "&TEC_NM=" + TEC_NM + "&kbn=" + kbn;
 
-    if (kbn == "10" || kbn == "50") { vPlayerLnk = "L"; } //ÀÏ¹İ µ¿¿µ»ó °­ÀÇ
-    if (kbn == "20" || kbn == "60") { vPlayerLnk = "H"; } //½ß½ßÇÃ·¯½º µ¿¿µ»ó °­ÀÇ
+    if (kbn == "10" || kbn == "50") { vPlayerLnk = "L"; } //ì¼ë°˜ ë™ì˜ìƒ ê°•ì˜
+    if (kbn == "20" || kbn == "60") { vPlayerLnk = "H"; } //ìŒ©ìŒ©í”ŒëŸ¬ìŠ¤ ë™ì˜ìƒ ê°•ì˜
 
     player_div_Tzone(vPlayerLnk, vPlayerParam, 'D', 'A', 'Y',SITE_NM);
     return;
@@ -1273,13 +1273,13 @@ function nplayer_mega_aqua_Tzone(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM,SITE_NM) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¹«·á°­ÀÇ ÇÃ·¹ÀÌ¾î
+// í•¨ìˆ˜ì„¤ëª… : ë¬´ë£Œê°•ì˜ í”Œë ˆì´ì–´
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_mega_sim(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 
     vPlayerParam = "?APP_NO=" + APP_NO + "&CHR_CD=" + CHR_CD + "&LEC_CD=" + LEC_CD + "&TEC_NM=" + TEC_NM + "&kbn=" + kbn;
 
-    //ÀÏ¹İ µ¿¿µ»ó ¸Àº¸±â(free) - 10:ÀÏ¹İ 15:¼±»ı´Ô µ¿¿µ»ó ÀÎ»ç 31~39 : ÀÏ¹İ ¸Àº¸±â ¼±ÅÃ
+    //ì¼ë°˜ ë™ì˜ìƒ ë§›ë³´ê¸°(free) - 10:ì¼ë°˜ 15:ì„ ìƒë‹˜ ë™ì˜ìƒ ì¸ì‚¬ 31~39 : ì¼ë°˜ ë§›ë³´ê¸° ì„ íƒ
     if (kbn == "10") { vPlayerLnk = "L"; }
     if (kbn == "20") { vPlayerLnk = "H"; }
 
@@ -1289,12 +1289,12 @@ function player_mega_sim(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : FREE ¾ÆÄí¾Æ ÇÃ·¹ÀÌ¾î
+// í•¨ìˆ˜ì„¤ëª… : FREE ì•„ì¿ ì•„ í”Œë ˆì´ì–´
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_free(kbn, para) {
 
-    //°íÈ­Áú ÅÇ±¸ºĞ¿ë(P:OT,¸Àº¸±â,F:ÀÌº¥Æ®)
-    if (kbn == "20" || kbn == "72" || kbn == "90" || kbn == "80" || kbn == "91" || kbn == "82") {	//³í¼ú¸ŞÀÎ Áø¼ö°ü·Ã ÄÚµå Ãß°¡ 20150813 CHOIJH
+    //ê³ í™”ì§ˆ íƒ­êµ¬ë¶„ìš©(P:OT,ë§›ë³´ê¸°,F:ì´ë²¤íŠ¸)
+    if (kbn == "20" || kbn == "72" || kbn == "90" || kbn == "80" || kbn == "91" || kbn == "82") {	//ë…¼ìˆ ë©”ì¸ ì§„ìˆ˜ê´€ë ¨ ì½”ë“œ ì¶”ê°€ 20150813 CHOIJH
         PlayerKbn = "P";
     } else if (kbn == "29") {
         PlayerKbn = "I";
@@ -1306,12 +1306,12 @@ function player_free(kbn, para) {
 
     vPlayerParam = "?dng_kbn=" + kbn + "&CHR_CD=" + para;
 
-    if (kbn == "10" || kbn == "20" || kbn == "72" || kbn == "80" || kbn == "90" || kbn == "91" || kbn == "79" || kbn == "89") { fncPreDngCnt(vPlayerParam); } //Á¶È¸¼ö ÃøÁ¤//Áø¼ö¸Àº¸±â Ãß°¡
+    if (kbn == "10" || kbn == "20" || kbn == "72" || kbn == "80" || kbn == "90" || kbn == "91" || kbn == "79" || kbn == "89") { fncPreDngCnt(vPlayerParam); } //ì¡°íšŒìˆ˜ ì¸¡ì •//ì§„ìˆ˜ë§›ë³´ê¸° ì¶”ê°€
 
-    //ÀÏ¹İ µ¿¿µ»ó ¸Àº¸±â(free) - 10:ÀÏ¹İ 15:¼±»ı´Ô µ¿¿µ»ó ÀÎ»ç 31~39 : ÀÏ¹İ ¸Àº¸±â ¼±ÅÃ
+    //ì¼ë°˜ ë™ì˜ìƒ ë§›ë³´ê¸°(free) - 10:ì¼ë°˜ 15:ì„ ìƒë‹˜ ë™ì˜ìƒ ì¸ì‚¬ 31~39 : ì¼ë°˜ ë§›ë³´ê¸° ì„ íƒ
     if ((kbn >= "10" && kbn <= "19") || (kbn >= "31" && kbn <= "39") || kbn == "50" || kbn == "51" || kbn == "62" || kbn == "68" || kbn == "79" || kbn == "80") { vPlayerLnk = "L"; }
 
-    //½ß½ß ÇÃ·¯½º µ¿¿µ»ó ¸Àº¸±â (free) - 20:½ß½ß 23:¸Àº¸±â  72:OT	82:ÇĞ½ÀÁ¤º¸(OT2) 41~49 : ½ß½ß ¸Àº¸±â ¼±ÅÃ
+    //ìŒ©ìŒ© í”ŒëŸ¬ìŠ¤ ë™ì˜ìƒ ë§›ë³´ê¸° (free) - 20:ìŒ©ìŒ© 23:ë§›ë³´ê¸°  72:OT	82:í•™ìŠµì •ë³´(OT2) 41~49 : ìŒ©ìŒ© ë§›ë³´ê¸° ì„ íƒ
     if ((kbn >= "20" && kbn <= "29") || (kbn >= "41" && kbn <= "49") || kbn == "60" || kbn == "72" || kbn == "82" || kbn == "90" || kbn == "91" || kbn == "89" || kbn == "99") { vPlayerLnk = "H"; }
 
     var hopt = "D"
@@ -1330,7 +1330,7 @@ function fncVod_20141022(e) {
 	});
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÇØ¼³°­ÀÇ ÇÃ·¹ÀÌ¾î ´ëÀÀ
+// í•¨ìˆ˜ì„¤ëª… : í•´ì„¤ê°•ì˜ í”Œë ˆì´ì–´ ëŒ€ì‘
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_exam(kbn, dngkbn, para) {
 
@@ -1347,10 +1347,10 @@ function player_exam(kbn, dngkbn, para) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-// ÇÔ¼öÀÌ¸§ : player_exam_2007
-// ÇÔ¼ö¼³¸í : ÇÃ·¹ÀÌ¾î - FREE
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : player_exam_2007
+// í•¨ìˆ˜ì„¤ëª… : í”Œë ˆì´ì–´ - FREE
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function player_exam_2007(seq, num, stm, idx, dng_num, free_flg) {
 
     var dng_cul_num = 0;
@@ -1374,10 +1374,10 @@ function player_exam_2007(seq, num, stm, idx, dng_num, free_flg) {
     return;
 }
 
-// ÇÔ¼öÀÌ¸§ : player_Lab_free()
-// ÇÔ¼ö¼³¸í : ¿µ¾îµè±â ¸Àº¸±â °­ÁÂ ÇÃ·¹ÀÌ¾î - FREE
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : player_Lab_free()
+// í•¨ìˆ˜ì„¤ëª… : ì˜ì–´ë“£ê¸° ë§›ë³´ê¸° ê°•ì¢Œ í”Œë ˆì´ì–´ - FREE
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function player_Lab_free(kbn, para) {
 
     vPlayerLnk = "/Player/Mega/listening/Player_Load.asp";
@@ -1388,10 +1388,10 @@ function player_Lab_free(kbn, para) {
     return;
 }
 
-// ÇÔ¼öÀÌ¸§ : lplayer_mega()
-// ÇÔ¼ö¼³¸í : µè±âÀü¿ë ÇÃ·¹ÀÌ¾î
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : lplayer_mega()
+// í•¨ìˆ˜ì„¤ëª… : ë“£ê¸°ì „ìš© í”Œë ˆì´ì–´
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function lplayer_mega(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 
     vPlayerLnk = "/Player/Mega/listening/Player_Load.asp";
@@ -1402,10 +1402,10 @@ function lplayer_mega(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
     return;
 }
 
-// ÇÔ¼öÀÌ¸§ : splayer_mega_freepass(),nplayer_mega_freepass() --> ÅëÇÕ player_mega_freepass() ÆäÀÌÁö ÀÛ¾÷ÇÊ¿ä
-// ÇÔ¼ö¼³¸í : ´ºÇÃ·¹ÀÌ¾î - ½ß½ß ÇÁ¸®ÆĞ½º Ã¼Çè
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ, ¼Ó¼º
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : splayer_mega_freepass(),nplayer_mega_freepass() --> í†µí•© player_mega_freepass() í˜ì´ì§€ ì‘ì—…í•„ìš”
+// í•¨ìˆ˜ì„¤ëª… : ë‰´í”Œë ˆì´ì–´ - ìŒ©ìŒ© í”„ë¦¬íŒ¨ìŠ¤ ì²´í—˜
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì, ì†ì„±
+// ë°˜ í™˜ ê°’ :
 function player_mega_freepass(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
     vPlayerParam = "?APP_NO=" + APP_NO + "&CHR_CD=" + CHR_CD + "&LEC_CD=" + LEC_CD + "&TEC_NM=" + TEC_NM + "&kbn=" + kbn;
 
@@ -1417,15 +1417,15 @@ function player_mega_freepass(kbn, APP_NO, CHR_CD, LEC_CD, TEC_NM) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¾ÆÄí¾Æ ÀÎµ¦½º ÇÃ·¹ÀÌ¾î - ÀÏ¹İ/½ß½ß
+// í•¨ìˆ˜ì„¤ëª… : ì•„ì¿ ì•„ ì¸ë±ìŠ¤ í”Œë ˆì´ì–´ - ì¼ë°˜/ìŒ©ìŒ©
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function player_index(kbn, idx) {
 
     vPlayerParam = "?dng_kbn=" + kbn + "&DNG_IDX=" + idx;
 
-    //ÀÏ¹İ µ¿¿µ»ó ¸Àº¸±â(free) - 10:ÀÏ¹İ 15:¼±»ı´Ô µ¿¿µ»ó ÀÎ»ç
+    //ì¼ë°˜ ë™ì˜ìƒ ë§›ë³´ê¸°(free) - 10:ì¼ë°˜ 15:ì„ ìƒë‹˜ ë™ì˜ìƒ ì¸ì‚¬
     if (kbn == "13" || kbn == "10") { vPlayerLnk = "L"; }
-    //½ß½ß ÇÃ·¯½º µ¿¿µ»ó ¸Àº¸±â (free) - 20:½ß½ß 23:¸Àº¸±â  72:OT
+    //ìŒ©ìŒ© í”ŒëŸ¬ìŠ¤ ë™ì˜ìƒ ë§›ë³´ê¸° (free) - 20:ìŒ©ìŒ© 23:ë§›ë³´ê¸°  72:OT
     if (kbn == "23" || kbn == "20" || kbn == "29") { vPlayerLnk = "H"; }
 
     player_div(vPlayerLnk, vPlayerParam, 'D', 'I', 'N');
@@ -1434,7 +1434,7 @@ function player_index(kbn, idx) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÆäÀÌÁö »ğÀÔ ÇÃ·¹ÀÌ¾î È£Ãâ/ÄÁÆ®·Ñ
+// í•¨ìˆ˜ì„¤ëª… : í˜ì´ì§€ ì‚½ì… í”Œë ˆì´ì–´ í˜¸ì¶œ/ì»¨íŠ¸ë¡¤
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function fncPlayerPageAx(acd, ppr) {
     try {
@@ -1474,11 +1474,11 @@ function fncPageMove(acd, t) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¿µ»ó´Ù¿î·Îµå
+// í•¨ìˆ˜ì„¤ëª… : ì˜ìƒë‹¤ìš´ë¡œë“œ
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function fncVideoDownload(kbn, para) {
-    //°íÈ­Áú ÅÇ±¸ºĞ¿ë(P:OT,¸Àº¸±â,F:ÀÌº¥Æ®)
-    if (kbn == "20" || kbn == "72" || kbn == "90" || kbn == "80" || kbn == "91" || kbn == "82") {	//³í¼ú¸ŞÀÎ Áø¼ö°ü·Ã ÄÚµå Ãß°¡ 20150813 CHOIJH
+    //ê³ í™”ì§ˆ íƒ­êµ¬ë¶„ìš©(P:OT,ë§›ë³´ê¸°,F:ì´ë²¤íŠ¸)
+    if (kbn == "20" || kbn == "72" || kbn == "90" || kbn == "80" || kbn == "91" || kbn == "82") {	//ë…¼ìˆ ë©”ì¸ ì§„ìˆ˜ê´€ë ¨ ì½”ë“œ ì¶”ê°€ 20150813 CHOIJH
         PlayerKbn = "P";
     } else if (kbn == "29") {
         PlayerKbn = "I";
@@ -1505,11 +1505,11 @@ function fncVideoDownload(kbn, para) {
     return;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//ÇÃ·¹ÀÌ¾î////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//í”Œë ˆì´ì–´////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÀÌº¥Æ® µ¿¿µ»ó ÀÎµ¦½º¿ë
+// í•¨ìˆ˜ì„¤ëª… : ì´ë²¤íŠ¸ ë™ì˜ìƒ ì¸ë±ìŠ¤ìš©
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function fncPlayerGoIndex(frame_id, no, img_path, img_w, img_h, qm_stime) {
 
@@ -1564,7 +1564,7 @@ function fncPlayerIndexUrl(frame_id, qm_stime) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ÀÌº¥Æ® µ¿¿µ»ó Á¶È¸ ¼ö È®ÀÎ
+// í•¨ìˆ˜ì„¤ëª… : ì´ë²¤íŠ¸ ë™ì˜ìƒ ì¡°íšŒ ìˆ˜ í™•ì¸
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var xmlHttp;
 var blChk = false;
@@ -1601,7 +1601,7 @@ function fncPreDngCnt(para) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼ö¼³¸í : ¸Ş°¡½ºÅÍµğ »ç¿ëÇÏ´Â ¹ü¿ë Ajax È£Ãâ
+// í•¨ìˆ˜ì„¤ëª… : ë©”ê°€ìŠ¤í„°ë”” ì‚¬ìš©í•˜ëŠ” ë²”ìš© Ajax í˜¸ì¶œ
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function msAjax(o) {
     o = { type: o.type || "POST", url: o.url || "", info: o.info || null, timeout: o.timeout || 10000, onLoading: o.onLoading || function () { }, onComplete: o.onComplete || function () { }, onError: o.onError || function () { }, onSuccess: o.onSuccess || function () { }, onTimeOut: o.onTimeOut || function () { }, data: o.data || "" };
@@ -1622,10 +1622,10 @@ function msAxList(u, d) {
     msAjax({ url: u, type: "GET", onSuccess: function (rss) { document.getElementById(d).innerHTML = rss; } });
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼öÀÌ¸§ : OpenImage_n()
-// ÇÔ¼ö¼³¸í : ÀÌ¹ÌÁö »çÀÌÁî¿¡ ¸Â°Ô ÆË¾÷ ¶ç¿ì±â --> focus ¹®Á¦·Î ·¹ÀÌ¾î·Î ¶ç¿ìµµ·Ï º¯°æ(20101203)
-// ÀÔ ·Â °ª : Image Url, popup width, popup height
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : OpenImage_n()
+// í•¨ìˆ˜ì„¤ëª… : ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆì— ë§ê²Œ íŒì—… ë„ìš°ê¸° --> focus ë¬¸ì œë¡œ ë ˆì´ì–´ë¡œ ë„ìš°ë„ë¡ ë³€ê²½(20101203)
+// ì… ë ¥ ê°’ : Image Url, popup width, popup height
+// ë°˜ í™˜ ê°’ :
 function OpenImage_n(s, w, h) {
 
     CommonMsLayerHidden();
@@ -1648,7 +1648,7 @@ function OpenImage_n(s, w, h) {
     var div = document.getElementById("ZoomImageView");
     div.innerHTML = "<a href='#_blank' onclick='CommonMsLayerHidden()'><img src='" + s + "' width='" + w + "' height='" + h + "' onclick='CommonMsLayerHidden()' style='border:3px solid #999999; ridge white;' ></a>";
 
-    // 20110711 - °¡¿îµ¥ Á¤·Ä ÈÄ ±úÁö´Â °æ¿ì°¡ ÀÖ¾î¼­ ¼öÁ¤
+    // 20110711 - ê°€ìš´ë° ì •ë ¬ í›„ ê¹¨ì§€ëŠ” ê²½ìš°ê°€ ìˆì–´ì„œ ìˆ˜ì •
     //    if (document.body.scrollLeft != 0) {
     imgLeft = (document.body.clientWidth - w) / 2;
     //    } else {
@@ -1672,10 +1672,10 @@ function OpenImage_n(s, w, h) {
 
 }
 
-// ÇÔ¼öÀÌ¸§ : OpenImage_n_all(), Ç¥ÁØ
-// ÇÔ¼ö¼³¸í : ÀÌ¹ÌÁö »çÀÌÁî¿¡ ¸Â°Ô ÆË¾÷ ¶ç¿ì±â --> focus ¹®Á¦·Î ·¹ÀÌ¾î·Î ¶ç¿ìµµ·Ï º¯°æ(20101203)
-// ÀÔ ·Â °ª : Image Url, popup width, popup height
-// ¹İ È¯ °ª :
+// í•¨ìˆ˜ì´ë¦„ : OpenImage_n_all(), í‘œì¤€
+// í•¨ìˆ˜ì„¤ëª… : ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆì— ë§ê²Œ íŒì—… ë„ìš°ê¸° --> focus ë¬¸ì œë¡œ ë ˆì´ì–´ë¡œ ë„ìš°ë„ë¡ ë³€ê²½(20101203)
+// ì… ë ¥ ê°’ : Image Url, popup width, popup height
+// ë°˜ í™˜ ê°’ :
 function OpenImage_n_all(s, w, h) {
 
     CommonMsLayerHidden();
@@ -1698,7 +1698,7 @@ function OpenImage_n_all(s, w, h) {
     var div = document.getElementById("ZoomImageView");
     div.innerHTML = "<a href='#_blank' onclick='CommonMsLayerHidden()'><img src='" + s + "' width='" + w + "' height='" + h + "' onclick='CommonMsLayerHidden()' style='border:3px solid #999999; ridge white;' ></a>";
 
-    // 20110711 - °¡¿îµ¥ Á¤·Ä ÈÄ ±úÁö´Â °æ¿ì°¡ ÀÖ¾î¼­ ¼öÁ¤
+    // 20110711 - ê°€ìš´ë° ì •ë ¬ í›„ ê¹¨ì§€ëŠ” ê²½ìš°ê°€ ìˆì–´ì„œ ìˆ˜ì •
     //    if (document.body.scrollLeft != 0) {
     imgLeft = (document.documentElement.clientWidth - w) / 2;
     //    } else {
@@ -1726,8 +1726,8 @@ function OpenImage_n_all(s, w, h) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼öÀÌ¸§ : CommonMsLayerHidden()
-// ÇÔ¼ö¼³¸í : ¿­·ÁÀÖ´Â ·¹ÀÌ¾î ´İ±â °øÅëÀû¿ë
+// í•¨ìˆ˜ì´ë¦„ : CommonMsLayerHidden()
+// í•¨ìˆ˜ì„¤ëª… : ì—´ë ¤ìˆëŠ” ë ˆì´ì–´ ë‹«ê¸° ê³µí†µì ìš©
 function CommonMsLayerHidden() {
     var d = document.getElementsByTagName("div");
     for (var i = 0; i < d.length; i++) {
@@ -1762,7 +1762,7 @@ function OpenImage_n_ifm(s, w, h, evc) {
 
     div.innerHTML = "<a href='#_blank' onclick='CommonMsLayerHidden_ifrm()'><img src='" + s + "' width='" + w + "' height='" + h + "' onclick='CommonMsLayerHidden_ifrm()' style='border:3px solid #999999; ridge white;' ></a>";
 
-    // 20110711 - °¡¿îµ¥ Á¤·Ä ÈÄ ±úÁö´Â °æ¿ì°¡ ÀÖ¾î¼­ ¼öÁ¤
+    // 20110711 - ê°€ìš´ë° ì •ë ¬ í›„ ê¹¨ì§€ëŠ” ê²½ìš°ê°€ ìˆì–´ì„œ ìˆ˜ì •
     //    if (document.body.scrollLeft != 0) {
     imgLeft = (document.body.clientWidth - w) / 2;
     //    } else {
@@ -1784,8 +1784,8 @@ function OpenImage_n_ifm(s, w, h, evc) {
 
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ÇÔ¼öÀÌ¸§ : CommonMsLayerHidden_ifrm()
-// ÇÔ¼ö¼³¸í : ¿­·ÁÀÖ´Â ·¹ÀÌ¾î ´İ±â °øÅëÀû¿ë
+// í•¨ìˆ˜ì´ë¦„ : CommonMsLayerHidden_ifrm()
+// í•¨ìˆ˜ì„¤ëª… : ì—´ë ¤ìˆëŠ” ë ˆì´ì–´ ë‹«ê¸° ê³µí†µì ìš©
 function CommonMsLayerHidden_ifrm() {
     var d = document.getElementsByTagName("div");
     for (var i = 0; i < d.length; i++) {
@@ -1798,10 +1798,10 @@ function CommonMsLayerHidden_ifrm() {
     }
 }
 
-// ÇÔ¼öÀÌ¸§ : CloseImage_n()
-// ÇÔ¼ö¼³¸í : ¿­·ÁÀÖ´Â ÆË¾÷Ã¢ ´İ±â
-// ÀÔ ·Â °ª : ¾øÀ½
-// ¹İ È¯ °ª : ¾øÀ½
+// í•¨ìˆ˜ì´ë¦„ : CloseImage_n()
+// í•¨ìˆ˜ì„¤ëª… : ì—´ë ¤ìˆëŠ” íŒì—…ì°½ ë‹«ê¸°
+// ì… ë ¥ ê°’ : ì—†ìŒ
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
 function CloseImage_n() {
     try {
         if (win != null) win.close();
@@ -1811,72 +1811,72 @@ function CloseImage_n() {
 }
 
 
-//iframe ResizeÇÔ¼ö
+//iframe Resizeí•¨ìˆ˜
 function resizeFrame(that) {
     //that.style.height = that.contentWindow.document.body.scrollHeight + that.contentWindow.document.body.offsetHeight - that.contentWindow.document.body.clientHeight;
     that.style.height = that.contentWindow.document.body.scrollHeight + that.contentWindow.document.body.offsetHeight - that.contentWindow.document.body.clientHeight + 'px';
 }
 
-// °­ÁÂ °³°­ ¾Ë¸®¹Ì ÆË¾÷
+// ê°•ì¢Œ ê°œê°• ì•Œë¦¬ë¯¸ íŒì—…
 function Chr_Alarm_Pop(Chr_Cd) {
 
-    //»õÃ¢ÀÇ Å©±â
+    //ìƒˆì°½ì˜ í¬ê¸°
     cw = 700;
     ch = 500;
 
-    //½ºÅ©¸°ÀÇ Å©±â
+    //ìŠ¤í¬ë¦°ì˜ í¬ê¸°
     sw = screen.availWidth;
     sh = screen.availHeight;
 
-    //¿­ Ã¢ÀÇ Æ÷Áö¼Ç
+    //ì—´ ì°½ì˜ í¬ì§€ì…˜
     px = (sw - cw) / 2;
     py = (sh - ch) / 5;
 
-    //Ã¢À» ¿©´ÂºÎºĞ
+    //ì°½ì„ ì—¬ëŠ”ë¶€ë¶„
     window.open("/Mypage/mp_2017/notice/pop_allim.asp?chrcd=" + Chr_Cd + "&flg=C", "Chr_Alarm_Pop", 'left=' + px + ', top=' + py + ', width=' + cw + ', height=' + ch + ', toolbar=no,menubar=no,status=no,scrollbars=no,resizable=no');
 }
 
-// ±³Àç ¾Ë¸®¹Ì ÆË¾÷
+// êµì¬ ì•Œë¦¬ë¯¸ íŒì—…
 function Book_Alarm_Pop(Book_Cd, Chr_Cd) {
 	
-    //»õÃ¢ÀÇ Å©±â
+    //ìƒˆì°½ì˜ í¬ê¸°
     cw = 700;
     ch = 500;
 
-    //½ºÅ©¸°ÀÇ Å©±â
+    //ìŠ¤í¬ë¦°ì˜ í¬ê¸°
     sw = screen.availWidth;
     sh = screen.availHeight;
 
-    //¿­ Ã¢ÀÇ Æ÷Áö¼Ç
+    //ì—´ ì°½ì˜ í¬ì§€ì…˜
     px = (sw - cw) / 2;
     py = (sh - ch) / 5;
 
-    //Ã¢À» ¿©´ÂºÎºĞ
+    //ì°½ì„ ì—¬ëŠ”ë¶€ë¶„
     window.open("/Mypage/mp_2017/notice/pop_allim.asp?bookcd=" + Book_Cd + "&chrcd=" + Chr_Cd + "&flg=B", "Book_Alarm_Pop", 'left=' + px + ', top=' + py + ', width=' + cw + ', height=' + ch + ', toolbar=no,menubar=no,status=no,scrollbars=no,resizable=no');
 }
 
-// ebook ¾Ë¸®¹Ì ÆË¾÷
+// ebook ì•Œë¦¬ë¯¸ íŒì—…
 function eBook_Alarm_Pop(Book_Cd, Chr_Cd) {
 	
-    //»õÃ¢ÀÇ Å©±â
+    //ìƒˆì°½ì˜ í¬ê¸°
     cw = 700;
     ch = 500;
 
-    //½ºÅ©¸°ÀÇ Å©±â
+    //ìŠ¤í¬ë¦°ì˜ í¬ê¸°
     sw = screen.availWidth;
     sh = screen.availHeight;
 
-    //¿­ Ã¢ÀÇ Æ÷Áö¼Ç
+    //ì—´ ì°½ì˜ í¬ì§€ì…˜
     px = (sw - cw) / 2;
     py = (sh - ch) / 5;
 
-    //Ã¢À» ¿©´ÂºÎºĞ
+    //ì°½ì„ ì—¬ëŠ”ë¶€ë¶„
     window.open("/Mypage/mp_2017/notice/pop_allim.asp?bookcd=" + Book_Cd + "&chrcd=" + Chr_Cd + "&flg=E", "Book_Alarm_Pop", 'left=' + px + ', top=' + py + ', width=' + cw + ', height=' + ch + ', toolbar=no,menubar=no,status=no,scrollbars=no,resizable=no');
 }
 
 
 
-//png ÆÄÀÏ Åõ¸íÈ­
+//png íŒŒì¼ íˆ¬ëª…í™”
 var pngtmpcnt = 0;
 function fncSetPng24(obj) {
     if (pngtmpcnt == 0) {
@@ -1891,10 +1891,10 @@ function fncSetPng24(obj) {
 }
 
 
-// ÇÔ¼öÀÌ¸§ : d_imgRollover()
-// ÇÔ¼ö¼³¸í : ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®
-// ÀÔ ·Â °ª : id, image format
-// ¹İ È¯ °ª : ¾øÀ½
+// í•¨ìˆ˜ì´ë¦„ : d_imgRollover()
+// í•¨ìˆ˜ì„¤ëª… : ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸
+// ì… ë ¥ ê°’ : id, image format
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
 function d_imgRollover(id, format) {
     if (!document.getElementsByTagName) return;
     var vformat = "." + format;
@@ -1924,15 +1924,15 @@ function d_imgRollover(id, format) {
 }
 
 
-// ÇÔ¼öÀÌ¸§ : popMemberInput()
-// ÇÔ¼ö¼³¸í : È¸¿øÀ¯ÀÔÆË¾÷
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ
-// ¹İ È¯ °ª : ¾øÀ½
+// í•¨ìˆ˜ì´ë¦„ : popMemberInput()
+// í•¨ìˆ˜ì„¤ëª… : íšŒì›ìœ ì…íŒì—…
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
 function popMemberInput(zflg) {
     var dns, arrDns, str;
-    dns = document.location.href; //<-- ÇöÀç URL ¾ò¾î¿Â´Ù
-    arrDns = dns.split("//"); //<-- // ±¸ºĞÀÚ·Î Â©¶ó¿Í¼­
-    str = arrDns[1].substring(0, arrDns[1].indexOf("/")); //<-- µÚ¿¡ºÎÅÍ ´ÙÀ½ / ±îÁö °¡Á®¿Â´Ù    
+    dns = document.location.href; //<-- í˜„ì¬ URL ì–»ì–´ì˜¨ë‹¤
+    arrDns = dns.split("//"); //<-- // êµ¬ë¶„ìë¡œ ì§¤ë¼ì™€ì„œ
+    str = arrDns[1].substring(0, arrDns[1].indexOf("/")); //<-- ë’¤ì—ë¶€í„° ë‹¤ìŒ / ê¹Œì§€ ê°€ì ¸ì˜¨ë‹¤    
    
     //var callUrl = "http://" + str + "/member/member_2011/goMemInput.Asp?zflg=" + zflg;
     if (arrDns[0].substring(0, 5) == "https") {
@@ -1943,46 +1943,46 @@ function popMemberInput(zflg) {
 
     //var ckWinUp = window.open(callUrl, 'popMemInput', 'width=716,height=710,scrollbars=1');
     //if (ckWinUp == null) {
-    //    alert("Â÷´ÜµÈ ÆË¾÷À» Çã¿ëÇØ ÁÖ½Ê½Ã¿ä");
+    //    alert("ì°¨ë‹¨ëœ íŒì—…ì„ í—ˆìš©í•´ ì£¼ì‹­ì‹œìš”");
     //    return;
     //}
     location.href=callUrl;
 }
 
-// ÇÔ¼öÀÌ¸§ : popMemberEdit()
-// ÇÔ¼ö¼³¸í : È¸¿ø¼öÁ¤ÆË¾÷
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ
-// ¹İ È¯ °ª : ¾øÀ½
+// í•¨ìˆ˜ì´ë¦„ : popMemberEdit()
+// í•¨ìˆ˜ì„¤ëª… : íšŒì›ìˆ˜ì •íŒì—…
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
 function popMemberEdit(zflg) {
     var dns, arrDns, str;
-    dns = document.location.href; //<-- ÇöÀç URL ¾ò¾î¿Â´Ù
-    arrDns = dns.split("//"); //<-- // ±¸ºĞÀÚ·Î Â©¶ó¿Í¼­
-    str = arrDns[1].substring(0, arrDns[1].indexOf("/")); //<-- µÚ¿¡ºÎÅÍ ´ÙÀ½ / ±îÁö °¡Á®¿Â´Ù
+    dns = document.location.href; //<-- í˜„ì¬ URL ì–»ì–´ì˜¨ë‹¤
+    arrDns = dns.split("//"); //<-- // êµ¬ë¶„ìë¡œ ì§¤ë¼ì™€ì„œ
+    str = arrDns[1].substring(0, arrDns[1].indexOf("/")); //<-- ë’¤ì—ë¶€í„° ë‹¤ìŒ / ê¹Œì§€ ê°€ì ¸ì˜¨ë‹¤
 
 //    var callUrl = "/member/member_2011/goMemEdit.Asp?zflg=" + zflg;
     var callUrl = "https://" + str + "/mypage/mp_2017/member/goMemEdit.Asp?zflg=" + zflg;
     var ckWinUp = window.open(callUrl, 'popMemEdit', 'width=758,height=680,scrollbars=1');
     if (ckWinUp == null) {
-        alert("Â÷´ÜµÈ ÆË¾÷À» Çã¿ëÇØ ÁÖ½Ê½Ã¿ä");
+        alert("ì°¨ë‹¨ëœ íŒì—…ì„ í—ˆìš©í•´ ì£¼ì‹­ì‹œìš”");
         return;
     }
 }
 
-// ÇÔ¼öÀÌ¸§ : popChrRecom()
-// ÇÔ¼ö¼³¸í : ¼ö°­Æò ÆË¾÷
-// ÀÔ ·Â °ª : ±¸ºĞÀÚ
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : J : 2012-06-14
+// í•¨ìˆ˜ì´ë¦„ : popChrRecom()
+// í•¨ìˆ˜ì„¤ëª… : ìˆ˜ê°•í‰ íŒì—…
+// ì… ë ¥ ê°’ : êµ¬ë¶„ì
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : J : 2012-06-14
 function popChrRecom() {
     window.open('/teacher_v2/ChrReview/pop_review.asp', 'ChrRecomPop', 'width=827, height=750, scrollbars=yes');
 }
 
 
-// ÇÔ¼öÀÌ¸§ : fncSitelink(snsUrl,dngNo,dngKbn)
-// ÇÔ¼ö¼³¸í : µ¿¿µ»ó °øÀ¯ÇÏ±â URL º¹»ç
-// ÀÔ ·Â °ª : ´ÜÃàÁÖ¼Ò
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
+// í•¨ìˆ˜ì´ë¦„ : fncSitelink(snsUrl,dngNo,dngKbn)
+// í•¨ìˆ˜ì„¤ëª… : ë™ì˜ìƒ ê³µìœ í•˜ê¸° URL ë³µì‚¬
+// ì… ë ¥ ê°’ : ë‹¨ì¶•ì£¼ì†Œ
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
 function fncSitelink(snsUrl,dngNo,dngKbn) {
 	msAjax({
 		url:'/Player/MegaPlayer/PlayerCommon/PlayerGetVodUrl.asp?no='+dngNo+'&dng_kbn='+dngKbn,
@@ -1993,20 +1993,20 @@ function fncSitelink(snsUrl,dngNo,dngKbn) {
 	var IE=(document.all)?true:false;
 	if (IE) {
 		window.clipboardData.setData("Text",snsUrl);
-		alert('µ¿¿µ»ó URLÀÌ º¹»çµÇ¾ú½À´Ï´Ù.\nÄ£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡ Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»ó URL Å¬¸¯½Ã »õ Ã¢À¸·Î ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù..');
+		alert('ë™ì˜ìƒ URLì´ ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤.\nì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì— Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒ URL í´ë¦­ì‹œ ìƒˆ ì°½ìœ¼ë¡œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤..');
 	} else {
-		temp = prompt("¾Æ·¡ µ¿¿µ»ó URL º¹»ç ÈÄ Ä£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡ Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»ó URL Å¬¸¯½Ã »õ Ã¢À¸·Î ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.", snsUrl);
+		temp = prompt("ì•„ë˜ ë™ì˜ìƒ URL ë³µì‚¬ í›„ ì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì— Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒ URL í´ë¦­ì‹œ ìƒˆ ì°½ìœ¼ë¡œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.", snsUrl);
 	}
 	jQuery('.close').parent().css('display','none');
 	return;
 }
 
-// ÇÔ¼öÀÌ¸§ : fncEmbedlink(dngNo,dngKbn,keyNote)
-// ÇÔ¼ö¼³¸í : µ¿¿µ»ó °øÀ¯ÇÏ±â HTML ¼Ò½º º¹»ç
-// ÀÔ ·Â °ª : µ¿¿µ»ó¹øÈ£,±¸ºĞ,Å°³ëÆ®-ÅØ½ºÆ®
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
-// Æ¯ÀÌ»çÇ× : Å©·Ò ¹× IE11¿¡¼­ EMBED ÅÂ±× µ¿ÀÛ ¾ÈÇÏ¹Ç·Î, VIDEOÅÂ±× ¾È¿¡ EMBEDÅÂ±× »ğÀÔ. HTML5 ºê¶ó¿ìÀú¿¡¼± VIDEO ÅÂ±× ½ÇÇà. ±× ÀÌÇÏ ºê¶ó¿ìÀú¿¡¼± EMBED ÅÂ±× ½ÇÇà.
+// í•¨ìˆ˜ì´ë¦„ : fncEmbedlink(dngNo,dngKbn,keyNote)
+// í•¨ìˆ˜ì„¤ëª… : ë™ì˜ìƒ ê³µìœ í•˜ê¸° HTML ì†ŒìŠ¤ ë³µì‚¬
+// ì… ë ¥ ê°’ : ë™ì˜ìƒë²ˆí˜¸,êµ¬ë¶„,í‚¤ë…¸íŠ¸-í…ìŠ¤íŠ¸
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
+// íŠ¹ì´ì‚¬í•­ : í¬ë¡¬ ë° IE11ì—ì„œ EMBED íƒœê·¸ ë™ì‘ ì•ˆí•˜ë¯€ë¡œ, VIDEOíƒœê·¸ ì•ˆì— EMBEDíƒœê·¸ ì‚½ì…. HTML5 ë¸Œë¼ìš°ì €ì—ì„  VIDEO íƒœê·¸ ì‹¤í–‰. ê·¸ ì´í•˜ ë¸Œë¼ìš°ì €ì—ì„  EMBED íƒœê·¸ ì‹¤í–‰.
 function fncEmbedlink(dngNo,dngKbn,keyNote) {
 	msAjax({
 		url:'/Player/MegaPlayer/PlayerCommon/PlayerGetVodUrl.asp?no='+dngNo+'&dng_kbn='+dngKbn,
@@ -2017,9 +2017,9 @@ function fncEmbedlink(dngNo,dngKbn,keyNote) {
 			var IE=(document.all)?true:false;
 			if (IE) {
 				window.clipboardData.setData("Text",dValue);
-				alert('µ¿¿µ»ó HTML ¼Ò½º ÄÚµå°¡ º¹»çµÇ¾ú½À´Ï´Ù.\nÄ£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡¼­ ¡®HTML¡¯À» ¼±ÅÃÇÏ½Ã°í, Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.');
+				alert('ë™ì˜ìƒ HTML ì†ŒìŠ¤ ì½”ë“œê°€ ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤.\nì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì—ì„œ â€˜HTMLâ€™ì„ ì„ íƒí•˜ì‹œê³ , Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
 			} else {
-				temp = prompt("¾Æ·¡ HTML ¼Ò½º ÄÚµå º¹»ç ÈÄ Ä£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡¼­ ¡®HTML¡¯À» ¼±ÅÃÇÏ½Ã°í, Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.", dValue);
+				temp = prompt("ì•„ë˜ HTML ì†ŒìŠ¤ ì½”ë“œ ë³µì‚¬ í›„ ì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì—ì„œ â€˜HTMLâ€™ì„ ì„ íƒí•˜ì‹œê³ , Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.", dValue);
 			}
 			jQuery('.close').parent().css('display','none');
 			return;
@@ -2027,31 +2027,31 @@ function fncEmbedlink(dngNo,dngKbn,keyNote) {
 	});
 }
 
-// ÇÔ¼öÀÌ¸§ : fncShareVieolink(shareKey,strTitle)
-// ÇÔ¼ö¼³¸í : µ¿¿µ»ó °øÀ¯ÇÏ±â HTML ¼Ò½º º¹»ç
-// ÀÔ ·Â °ª : ¿ÀÇÂ°øÀ¯ÄÚµå, Á¦¸ñ
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : ÃÖÁøÇõ : 2018-03-16
-// Æ¯ÀÌ»çÇ× : °øÀ¯¸µÅ©
+// í•¨ìˆ˜ì´ë¦„ : fncShareVieolink(shareKey,strTitle)
+// í•¨ìˆ˜ì„¤ëª… : ë™ì˜ìƒ ê³µìœ í•˜ê¸° HTML ì†ŒìŠ¤ ë³µì‚¬
+// ì… ë ¥ ê°’ : ì˜¤í”ˆê³µìœ ì½”ë“œ, ì œëª©
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ìµœì§„í˜ : 2018-03-16
+// íŠ¹ì´ì‚¬í•­ : ê³µìœ ë§í¬
 function fncShareVieolink(shareKey,strTitle) {
 	var dValue = "<iframe width=\"760\" height=\"480\" src=\"http://v.kr.kollus.com/"+shareKey+"?title="+strTitle+"\" frameborder=\"0\" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>";
 	var IE=(document.all)?true:false;
 	if (IE) {
 		window.clipboardData.setData("Text",dValue);
-		alert('µ¿¿µ»ó HTML ¼Ò½º ÄÚµå°¡ º¹»çµÇ¾ú½À´Ï´Ù.\nÄ£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡¼­ ¡®HTML¡¯À» ¼±ÅÃÇÏ½Ã°í, Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.');
+		alert('ë™ì˜ìƒ HTML ì†ŒìŠ¤ ì½”ë“œê°€ ë³µì‚¬ë˜ì—ˆìŠµë‹ˆë‹¤.\nì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì—ì„œ â€˜HTMLâ€™ì„ ì„ íƒí•˜ì‹œê³ , Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
 	} else {
-		temp = prompt("¾Æ·¡ HTML ¼Ò½º ÄÚµå º¹»ç ÈÄ Ä£±¸µé°ú °øÀ¯ ÇÒ ºí·Î±×, Ä«Æä¿¡¼­ ¡®HTML¡¯À» ¼±ÅÃÇÏ½Ã°í, Ctrl+V·Î ºÙ¿© ³Ö±â ÇÏ¼¼¿ä. ^^\nº¹»çÇÑ °÷¿¡¼­ ¿µ»óÀ» °¨»óÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.", dValue);
+		temp = prompt("ì•„ë˜ HTML ì†ŒìŠ¤ ì½”ë“œ ë³µì‚¬ í›„ ì¹œêµ¬ë“¤ê³¼ ê³µìœ  í•  ë¸”ë¡œê·¸, ì¹´í˜ì—ì„œ â€˜HTMLâ€™ì„ ì„ íƒí•˜ì‹œê³ , Ctrl+Vë¡œ ë¶™ì—¬ ë„£ê¸° í•˜ì„¸ìš”. ^^\në³µì‚¬í•œ ê³³ì—ì„œ ì˜ìƒì„ ê°ìƒí•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.", dValue);
 	}
 	jQuery('.close').parent().css('display','none');
 	return;
 }
 
 
-// ÇÔ¼öÀÌ¸§ : fncToTwitter(snsURL,snsTitle,dngNo,dngKbn)
-// ÇÔ¼ö¼³¸í : Æ®À§ÅÍ ÆÛ°¡±â
-// ÀÔ ·Â °ª : ´ÜÃàÁÖ¼Ò,Á¦¸ñ
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
+// í•¨ìˆ˜ì´ë¦„ : fncToTwitter(snsURL,snsTitle,dngNo,dngKbn)
+// í•¨ìˆ˜ì„¤ëª… : íŠ¸ìœ„í„° í¼ê°€ê¸°
+// ì… ë ¥ ê°’ : ë‹¨ì¶•ì£¼ì†Œ,ì œëª©
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
 function fncToTwitter(snsURL,snsTitle,dngNo,dngKbn) {
 	msAjax({
 		url:'/Player/MegaPlayer/PlayerCommon/PlayerGetVodUrl.asp?no='+dngNo+'&dng_kbn='+dngKbn,
@@ -2060,25 +2060,25 @@ function fncToTwitter(snsURL,snsTitle,dngNo,dngKbn) {
 	});
 
 	var toLink;
-	toLink = 'https://twitter.com/intent/tweet?original_referer='+snsURL+'&text='+encodeURIComponent('[¸Ş°¡½ºÅÍµğ] ') + encodeURIComponent(snsTitle) + ' ' + snsURL;
+	toLink = 'https://twitter.com/intent/tweet?original_referer='+snsURL+'&text='+encodeURIComponent('[ë©”ê°€ìŠ¤í„°ë””] ') + encodeURIComponent(snsTitle) + ' ' + snsURL;
 
 	window.open(toLink);
 }
 
-// ÇÔ¼öÀÌ¸§ : fncNtvCastPop(tv_no)
-// ÇÔ¼ö¼³¸í : Æ¼ºñÄ³½ºÆ® ÆË¾÷Ã¢
-// ÀÔ ·Â °ª : Æ¼ºñÄ³½ºÆ® ÀÌº¥Æ®ÄÚµå
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : °í°Ç : 2014-03-10
+// í•¨ìˆ˜ì´ë¦„ : fncNtvCastPop(tv_no)
+// í•¨ìˆ˜ì„¤ëª… : í‹°ë¹„ìºìŠ¤íŠ¸ íŒì—…ì°½
+// ì… ë ¥ ê°’ : í‹°ë¹„ìºìŠ¤íŠ¸ ì´ë²¤íŠ¸ì½”ë“œ
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ê³ ê±´ : 2014-03-10
 function fncNtvCastPop(tv_no) {
     window.open('/Player/tvCast/pop_vod.asp?TV_CAST_NO=' + tv_no, 'ncast_pop', 'width=540 height=410 scrollbars=no');
 }
 
-// ÇÔ¼öÀÌ¸§ : fncToMe2Day(snsURL,snsTitle,dngNo,dngKbn)
-// ÇÔ¼ö¼³¸í : ¹ÌÅõµ¥ÀÌ ÆÛ°¡±â
-// ÀÔ ·Â °ª : ´ÜÃàÁÖ¼Ò,Á¦¸ñ
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
+// í•¨ìˆ˜ì´ë¦„ : fncToMe2Day(snsURL,snsTitle,dngNo,dngKbn)
+// í•¨ìˆ˜ì„¤ëª… : ë¯¸íˆ¬ë°ì´ í¼ê°€ê¸°
+// ì… ë ¥ ê°’ : ë‹¨ì¶•ì£¼ì†Œ,ì œëª©
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
 function fncToMe2Day(snsURL,snsTitle,dngNo,dngKbn) {
 	msAjax({
 		url:'/Player/MegaPlayer/PlayerCommon/PlayerGetVodUrl.asp?no='+dngNo+'&dng_kbn='+dngKbn,
@@ -2088,15 +2088,15 @@ function fncToMe2Day(snsURL,snsTitle,dngNo,dngKbn) {
 
 	var toLink;
 	toLink = 'http://me2day.net/posts/new?new_post[body]=';
-	toLink = toLink + encodeURIComponent('[¸Ş°¡½ºÅÍµğ] ') + encodeURIComponent(snsTitle) + ' ' + snsURL;
+	toLink = toLink + encodeURIComponent('[ë©”ê°€ìŠ¤í„°ë””] ') + encodeURIComponent(snsTitle) + ' ' + snsURL;
 	window.open(toLink);
 }
 
-// ÇÔ¼öÀÌ¸§ : fncToFacebook(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn)
-// ÇÔ¼ö¼³¸í : ÆäÀÌ½ººÏ ÆÛ°¡±â
-// ÀÔ ·Â °ª : ´ÜÃàÁÖ¼Ò,Á¦¸ñ,Å°³ëÆ®-ÅØ½ºÆ®
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
+// í•¨ìˆ˜ì´ë¦„ : fncToFacebook(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn)
+// í•¨ìˆ˜ì„¤ëª… : í˜ì´ìŠ¤ë¶ í¼ê°€ê¸°
+// ì… ë ¥ ê°’ : ë‹¨ì¶•ì£¼ì†Œ,ì œëª©,í‚¤ë…¸íŠ¸-í…ìŠ¤íŠ¸
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
 function fncToFacebook(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn) {
 	msAjax({
 		url:'/Player/MegaPlayer/PlayerCommon/PlayerGetVodUrl.asp?no='+dngNo+'&dng_kbn='+dngKbn,
@@ -2111,7 +2111,7 @@ function fncToFacebook(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn) {
 	snsURL = encodeURIComponent(snsURL);
 	//snsThumbnail = encodeURIComponent("http://img.megastudy.net/teacher_v2/main/t_pic2007/t_mega.gif");
 
-	//¸ğ¹ÙÀÏ & PC ¿©ºÎ °Ë»ç
+	//ëª¨ë°”ì¼ & PC ì—¬ë¶€ ê²€ì‚¬
 	if (navigator.userAgent.lastIndexOf('Android') > 0 || navigator.userAgent.lastIndexOf('iPhone') > 0 || navigator.userAgent.lastIndexOf('iPad') > 0) {
 		toLink = "http://m.facebook.com/sharer.php?u=" + snsURL;
 	} else {
@@ -2120,12 +2120,12 @@ function fncToFacebook(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn) {
 		window.open(toLink);
 }
 
-// ÇÔ¼öÀÌ¸§ : fncToFacebook2(snsURL)
-// ÇÔ¼ö¼³¸í : ÆäÀÌ½ººÏ ÆÛ°¡±â
-// ÀÔ ·Â °ª : ´ÜÃàÁÖ¼Ò,Á¦¸ñ,Å°³ëÆ®-ÅØ½ºÆ®
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : Â÷ÀçÇõ : 2013-05-07
-//          : Â÷ÀçÇõ : 2014-11-04
+// í•¨ìˆ˜ì´ë¦„ : fncToFacebook2(snsURL)
+// í•¨ìˆ˜ì„¤ëª… : í˜ì´ìŠ¤ë¶ í¼ê°€ê¸°
+// ì… ë ¥ ê°’ : ë‹¨ì¶•ì£¼ì†Œ,ì œëª©,í‚¤ë…¸íŠ¸-í…ìŠ¤íŠ¸
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : ì°¨ì¬í˜ : 2013-05-07
+//          : ì°¨ì¬í˜ : 2014-11-04
 function fncToFacebook2(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn) {
 
 	var toLink;
@@ -2136,7 +2136,7 @@ function fncToFacebook2(snsURL,snsTitle,snsKeyNote,dngNo,dngKbn) {
 	window.open(toLink);
 }
 
-// ÀÎ½ºÅ¸±×·¥ ¾²·¹µå, Â÷ÀçÇõ(2024-04-12)
+// ì¸ìŠ¤íƒ€ê·¸ë¨ ì“°ë ˆë“œ, ì°¨ì¬í˜(2024-04-12)
 function fncToThreads(strTitle, snsURL) {
 	var toLink;
 
@@ -2145,11 +2145,11 @@ function fncToThreads(strTitle, snsURL) {
 	window.open(toLink);
 }
 
-// ÇÔ¼öÀÌ¸§ : fncLazyLoadingDataGB(dNm, fnc) , fncCheckVisibleGB( elm, eval ) 
-// ÇÔ¼ö¼³¸í : Lazy Loading ±¸Çö
-// ÀÔ ·Â °ª : ¿µ¿ª ID, È£ÃâÇÔ¼ö
-// ¹İ È¯ °ª : ¾øÀ½
-// ÀÛ ¼º ÀÚ : nin2 : 2021-01-22
+// í•¨ìˆ˜ì´ë¦„ : fncLazyLoadingDataGB(dNm, fnc) , fncCheckVisibleGB( elm, eval ) 
+// í•¨ìˆ˜ì„¤ëª… : Lazy Loading êµ¬í˜„
+// ì… ë ¥ ê°’ : ì˜ì—­ ID, í˜¸ì¶œí•¨ìˆ˜
+// ë°˜ í™˜ ê°’ : ì—†ìŒ
+// ì‘ ì„± ì : nin2 : 2021-01-22
 var isVisibleGB = [];
 function fncLazyLoadingDataGB(dNm, fnc){
     if (fncCheckVisibleGB($('#'+dNm))&&!isVisibleGB[dNm]) {
@@ -2169,10 +2169,10 @@ function fncCheckVisibleGB( elm, eval ) {
 }
 
 
-//Poc °øÅë º¯¼ö
+//Poc ê³µí†µ ë³€ìˆ˜
 var NTPT_PGEXTRA = "";
 
-// ÀÌº¥Æ® Å¬¸¯ È®ÀÎ¿ë 20160321 CHOIJH
+// ì´ë²¤íŠ¸ í´ë¦­ í™•ì¸ìš© 20160321 CHOIJH
 function fncEventClickCnt(evt_nm) {
 	createXMLHttpRequest();
 	xmlHttp.onreadystatechange = handleStateChange;
@@ -2180,7 +2180,7 @@ function fncEventClickCnt(evt_nm) {
 	xmlHttp.send(null);
 }
 
-// ¶óÀÌºê Å¬¸¯ È®ÀÎ¿ë 20160831 CHOIJH
+// ë¼ì´ë¸Œ í´ë¦­ í™•ì¸ìš© 20160831 CHOIJH
 function fncLiveLogCnt(evtno, kbn, mobyn) {
 	createXMLHttpRequest();
 	xmlHttp.onreadystatechange = handleStateChange;
@@ -2188,7 +2188,7 @@ function fncLiveLogCnt(evtno, kbn, mobyn) {
 	xmlHttp.send(null);
 }
 
-// ´Ù¿î·Îµå URL Iframe »ı¼º
+// ë‹¤ìš´ë¡œë“œ URL Iframe ìƒì„±
 function downloadURL(url) {
 	if( $('#idown').length ){
 		$('#idown').attr('src',url);
@@ -2216,16 +2216,16 @@ function kollus_custom_scheme_call(scheme_param) {
 			},
 			etcCallback: function() {
 				if (osName !== 'iOS' && osName !== 'Android') {
-						alert('¸ğ¹ÙÀÏ ´Ü¸»¿¡¼­ ½ÇÇàÇÏ¼Å¾ß ÇÕ´Ï´Ù.');
+						alert('ëª¨ë°”ì¼ ë‹¨ë§ì—ì„œ ì‹¤í–‰í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.');
 					}
 				},
 			notFoundCallback: function() {
 				if (osName == 'iOS') {
-					alert('KollusPlayer ¾ÛÀ» ¼³Ä¡ÇÏ±â À§ÇØ ¾Û½ºÅä¾î·Î ÀÌµ¿ÇÕ´Ï´Ù.');
+					alert('KollusPlayer ì•±ì„ ì„¤ì¹˜í•˜ê¸° ìœ„í•´ ì•±ìŠ¤í† ì–´ë¡œ ì´ë™í•©ë‹ˆë‹¤.');
 					window.location.href = 'https://itunes.apple.com/app/id760006888';
 				}
 				else if(osName =='Android'){
-					alert('KollusPlayer ¾ÛÀ» ¼³Ä¡ÇÏ±â À§ÇØ ÇÃ·¹ÀÌ½ºÅä¾î·Î ÀÌµ¿ÇÕ´Ï´Ù.');
+					alert('KollusPlayer ì•±ì„ ì„¤ì¹˜í•˜ê¸° ìœ„í•´ í”Œë ˆì´ìŠ¤í† ì–´ë¡œ ì´ë™í•©ë‹ˆë‹¤.');
 					window.location.href = 'market://details?id=com.kollus.media';
 				}
 			}

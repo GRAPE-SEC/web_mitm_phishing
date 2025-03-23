@@ -3,51 +3,51 @@ var vSearchADLnk = "";
 var vSearchADImg = "";
 var url_main = "http://"+window.location.hostname;
 
-//ÀÚµ¿ ¿Ï¼º Å¬·¡½º
+//ìë™ ì™„ì„± í´ë˜ìŠ¤
 var KonanAKC_Quick = function () {
-	this.akcInputID2 = null; 		//°Ë»ö¾î ÀÔ·Â Æû ¾ÆÀÌµğ
-	this.akcArrowID2 = null; 		//°Ë»ö¾î ÀÚµ¿¿Ï¼º º¸ÀÌ±â/¼û±â±â ÀÌ¹ÌÁö ¾ÆÀÌµğ
-	this.akcCanvasID2 = null; 		//°Ë»ö¾î ÀÚµ¿¿Ï¼º ÄÁÅ×ÀÌÅÍ ¾ÆÀÌµğ
-	this.akcURL = null; 			//°Ë»ö¾î ÀÚµ¿¿Ï¼º URL
-	this.canvasPosition = null; 	//ÀÚµ¿¿Ï¼º Ã¢ position
-	this.akcDomainNo = 0; 			//ÀÚµ¿¿Ï¼º µµ¸ŞÀÎ ¹øÈ£
-	this.akcExtraView = null; 		//ÀÚµ¿¿Ï¼º µ¥ÀÌÅÍ Áß rank, tag, num Á¤º¸ º¸¿©ÁÙ Áö ¿©ºÎ ¼³Á¤
-	this.hoverAction = null; 		//ÀÚµ¿¿Ï¼º ¸®½ºÆ® hover action
+	this.akcInputID2 = null; 		//ê²€ìƒ‰ì–´ ì…ë ¥ í¼ ì•„ì´ë””
+	this.akcArrowID2 = null; 		//ê²€ìƒ‰ì–´ ìë™ì™„ì„± ë³´ì´ê¸°/ìˆ¨ê¸°ê¸° ì´ë¯¸ì§€ ì•„ì´ë””
+	this.akcCanvasID2 = null; 		//ê²€ìƒ‰ì–´ ìë™ì™„ì„± ì»¨í…Œì´í„° ì•„ì´ë””
+	this.akcURL = null; 			//ê²€ìƒ‰ì–´ ìë™ì™„ì„± URL
+	this.canvasPosition = null; 	//ìë™ì™„ì„± ì°½ position
+	this.akcDomainNo = 0; 			//ìë™ì™„ì„± ë„ë©”ì¸ ë²ˆí˜¸
+	this.akcExtraView = null; 		//ìë™ì™„ì„± ë°ì´í„° ì¤‘ rank, tag, num ì •ë³´ ë³´ì—¬ì¤„ ì§€ ì—¬ë¶€ ì„¤ì •
+	this.hoverAction = null; 		//ìë™ì™„ì„± ë¦¬ìŠ¤íŠ¸ hover action
 	this.clickAction = null;
 	var vMouseLeave = false;
 	var returnLength = 0;
 	var firstSearch = true;
 
-	//ÀÚµ¿¿Ï¼º ÇÊ¼ö ÄÄÆ÷³ÍÆ® ¾ÆÀÌµğ ÁöÁ¤
-	//inputFormID2	: °Ë»ö¾î ÀÔ·Â Æû ¾ÆÀÌµğ
-	//akcArrowImgID2	: °Ë»ö¾î ÀÚµ¿¿Ï¼º ÄÁÅ×ÀÌ³Ê º¸ÀÌ±â/¼û±â±â ÀÌ¹ÌÁö ¾ÆÀÌµğ
-	//akcCanvasID2	: °Ë»ö¾î ÀÚµ¿¿Ï¼º ÄÁÅ×ÀÌ³Ê ¾ÆÀÌµğ
+	//ìë™ì™„ì„± í•„ìˆ˜ ì»´í¬ë„ŒíŠ¸ ì•„ì´ë”” ì§€ì •
+	//inputFormID2	: ê²€ìƒ‰ì–´ ì…ë ¥ í¼ ì•„ì´ë””
+	//akcArrowImgID2	: ê²€ìƒ‰ì–´ ìë™ì™„ì„± ì»¨í…Œì´ë„ˆ ë³´ì´ê¸°/ìˆ¨ê¸°ê¸° ì´ë¯¸ì§€ ì•„ì´ë””
+	//akcCanvasID2	: ê²€ìƒ‰ì–´ ìë™ì™„ì„± ì»¨í…Œì´ë„ˆ ì•„ì´ë””
 	this.setAKCComponentID = function (inputFormID2, akcArrowImgID2, akcCanvasID2) {
 		this.akcInputID2 = inputFormID2;
 		this.akcArrowID2 = akcArrowImgID2;
 		this.akcCanvasID2 = akcCanvasID2;
 	};
 
-	//ÀÚµ¿¿Ï¼º Ã¢ÀÌ »ı¼ºµÉ ±âÁØ À§Ä¡ Á¤º¸ ÁöÁ¤
+	//ìë™ì™„ì„± ì°½ì´ ìƒì„±ë  ê¸°ì¤€ ìœ„ì¹˜ ì •ë³´ ì§€ì •
 	this.setAKCCanvasPosition = function (position) {
 		this.canvasPosition = position;
 	};
 
-	//ÀÚµ¿ ¿Ï¼º °Ë»ö¿¡ ºÎ°¡ µ¥ÀÌÅÍ º¸ÀÌ±â
+	//ìë™ ì™„ì„± ê²€ìƒ‰ì— ë¶€ê°€ ë°ì´í„° ë³´ì´ê¸°
 	this.setAKCExtraView = function (viewRank, viewTag, viewNum) {
 		this.akcExtraView = { rank: viewRank, tag: viewTag, num: viewNum };
 	}
 
-	//ÀÚµ¿¿Ï¼º °»½Å ¿¬°á Á¤º¸
+	//ìë™ì™„ì„± ê°±ì‹  ì—°ê²° ì •ë³´
 	this.setAKCConnectionInfo = function (akcURL, akcDomainNo) {
 		this.akcURL = akcURL;
 		this.akcDomainNo = akcDomainNo;
 	};
 
-	//°Ë»ö¾î ÀÚµ¿¿Ï¼º ±â´É ÃÊ±âÈ­ : ÀÌº¥Æ® µî·Ï ¹× ÀÚµ¿¿Ï¼º ÄÁÅ×ÀÌ³Ê À§Ä¡ Á¶Á¤
-	//action		: ÀÚµ¿¿Ï¼º¸ñ·Ï¿¡¼­ °Ë»ö¾î¸¦ ¼±ÅÃÇÏ°Å³ª ÀÚµ¿¿Ï¼º ÀÔ·Â Æû¿¡¼­ ¿£ÅÍ(¸®ÅÏ)Å°¸¦ ÀÔ·ÂÇßÀ» ¶§ ¼öÇàÇÒ ÇÔ¼ö - ÇÔ¼ö´Â ¹İµå½Ã keywork, rank, tag, num À» ÀÎÀÚ·Î ÁöÁ¤ÇØ¾ß ÇÑ´Ù
-	//hoverAction	: ÀÚµ¿¿Ï¼º ¸ñ·Ï hover ½Ã ¼öÇàÇÒ ÇÔ¼ö, ÇÊ¿ä ¾øÀ» °æ¿ì null -  - ÇÔ¼ö´Â ¹İµå½Ã keywork, rank, tag, num À» ÀÎÀÚ·Î ÁöÁ¤ÇØ¾ß ÇÑ´Ù
-	//on			: ÀÚµ¿¿Ï¼º ±â´É È°¼ºÈ­ ¿©ºÎ (true - È°¼ºÈ­ »óÅÂ·Î ÃÊ±âÈ­ÇÔ)
+	//ê²€ìƒ‰ì–´ ìë™ì™„ì„± ê¸°ëŠ¥ ì´ˆê¸°í™” : ì´ë²¤íŠ¸ ë“±ë¡ ë° ìë™ì™„ì„± ì»¨í…Œì´ë„ˆ ìœ„ì¹˜ ì¡°ì •
+	//action		: ìë™ì™„ì„±ëª©ë¡ì—ì„œ ê²€ìƒ‰ì–´ë¥¼ ì„ íƒí•˜ê±°ë‚˜ ìë™ì™„ì„± ì…ë ¥ í¼ì—ì„œ ì—”í„°(ë¦¬í„´)í‚¤ë¥¼ ì…ë ¥í–ˆì„ ë•Œ ìˆ˜í–‰í•  í•¨ìˆ˜ - í•¨ìˆ˜ëŠ” ë°˜ë“œì‹œ keywork, rank, tag, num ì„ ì¸ìë¡œ ì§€ì •í•´ì•¼ í•œë‹¤
+	//hoverAction	: ìë™ì™„ì„± ëª©ë¡ hover ì‹œ ìˆ˜í–‰í•  í•¨ìˆ˜, í•„ìš” ì—†ì„ ê²½ìš° null -  - í•¨ìˆ˜ëŠ” ë°˜ë“œì‹œ keywork, rank, tag, num ì„ ì¸ìë¡œ ì§€ì •í•´ì•¼ í•œë‹¤
+	//on			: ìë™ì™„ì„± ê¸°ëŠ¥ í™œì„±í™” ì—¬ë¶€ (true - í™œì„±í™” ìƒíƒœë¡œ ì´ˆê¸°í™”í•¨)
 	this.init = function (action, hoverAction, on) {
 		var agt = navigator.userAgent.toLowerCase();
 
@@ -56,24 +56,24 @@ var KonanAKC_Quick = function () {
 			throw "can not find a container for akc data";
 		}
 
-		//ÀÚµ¿ ¿Ï¼º ¸®½ºÆ® hovering action
+		//ìë™ ì™„ì„± ë¦¬ìŠ¤íŠ¸ hovering action
 		if (hoverAction != null) {
 			this.hoverAction = hoverAction;
 		}
 
-		//ÀÚµ¿ ¿Ï¼º ÀÔ·Â Æû ÀÌº¥Æ® µî·Ï - ÇÊ¿ä ¾ø´Ù¸é ÁÖ¼®
+		//ìë™ ì™„ì„± ì…ë ¥ í¼ ì´ë²¤íŠ¸ ë“±ë¡ - í•„ìš” ì—†ë‹¤ë©´ ì£¼ì„
 		if (action != null) {
 			this.clickAction = action;
 			this.setInputTextEventHandler(action);
 			
-			//2016-02-11 by Â÷ÀçÇõ(ºê¶ó¿ìÀú Á¤º¸ Ã¼Å©)
+			//2016-02-11 by ì°¨ì¬í˜(ë¸Œë¼ìš°ì € ì •ë³´ ì²´í¬)
 			if (agt.indexOf("firefox") != -1) {
 				try {
 					var observe = new KonanObserve(jQuery("#" + this.akcInputID2));
 				} catch (e) { }
 			}
 			/*
-			if (jQuery.browser.mozilla == true) { //firefox ¿¡¼­´Â ÇÑ±Û Å°ÀÔ·Â ½Ã keyup ÀÌº¥Æ®°¡ ¹ß»ıÇÏÁö ¾ÊÀ¸¹Ç·Î º°µµÀÇ input form ÀÌº¥Æ® Ã³¸®
+			if (jQuery.browser.mozilla == true) { //firefox ì—ì„œëŠ” í•œê¸€ í‚¤ì…ë ¥ ì‹œ keyup ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ì§€ ì•Šìœ¼ë¯€ë¡œ ë³„ë„ì˜ input form ì´ë²¤íŠ¸ ì²˜ë¦¬
 				try {
 					var observe = new KonanObserve(jQuery("#" + this.akcInputID2));
 				} catch (e) { }
@@ -81,10 +81,10 @@ var KonanAKC_Quick = function () {
 			*/
 		}
 
-		//ÀÚµ¿ ¿Ï¼º È­»ìÇ¥ ÀÌ¹ÌÁö¿¡ ±âº» ÀÌº¥Æ® µî·Ï - ÇÊ¿ä ¾ø´Ù¸é ÁÖ¼®
+		//ìë™ ì™„ì„± í™”ì‚´í‘œ ì´ë¯¸ì§€ì— ê¸°ë³¸ ì´ë²¤íŠ¸ ë“±ë¡ - í•„ìš” ì—†ë‹¤ë©´ ì£¼ì„
 		this.setDefaultArrowImageEventHandler();
 
-		//ÀÚµ¿¿Ï¼º ÄÑ±â/²ô±â ÀÌº¥Æ® µî·Ï - ÇÊ¿ä ¾ø´Ù¸é ÁÖ¼®
+		//ìë™ì™„ì„± ì¼œê¸°/ë„ê¸° ì´ë²¤íŠ¸ ë“±ë¡ - í•„ìš” ì—†ë‹¤ë©´ ì£¼ì„
 		if (typeof on == "boolean") {
 			this.setDefaultOnOffFunction(on, this.akcCanvasID2);
 		}
@@ -105,13 +105,13 @@ var KonanAKC_Quick = function () {
 			firstSearch = false;
 		}
 
-		//°Ë»ö ¹öÆ° Å¬¸¯½Ã
+		//ê²€ìƒ‰ ë²„íŠ¼ í´ë¦­ì‹œ
 		this.setSearchButtonEventHandler();
 	};
 
 
 
-	// °Ë»ö ¹öÆ° Å¬¸¯ ÀÌº¥Æ® ¼ÂÆÃ
+	// ê²€ìƒ‰ ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ ì…‹íŒ…
 	this.setSearchButtonEventHandler = function () {
 		jQuery("#searchBtn2").bind("click", function () {
 			if (jQuery("#akcKwd2").val() != ""){
@@ -120,8 +120,8 @@ var KonanAKC_Quick = function () {
 		});
 	}
 
-	//ÀÚµ¿¿Ï¼º ÄÑ±â/²ô±â ÀÌº¥Æ® µî·Ï : akcFoot2À» Å¬·¡½º·Î °¡Áø label ÅÂ±×¿¡ ÄÑ±â/²ô±â ±â´É µî·ÏÇÔ
-	//on : ½ÃÀÛ ½Ã »óÅÂ
+	//ìë™ì™„ì„± ì¼œê¸°/ë„ê¸° ì´ë²¤íŠ¸ ë“±ë¡ : akcFoot2ì„ í´ë˜ìŠ¤ë¡œ ê°€ì§„ label íƒœê·¸ì— ì¼œê¸°/ë„ê¸° ê¸°ëŠ¥ ë“±ë¡í•¨
+	//on : ì‹œì‘ ì‹œ ìƒíƒœ
 	this.setDefaultOnOffFunction = function (on, canvasID) {
 		var url = this.akcURL;
 		var input2 = this.akcInputID2;
@@ -134,11 +134,11 @@ var KonanAKC_Quick = function () {
 
 		if (on) {
 			akcOnOf.removeClass("off").addClass("on");
-			akcOnOf.text("ÀÚµ¿¿Ï¼º ²ô±â"); //²ô±â
+			akcOnOf.text("ìë™ì™„ì„± ë„ê¸°"); //ë„ê¸°
 			updateImage("up");
 		} else {
 			akcOnOf.removeClass("on").addClass("off");
-			akcOnOf.text("ÀÚµ¿¿Ï¼º ÄÑ±â"); //ÄÑ±â
+			akcOnOf.text("ìë™ì™„ì„± ì¼œê¸°"); //ì¼œê¸°
 			updateImage("on");
 		}
 
@@ -147,7 +147,7 @@ var KonanAKC_Quick = function () {
 		});
 	};
 
-	//ÀÚµ¿ ¿Ï¼º È­»ìÇ¥ ÀÌ¹ÌÁö Å¬¸¯ ÀÌº¥Æ®
+	//ìë™ ì™„ì„± í™”ì‚´í‘œ ì´ë¯¸ì§€ í´ë¦­ ì´ë²¤íŠ¸
 	this.setDefaultArrowImageEventHandler = function () {
 		var url = this.akcURL;
 		var input2 = this.akcInputID2;
@@ -162,8 +162,8 @@ var KonanAKC_Quick = function () {
 		});
 	};
 
-	//ÀÚµ¿ ¿Ï¼º »ı¼º ÀÔ·Â Æû¿¡ ±âº» ÀÌº¥Æ® ÇÚµé·¯ µî·Ï (Å° ÀÔ·Â ½Ã ÀÚµ¿¿Ï¼º ¸ñ·ÏÀ» °»½Å)
-	//action : ÀÚµ¿¿Ï¼ºÀ» ¼±ÅÃÇÏ°Å³ª ÀÚµ¿¿Ï¼º ÀÔ·Â Æû¿¡¼­ ¿£ÅÍ(¸®ÅÏ)Å°¸¦ ÀÔ·ÂÇßÀ» ¼öÇàÇÒ ÇÔ¼ö
+	//ìë™ ì™„ì„± ìƒì„± ì…ë ¥ í¼ì— ê¸°ë³¸ ì´ë²¤íŠ¸ í•¸ë“¤ëŸ¬ ë“±ë¡ (í‚¤ ì…ë ¥ ì‹œ ìë™ì™„ì„± ëª©ë¡ì„ ê°±ì‹ )
+	//action : ìë™ì™„ì„±ì„ ì„ íƒí•˜ê±°ë‚˜ ìë™ì™„ì„± ì…ë ¥ í¼ì—ì„œ ì—”í„°(ë¦¬í„´)í‚¤ë¥¼ ì…ë ¥í–ˆì„ ìˆ˜í–‰í•  í•¨ìˆ˜
 	this.setInputTextEventHandler = function (action) {
 		var node = jQuery("#" + this.akcInputID2);
 		var akcOnOf = jQuery("#akcFoot2 > p");
@@ -227,14 +227,14 @@ var KonanAKC_Quick = function () {
 									jQuery(nodes[i - 1]).addClass("selects");
 								}
 								jQuery(node).val(jQuery(nodes[i - 1]).text());
-								fncSetTecCd(jQuery(nodes[i - 1]).text()); 		//ÀÚµ¿¿Ï¼º ¿ìÃâ °Ë»ö ±¤°í ³ëÃâ
+								fncSetTecCd(jQuery(nodes[i - 1]).text()); 		//ìë™ì™„ì„± ìš°ì¶œ ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 								break;
 							}
 						}
 					} else {
 						nodes.eq(nodeLen - 1).addClass("selects");
 						jQuery(node).val(nodes.eq(nodeLen - 1).text());
-						fncSetTecCd(nodes.eq(nodeLen - 1).text()); 			//ÀÚµ¿¿Ï¼º ¿ìÃâ °Ë»ö ±¤°í ³ëÃâ
+						fncSetTecCd(nodes.eq(nodeLen - 1).text()); 			//ìë™ì™„ì„± ìš°ì¶œ ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 					}
 					break;
 
@@ -256,14 +256,14 @@ var KonanAKC_Quick = function () {
 									jQuery(nodes[i + 1]).addClass("selects");
 								}
 								jQuery(node).val(jQuery(nodes[i + 1]).text());
-								fncSetTecCd(jQuery(nodes[i + 1]).text()); 		//ÀÚµ¿¿Ï¼º ¿ìÃâ °Ë»ö ±¤°í ³ëÃâ
+								fncSetTecCd(jQuery(nodes[i + 1]).text()); 		//ìë™ì™„ì„± ìš°ì¶œ ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 								break;
 							}
 						}
 					} else {
 						nodes.eq(0).addClass("selects");
 						jQuery(node).val(nodes.eq(0).text());
-						fncSetTecCd(nodes.eq(0).text()); 						//ÀÚµ¿¿Ï¼º ¿ìÃâ °Ë»ö ±¤°í ³ëÃâ
+						fncSetTecCd(nodes.eq(0).text()); 						//ìë™ì™„ì„± ìš°ì¶œ ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 					}
 					break;
 
@@ -294,7 +294,7 @@ var KonanAKC_Quick = function () {
 					jQuery(node).css("background-image", "url()");
 				} else if (vSearchADTxt != "" && jQuery(node).val() == vSearchADTxt) {
 					jQuery(node).val('');
-					jQuery(node).css("color", "");			// ÅØ½ºÆ® »ö±ò º¯°æ Ã³¸®
+					jQuery(node).css("color", "");			// í…ìŠ¤íŠ¸ ìƒ‰ê¹” ë³€ê²½ ì²˜ë¦¬
 				}
 
 				fncSetCanvas("focus", url, input2, canvas, domain, view, update, mouseA);
@@ -306,14 +306,14 @@ var KonanAKC_Quick = function () {
 		try {
 			var body = jQuery("#akcBody2");
 			var input2 = this.akcInputID2;
-			var flag = 2; 			//0: Ã¹´Ü¾î, 1: ³¡´Ü¾î, 2: È¥ÇÕ (ÀÏ´ÜÀº Ã¹´Ü¾î¸¸ ÇÏ´Â °ÍÀ¸·Î °íÁ¤ÇÔ)
+			var flag = 2; 			//0: ì²«ë‹¨ì–´, 1: ëë‹¨ì–´, 2: í˜¼í•© (ì¼ë‹¨ì€ ì²«ë‹¨ì–´ë§Œ í•˜ëŠ” ê²ƒìœ¼ë¡œ ê³ ì •í•¨)
 
 			if (!seed || seed == vSearchADTxt) {
 				fncSetInputDefault();
 				return;
 			}
 
-			if (seed == "sh"){ seed = "³ë" }
+			if (seed == "sh"){ seed = "ë…¸" }
 
 			jQuery.ajax({
 				url: url,
@@ -333,7 +333,7 @@ var KonanAKC_Quick = function () {
 						word = unescape(entry["word"]);
 
 						if (entryIndex == 0) {
-							fncSetTecCd(word);							// ÀÚµ¿¿Ï¼º ¿ìÃà °Ë»ö ±¤°í ³ëÃâ
+							fncSetTecCd(word);							// ìë™ì™„ì„± ìš°ì¶• ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 							strHtml += '<li class="selects">';
 						} else {
 							strHtml += '<li>';
@@ -381,7 +381,7 @@ var KonanAKC_Quick = function () {
 		}
 	};
 
-	//ÀÚµ¿¿Ï¼º ·¹ÀÌ¾îÃ¢ ÄÁÆ®·Ñ
+	//ìë™ì™„ì„± ë ˆì´ì–´ì°½ ì»¨íŠ¸ë¡¤
 	function fncSetCanvas(type, url, input2, canvas, domain, view, update, mouseA) {
 		//alert(canvas);
 
@@ -389,14 +389,14 @@ var KonanAKC_Quick = function () {
 		var InputBox = jQuery("#" + input2)
 		var akcOnOf = jQuery("#akcFoot2 > p");
 
-		//document.title = "Å¸ÀÔ:"+type+", °á°ú:"+returnLength+", "+layer.hasClass("akcHide2");
+		//document.title = "íƒ€ì…:"+type+", ê²°ê³¼:"+returnLength+", "+layer.hasClass("akcHide2");
 
 //		alert(returnLength);
 		
 		var akcBox2_yn = jQuery("#akcBox2").css("display");
 		var akcWrap_yn = jQuery(".newSearchWrap--list").css("display");
 
-		//°Ë»ö °á°ú°¡ ¾øÀ» °æ¿ì
+		//ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ì„ ê²½ìš°
 		if (type == "none") {
 			returnLength = 0;
 			if (layer.hasClass("akcShow2")) {
@@ -405,12 +405,12 @@ var KonanAKC_Quick = function () {
 			return false;
 		}
 
-		//È­»ìÇ¥¸¦ ´­·¶À» °æ¿ì ÀÚµ¿¿Ï¼º ±â´ÉÀÌ ²¸Àú ÀÖÀ¸¸é ÀÚµ¿¿Ï¼ºÀ» ÄÑÁØ´Ù
+		//í™”ì‚´í‘œë¥¼ ëˆŒë €ì„ ê²½ìš° ìë™ì™„ì„± ê¸°ëŠ¥ì´ ê»´ì € ìˆìœ¼ë©´ ìë™ì™„ì„±ì„ ì¼œì¤€ë‹¤
 		if (type == "arrow" && akcOnOf.hasClass("off")) {
 			update(url, jQuery("#" + input2).val(), canvas, domain, view, update, mouseA);
 
 			akcOnOf.removeClass("off").addClass("on");
-			akcOnOf.text("ÀÚµ¿¿Ï¼º ²ô±â");
+			akcOnOf.text("ìë™ì™„ì„± ë„ê¸°");
 			setLayCookie("layDisp", "no", 30, 7);
 			updateImage("up");
 			return false;
@@ -423,25 +423,25 @@ var KonanAKC_Quick = function () {
 			}
 
 			if (layer.hasClass("akcHide2")) {
-				//focus°¡ À§Ä¡ÇÏ°í °Ë»ö °á°ú°¡ ¾øÀ» °æ¿ì
+				//focusê°€ ìœ„ì¹˜í•˜ê³  ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ì„ ê²½ìš°
 				if (type != "arrow" && returnLength == 0) {
-					//°Ë»ö °á°ú°¡ ¾øÀ» °æ¿ì ·¹ÀÌ¾î°¡ º¸ÀÌ¸é ¾ÈµÊ
+					//ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ì„ ê²½ìš° ë ˆì´ì–´ê°€ ë³´ì´ë©´ ì•ˆë¨
 				} else {
 					layer.removeClass("akcHide2").addClass("akcShow2");
 					updateImage("down");
 				}
 			} else {
-				//°Ë»ö °á°ú°¡ ÀÖ¾î ·¹ÀÌ¾î°¡ È°¼ºÈ­ µÇ¾î ÀÖ´Â »óÅÂ
+				//ê²€ìƒ‰ ê²°ê³¼ê°€ ìˆì–´ ë ˆì´ì–´ê°€ í™œì„±í™” ë˜ì–´ ìˆëŠ” ìƒíƒœ
 				if (type == "result" && returnLength != 0) {
 					if (akcBox2_yn == "none") {
 						return; 
 					}
 				}
 
-				//ÀÚµ¿¿Ï¼º ²ô±â ¹öÆ°À» ´­·¶À» °æ¿ì
+				//ìë™ì™„ì„± ë„ê¸° ë²„íŠ¼ì„ ëˆŒë €ì„ ê²½ìš°
 				if (type == "onoff" && akcOnOf.hasClass("on")) {
 					akcOnOf.removeClass("on").addClass("off");
-					akcOnOf.text("ÀÚµ¿¿Ï¼º ÄÑ±â");
+					akcOnOf.text("ìë™ì™„ì„± ì¼œê¸°");
 					updateImage("on");
 					setLayCookie("layDisp", "yes", 30, 7);
 
@@ -455,7 +455,7 @@ var KonanAKC_Quick = function () {
 	}
 
 
-	//ÀÚµ¿ ¿Ï¼º È­»ìÇ¥ ÀÌ¹ÌÁö º¯°æ
+	//ìë™ ì™„ì„± í™”ì‚´í‘œ ì´ë¯¸ì§€ ë³€ê²½
 	function updateImage(type) {
 		try {
 			var arrowID = jQuery("#akcArrow2 > img")
@@ -475,10 +475,10 @@ var KonanAKC_Quick = function () {
 	function fncSetInputDefault() {
 		var body = jQuery("#akcBody2");
 		body.text("");
-		body.append('<ul><li class="nodata">ÇöÀç ÀÚµ¿¿Ï¼º ±â´ÉÀ» »ç¿ëÇÏ°í °è½Ê´Ï´Ù.</li></ul>');
+		body.append('<ul><li class="nodata">í˜„ì¬ ìë™ì™„ì„± ê¸°ëŠ¥ì„ ì‚¬ìš©í•˜ê³  ê³„ì‹­ë‹ˆë‹¤.</li></ul>');
 	}
 
-	//Å°¿öµå ÇÏÀÌ¶óÀÌÆÃ Ã³¸®
+	//í‚¤ì›Œë“œ í•˜ì´ë¼ì´íŒ… ì²˜ë¦¬
 	function fncReplaceKeyword(word, seed) {
 		if (word) {
 			word = word.replace(seed, "<strong>" + seed + "</strong>");
@@ -493,7 +493,7 @@ var KonanAKC_Quick = function () {
 		var cate = trim(jQuery('#tSelectbox2').val());
 
 		if (sword == "" || ackInput.css("background-image") == "") {
-			alert('°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.');
+			alert('ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.');
 			return;
 		}
 
@@ -501,7 +501,7 @@ var KonanAKC_Quick = function () {
 			location.href = vSearchADLnk;
 		} else {
 			strUrl = setActionPage(cate);
-			if (sword == "sh"){ sword = "³ë" }
+			if (sword == "sh"){ sword = "ë…¸" }
 			location.href = strUrl + "&kwd=" + escape(sword) + "&preKwd=" + escape(Hkwd);
 		}
 	}
@@ -514,18 +514,18 @@ var KonanAKC_Quick = function () {
 		var actionpage = url_main+"/search/search_main.asp?cate=10";
 
 		switch(str){
-			case "°­ÁÂ"			: actionpage = url_main+"/search/search_chr.asp?cate=0"; break;
-			case "±³Àç"			: actionpage = url_main+"/search/search_book.asp?cate=1"; break;
-			case "¿Â¶óÀÎ¼­Á¡"	: actionpage = url_main+"/search/search_book2.asp?cate=2"; break;
-			case "ÀÔ½ÃÁ¤º¸"		: actionpage = url_main+"/search/search_ipsi.asp?cate=3"; break;
-			case "ÃßÃµÁ¤º¸"		: actionpage = url_main+"/search/search_recom.asp?cate=4"; break;
-			case "½º¸¶Æ®Á¸"		: actionpage = url_main+"/search/search_pmp.asp?cate=5"; break;
-			case "¼­ºñ½ºÀÌ¿ë"	: actionpage = url_main+"/search/search_faq.asp?cate=6"; break;
+			case "ê°•ì¢Œ"			: actionpage = url_main+"/search/search_chr.asp?cate=0"; break;
+			case "êµì¬"			: actionpage = url_main+"/search/search_book.asp?cate=1"; break;
+			case "ì˜¨ë¼ì¸ì„œì "	: actionpage = url_main+"/search/search_book2.asp?cate=2"; break;
+			case "ì…ì‹œì •ë³´"		: actionpage = url_main+"/search/search_ipsi.asp?cate=3"; break;
+			case "ì¶”ì²œì •ë³´"		: actionpage = url_main+"/search/search_recom.asp?cate=4"; break;
+			case "ìŠ¤ë§ˆíŠ¸ì¡´"		: actionpage = url_main+"/search/search_pmp.asp?cate=5"; break;
+			case "ì„œë¹„ìŠ¤ì´ìš©"	: actionpage = url_main+"/search/search_faq.asp?cate=6"; break;
 		}
 		return actionpage;
 	}
 
-	//ÀÚµ¿¿Ï¼º ¿ìÃâ °Ë»ö ±¤°í ³ëÃâ
+	//ìë™ì™„ì„± ìš°ì¶œ ê²€ìƒ‰ ê´‘ê³  ë…¸ì¶œ
 	function fncSetTecCd(kwd) {
 		jQuery.get("/common/js/search/akc_tec.asp", { 'kwd': escape(kwd) }, function (data, textStatus) {
 			var $akcBox2 = jQuery('#akcBox2');
@@ -536,14 +536,14 @@ var KonanAKC_Quick = function () {
 		});
 	}
 
-	//¸¶¿ì½º Ä¿¼­°¡ input box¸¦ ¹ÛÀ¸·Î ³ª°¥ °æ¿ì
+	//ë§ˆìš°ìŠ¤ ì»¤ì„œê°€ input boxë¥¼ ë°–ìœ¼ë¡œ ë‚˜ê°ˆ ê²½ìš°
 	jQuery(".search_wrap").bind("mouseleave", function () {
 		vMouseLeave = true;
 	}).bind("mouseenter", function () {
 		vMouseLeave = false;
 	});
 
-	//input box¿¡ ¸¶¿ì½º°¡ À§Ä¡ÇÒ °æ¿ì
+	//input boxì— ë§ˆìš°ìŠ¤ê°€ ìœ„ì¹˜í•  ê²½ìš°
 	jQuery(document).bind("mousedown", function () {
 		try {
 			if (vMouseLeave && jQuery("#akcKwd2").val() == "") {

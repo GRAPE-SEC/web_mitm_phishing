@@ -1,4 +1,4 @@
-// ¾ÆÀÌµğ Ã¼Å©
+// ì•„ì´ë”” ì²´í¬
 function check_id(input)	{
 	var err_cnt=0
 	for (var i = 0; i < input.length; i++)	{
@@ -12,7 +12,7 @@ function check_id(input)	{
 		return false;
 }
 
-//¼ıÀÚ Ã¼Å©
+//ìˆ«ì ì²´í¬
  function IsNumberCheck(obj)
 {
 	var Chk = "0123456789"
@@ -34,7 +34,7 @@ function check_id(input)	{
 					
 	if (Chk.length == j)
 	{
-		alert('¼ıÀÚ¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.');
+		alert('ìˆ«ìë§Œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
 		obj.value="";
 		return false;
 	}
@@ -44,7 +44,7 @@ function check_id(input)	{
 	}
 }
 
-//	±â  ´É : ¿µ¹®, ¼ıÀÚÈ¥¿ë¸¸ »ç¿ë°¡´É
+//	ê¸°  ëŠ¥ : ì˜ë¬¸, ìˆ«ìí˜¼ìš©ë§Œ ì‚¬ìš©ê°€ëŠ¥
 function checkval(sExpression)	
 {		
 	for (i = 0; i < sExpression.length; i++) 
@@ -63,7 +63,7 @@ function checkval(sExpression)
 	return true ;
 }
 
-//	±â  ´É : ¿µ¹®, ¼ıÀÚ, ÇÑ±ÛÈ¥¿ë¸¸ »ç¿ë°¡´É
+//	ê¸°  ëŠ¥ : ì˜ë¬¸, ìˆ«ì, í•œê¸€í˜¼ìš©ë§Œ ì‚¬ìš©ê°€ëŠ¥
 function checkvalAll(sExpression)	
 {		
 	for (i = 0; i < sExpression.length; i++) 
@@ -85,7 +85,7 @@ function checkvalAll(sExpression)
 }
 
 
-//	±â  ´É : »ç¿ëÀÚ°¡ ¿øÇÏ´Â Æ¯¼ö¹®ÀÚÁ¸Àç¿©ºÎ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é true¸¦ ¸®ÅÏ"|^;:,'\""
+//	ê¸°  ëŠ¥ : ì‚¬ìš©ìê°€ ì›í•˜ëŠ” íŠ¹ìˆ˜ë¬¸ìì¡´ì¬ì—¬ë¶€ í¬í•¨ë˜ì–´ ìˆìœ¼ë©´ trueë¥¼ ë¦¬í„´"|^;:,'\""
 function checkChar(sExpression, sChar)
 {
 	var sEngNum = sChar; 

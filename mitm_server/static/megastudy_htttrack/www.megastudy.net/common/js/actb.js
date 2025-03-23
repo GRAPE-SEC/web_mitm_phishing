@@ -13,7 +13,7 @@ function actb(obj,ca, img){
 	this.actb_bgColor = '#FFFFFF';
 	this.actb_textColor = '#000000';
 	this.actb_hColor = '#FDF4D3';
-	this.actb_fFamily = 'µ¸À½Ã¼';
+	this.actb_fFamily = 'ë‹ìŒì²´';
 	//this.actb_fFamily = 'Verdana';
 	this.actb_fSize = '11px';
 	this.actb_hStyle = 'color:#FF6600';

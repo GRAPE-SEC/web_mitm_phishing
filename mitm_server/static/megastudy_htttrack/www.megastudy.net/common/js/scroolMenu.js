@@ -1,28 +1,28 @@
 /*
 '=======================================================================
-'¾÷ ¹« ¸í : ¸Ş°¡½ºÅÍµğ-common
-'¸ğµâ±â´É : ¸Ş°¡½ºÅÍµğ ½ºÅ©·Ñ ¸Ş´º js ÆÄÀÏ
-'ÆÄ ÀÏ ¸í : scroolMenu.js
-'ÀÛ¼ºÀÏÀÚ : 2004/11/10
-'ÀÛ ¼º ÀÚ : ±è¿µ¹«
+'ì—… ë¬´ ëª… : ë©”ê°€ìŠ¤í„°ë””-common
+'ëª¨ë“ˆê¸°ëŠ¥ : ë©”ê°€ìŠ¤í„°ë”” ìŠ¤í¬ë¡¤ ë©”ë‰´ js íŒŒì¼
+'íŒŒ ì¼ ëª… : scroolMenu.js
+'ì‘ì„±ì¼ì : 2004/11/10
+'ì‘ ì„± ì : ê¹€ì˜ë¬´
 '-----------------------------------------------------------------------
-'º¯°æÀÏÀÚ   º¯°æÀÚ  º¯µ¿³»¿ª
+'ë³€ê²½ì¼ì   ë³€ê²½ì  ë³€ë™ë‚´ì—­
 '=======================================================================
 '
 '=======================================================================
 */
 
-var stmnLEFT = 868; // ½ºÅ©·Ñ¸Ş´ºÀÇ ÁÂÃø À§Ä¡. ÇÊ¿ä ¾øÀ» °æ¿ì »èÁ¦
-var stmnGAP1 = 228 // ÆäÀÌÁö Çì´õºÎºĞÀÇ ¿©¹é (ÀÌº¸´Ù À§·Î´Â ¿Ã¶ó°¡Áö ¾ÊÀ½) : °Ë»ö¹Ù ÀÌÀü 111 (41Áõ°¡)
-//var stmnGAP2 = 10; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú »ó´Ü°ú ¾à°£ ¶ç¿ò. ÇÊ¿ä¾øÀ¸¸é 0À¸·Î ¼¼ÆÃ
-var stmnGAP2 =  10; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú »ó´Ü°ú ¾à°£ ¶ç¿ò. ÇÊ¿ä¾øÀ¸¸é 0À¸·Î ¼¼ÆÃ
-var stmnBASE = 200; // ½ºÅ©·Ñ¸Ş´º ÃÊ±â ½ÃÀÛÀ§Ä¡ (¾Æ¹«·¸°Ô³ª ÇØµµ »ó°üÀº ¾øÁö¸¸ stmnGAP1°ú ¾à°£ Â÷ÀÌ¸¦ ÁÖ´Â°Ô º¸±â ÁÁÀ½)
-var stmnActivateSpeed = 100; // ¿òÁ÷ÀÓÀ» °¨ÁöÇÏ´Â ¼Óµµ (¼ıÀÚ°¡ Å¬¼ö·Ï ´Ê°Ô ¾Ë¾ÆÂ÷¸²)
-var stmnScrollSpeed = 10; // ½ºÅ©·ÑµÇ´Â ¼Óµµ (Å¬¼ö·Ï ´Ê°Ô ¿òÁ÷ÀÓ)
+var stmnLEFT = 868; // ìŠ¤í¬ë¡¤ë©”ë‰´ì˜ ì¢Œì¸¡ ìœ„ì¹˜. í•„ìš” ì—†ì„ ê²½ìš° ì‚­ì œ
+var stmnGAP1 = 228 // í˜ì´ì§€ í—¤ë”ë¶€ë¶„ì˜ ì—¬ë°± (ì´ë³´ë‹¤ ìœ„ë¡œëŠ” ì˜¬ë¼ê°€ì§€ ì•ŠìŒ) : ê²€ìƒ‰ë°” ì´ì „ 111 (41ì¦ê°€)
+//var stmnGAP2 = 10; // ìŠ¤í¬ë¡¤ì‹œ ë¸Œë¼ìš°ì € ìƒë‹¨ê³¼ ì•½ê°„ ë„ì›€. í•„ìš”ì—†ìœ¼ë©´ 0ìœ¼ë¡œ ì„¸íŒ…
+var stmnGAP2 =  10; // ìŠ¤í¬ë¡¤ì‹œ ë¸Œë¼ìš°ì € ìƒë‹¨ê³¼ ì•½ê°„ ë„ì›€. í•„ìš”ì—†ìœ¼ë©´ 0ìœ¼ë¡œ ì„¸íŒ…
+var stmnBASE = 200; // ìŠ¤í¬ë¡¤ë©”ë‰´ ì´ˆê¸° ì‹œì‘ìœ„ì¹˜ (ì•„ë¬´ë ‡ê²Œë‚˜ í•´ë„ ìƒê´€ì€ ì—†ì§€ë§Œ stmnGAP1ê³¼ ì•½ê°„ ì°¨ì´ë¥¼ ì£¼ëŠ”ê²Œ ë³´ê¸° ì¢‹ìŒ)
+var stmnActivateSpeed = 100; // ì›€ì§ì„ì„ ê°ì§€í•˜ëŠ” ì†ë„ (ìˆ«ìê°€ í´ìˆ˜ë¡ ëŠ¦ê²Œ ì•Œì•„ì°¨ë¦¼)
+var stmnScrollSpeed = 10; // ìŠ¤í¬ë¡¤ë˜ëŠ” ì†ë„ (í´ìˆ˜ë¡ ëŠ¦ê²Œ ì›€ì§ì„)
 
 var stmnTimer;
 
-// ½ºÅ©·Ñ ¸Ş´ºÀÇ À§Ä¡ °»½Å
+// ìŠ¤í¬ë¡¤ ë©”ë‰´ì˜ ìœ„ì¹˜ ê°±ì‹ 
 function RefreshStaticMenu()
 {	 
 	//try{
@@ -43,42 +43,42 @@ function RefreshStaticMenu()
 	//}catch(e){}
 }
 
-// ¸Ş´º ON/OFF ÇÏ±â
+// ë©”ë‰´ ON/OFF í•˜ê¸°
 function ToggleAnimate()
 {
-		if (ANIMATE.checked) {	// ÀÌµ¿ÇÏ±â ¹öÆ°ÀÌ Ã¼Å©µÇ¾ú´Ù¸é
-		        RefreshStaticMenu(); // ¸Ş´ºÀ§Ä¡¸¦ ´Ù½Ã Á¶Á¤
-                scrCookie("ANIMATE", "true", 1, 1); // ÀÌµ¿ÀÌ ON »óÅÂ¶ó°í ÄíÅ°¸¦ ¼³Á¤
+		if (ANIMATE.checked) {	// ì´ë™í•˜ê¸° ë²„íŠ¼ì´ ì²´í¬ë˜ì—ˆë‹¤ë©´
+		        RefreshStaticMenu(); // ë©”ë‰´ìœ„ì¹˜ë¥¼ ë‹¤ì‹œ ì¡°ì •
+                scrCookie("ANIMATE", "true", 1, 1); // ì´ë™ì´ ON ìƒíƒœë¼ê³  ì¿ í‚¤ë¥¼ ì„¤ì •
 				document.getElementById("STATICMENU").style.position = "absolute";
        }
-        else {	// ¾Æ´Ï¶ó¸é... (ÀÌµ¿ÇÏ±â ¹öÆ°ÀÌ Ã¼Å©µÇ¾î ÀÖÁö ¾ÊÀ¸¸é)
-                clearTimeout(stmnTimer); // ÀÌµ¿¿ë Å¸ÀÌ¸Ó ÇØÁ¦
-                STATICMENU.style.top = stmnGAP1; // ¸Ş´ºÀÇ À§Ä¡¸¦ »ó´ÜÀ¸·Î ¿Å±ä´Ù.
-                scrCookie("ANIMATE", "false", 1, 1); // ÀÌµ¿ÀÌ ON »óÅÂ¶ó°í ÄíÅ°¸¦ ¼³Á¤
+        else {	// ì•„ë‹ˆë¼ë©´... (ì´ë™í•˜ê¸° ë²„íŠ¼ì´ ì²´í¬ë˜ì–´ ìˆì§€ ì•Šìœ¼ë©´)
+                clearTimeout(stmnTimer); // ì´ë™ìš© íƒ€ì´ë¨¸ í•´ì œ
+                STATICMENU.style.top = stmnGAP1; // ë©”ë‰´ì˜ ìœ„ì¹˜ë¥¼ ìƒë‹¨ìœ¼ë¡œ ì˜®ê¸´ë‹¤.
+                scrCookie("ANIMATE", "false", 1, 1); // ì´ë™ì´ ON ìƒíƒœë¼ê³  ì¿ í‚¤ë¥¼ ì„¤ì •
         }
 }
 
-// ¸Ş´º ÃÊ±âÈ­
+// ë©”ë‰´ ì´ˆê¸°í™”
 function InitializeStaticMenu()
 {
 	try{
-			if (RedCookie("ANIMATE", 1) == "true") {	// ÀÌµ¿ on »óÅÂ¶ó¸é
-					ANIMATE.checked = true; // Ã¼Å©Ç¥½Ã¸¦ ÇÏ°í
-					STATICMENU.style.top = Math.max(document.documentElement.scrollTop,document.body.scrollTop) + stmnBASE; // ±âº»À§Ä¡·Î ÀÌµ¿ÇÑ´Ù.
-					RefreshStaticMenu(); // ½ºÅ©¸³Æ® °¡µ¿
+			if (RedCookie("ANIMATE", 1) == "true") {	// ì´ë™ on ìƒíƒœë¼ë©´
+					ANIMATE.checked = true; // ì²´í¬í‘œì‹œë¥¼ í•˜ê³ 
+					STATICMENU.style.top = Math.max(document.documentElement.scrollTop,document.body.scrollTop) + stmnBASE; // ê¸°ë³¸ìœ„ì¹˜ë¡œ ì´ë™í•œë‹¤.
+					RefreshStaticMenu(); // ìŠ¤í¬ë¦½íŠ¸ ê°€ë™
 			}
-			else {	// ÀÌµ¿»óÅÂ°¡ off »óÅÂ¶ó¸é
-					ANIMATE.checked = false; // Ã¼Å©Ç¥½Ã¸¦ Áö¿ì°í
-					STATICMENU.style.top = Math.max(document.documentElement.scrollTop,document.body.scrollTop) + stmnGAP1; // ¸Ç À§¿¡ µé·¯ ºÙ´Â´Ù.
+			else {	// ì´ë™ìƒíƒœê°€ off ìƒíƒœë¼ë©´
+					ANIMATE.checked = false; // ì²´í¬í‘œì‹œë¥¼ ì§€ìš°ê³ 
+					STATICMENU.style.top = Math.max(document.documentElement.scrollTop,document.body.scrollTop) + stmnGAP1; // ë§¨ ìœ„ì— ë“¤ëŸ¬ ë¶™ëŠ”ë‹¤.
 			}
 
-			//STATICMENU.style.left = stmnLEFT; // ¸Ş´º ¿ŞÂÊ À§Ä¡ ÃÊ±âÈ­. ÇÊ¿ä¾øÀ» °æ¿ì »èÁ¦
+			//STATICMENU.style.left = stmnLEFT; // ë©”ë‰´ ì™¼ìª½ ìœ„ì¹˜ ì´ˆê¸°í™”. í•„ìš”ì—†ì„ ê²½ìš° ì‚­ì œ
 
 	}catch(e){}
 }
 
 
-// ÄíÅ° ÀĞ±â
+// ì¿ í‚¤ ì½ê¸°
 function RedCookie(name, cookie_num)
 {
 	var eventCookie=getCookie("ANIMATE");
@@ -90,7 +90,7 @@ function RedCookie(name, cookie_num)
     return unescape(arr_pop[parseInt(cookie_num)-1]);
 }
 
-//ÄíÅ° ¼¼Æ®
+//ì¿ í‚¤ ì„¸íŠ¸
 function scrCookie( name, value, expiredays, cookie_num )
 { 
     var todayDate = new Date(); 
@@ -107,7 +107,7 @@ function scrCookie( name, value, expiredays, cookie_num )
     document.cookie = name + "=" + escape( new_value ) + "; domain=megastudy.net ; path=/; expires=" + todayDate.toGMTString() + ";" 
 } 
 
-// ½ºÅ©·Ñ ¸Ş´ºÀÇ À§Ä¡ °»½Å
+// ìŠ¤í¬ë¡¤ ë©”ë‰´ì˜ ìœ„ì¹˜ ê°±ì‹ 
 /*
 function RefreshStaticMenu()
 {
@@ -131,36 +131,36 @@ try{
 }
 */
 
-// ¸Ş´º ON/OFF ÇÏ±â
+// ë©”ë‰´ ON/OFF í•˜ê¸°
 function ToggleAnimate1()
 {
-        if (ANIMATE1.checked) {		// ÀÌµ¿ÇÏ±â ¹öÆ°ÀÌ Ã¼Å©µÇ¾ú´Ù¸é
-                RefreshStaticMenu(); // ¸Ş´ºÀ§Ä¡¸¦ ´Ù½Ã Á¶Á¤
-                scrCookie("ANIMATE", "true", 1, 2); // ÀÌµ¿ÀÌ ON »óÅÂ¶ó°í ÄíÅ°¸¦ ¼³Á¤
+        if (ANIMATE1.checked) {		// ì´ë™í•˜ê¸° ë²„íŠ¼ì´ ì²´í¬ë˜ì—ˆë‹¤ë©´
+                RefreshStaticMenu(); // ë©”ë‰´ìœ„ì¹˜ë¥¼ ë‹¤ì‹œ ì¡°ì •
+                scrCookie("ANIMATE", "true", 1, 2); // ì´ë™ì´ ON ìƒíƒœë¼ê³  ì¿ í‚¤ë¥¼ ì„¤ì •
         }
-        else {	// ¾Æ´Ï¶ó¸é... (ÀÌµ¿ÇÏ±â ¹öÆ°ÀÌ Ã¼Å©µÇ¾î ÀÖÁö ¾ÊÀ¸¸é)
-                clearTimeout(stmnTimer); // ÀÌµ¿¿ë Å¸ÀÌ¸Ó ÇØÁ¦
-                STATICMENU.style.top = stmnGAP1; // ¸Ş´ºÀÇ À§Ä¡¸¦ »ó´ÜÀ¸·Î ¿Å±ä´Ù.
-                scrCookie("ANIMATE", "false", 1, 2); // ÀÌµ¿ÀÌ ON »óÅÂ¶ó°í ÄíÅ°¸¦ ¼³Á¤
+        else {	// ì•„ë‹ˆë¼ë©´... (ì´ë™í•˜ê¸° ë²„íŠ¼ì´ ì²´í¬ë˜ì–´ ìˆì§€ ì•Šìœ¼ë©´)
+                clearTimeout(stmnTimer); // ì´ë™ìš© íƒ€ì´ë¨¸ í•´ì œ
+                STATICMENU.style.top = stmnGAP1; // ë©”ë‰´ì˜ ìœ„ì¹˜ë¥¼ ìƒë‹¨ìœ¼ë¡œ ì˜®ê¸´ë‹¤.
+                scrCookie("ANIMATE", "false", 1, 2); // ì´ë™ì´ ON ìƒíƒœë¼ê³  ì¿ í‚¤ë¥¼ ì„¤ì •
         }
 }
 
-// ¸Ş´º ÃÊ±âÈ­
+// ë©”ë‰´ ì´ˆê¸°í™”
 function InitializeStaticMenu1() {
 
    // alert('dd');
 try{
-        if (RedCookie("ANIMATE", 1) == "true") {	// ÀÌµ¿ on »óÅÂ¶ó¸é
-                ANIMATE1.checked = true; // Ã¼Å©Ç¥½Ã¸¦ ÇÏ°í
-                STATICMENU.style.top = document.body.scrollTop + stmnBASE; // ±âº»À§Ä¡·Î ÀÌµ¿ÇÑ´Ù.
-                RefreshStaticMenu(); // ½ºÅ©¸³Æ® °¡µ¿
+        if (RedCookie("ANIMATE", 1) == "true") {	// ì´ë™ on ìƒíƒœë¼ë©´
+                ANIMATE1.checked = true; // ì²´í¬í‘œì‹œë¥¼ í•˜ê³ 
+                STATICMENU.style.top = document.body.scrollTop + stmnBASE; // ê¸°ë³¸ìœ„ì¹˜ë¡œ ì´ë™í•œë‹¤.
+                RefreshStaticMenu(); // ìŠ¤í¬ë¦½íŠ¸ ê°€ë™
         }
-        else {	// ÀÌµ¿»óÅÂ°¡ off »óÅÂ¶ó¸é
-                ANIMATE1.checked = false; // Ã¼Å©Ç¥½Ã¸¦ Áö¿ì°í
-                STATICMENU.style.top = document.body.scrollTop + stmnGAP1; // ¸Ç À§¿¡ µé·¯ ºÙ´Â´Ù.
+        else {	// ì´ë™ìƒíƒœê°€ off ìƒíƒœë¼ë©´
+                ANIMATE1.checked = false; // ì²´í¬í‘œì‹œë¥¼ ì§€ìš°ê³ 
+                STATICMENU.style.top = document.body.scrollTop + stmnGAP1; // ë§¨ ìœ„ì— ë“¤ëŸ¬ ë¶™ëŠ”ë‹¤.
         }
 
-        //STATICMENU.style.left = stmnLEFT; // ¸Ş´º ¿ŞÂÊ À§Ä¡ ÃÊ±âÈ­. ÇÊ¿ä¾øÀ» °æ¿ì »èÁ¦
+        //STATICMENU.style.left = stmnLEFT; // ë©”ë‰´ ì™¼ìª½ ìœ„ì¹˜ ì´ˆê¸°í™”. í•„ìš”ì—†ì„ ê²½ìš° ì‚­ì œ
 
 }catch(e){}
 }

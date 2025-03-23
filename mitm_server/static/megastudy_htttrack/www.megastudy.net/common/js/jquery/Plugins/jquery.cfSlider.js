@@ -1,33 +1,33 @@
-// cfSliderÀÇ ÀÛµ¿ ¹æ½ÄÀ» directionÀÌ horizontalÀÎ °æ¿ì¿¡ ´ëÇØ ¼³¸íµå¸®¸é(°¡·Î ½½¶óÀÌµå, directionÀÌ verticalÀÌ¸é ¼¼·Î ½½¶óÀÌµå)
-// ¾ÆÀÌÅÛµéÀ» °¨½Î°í ÀÖ´Â containerÀÇ margin-left °ªÀ» Á¶ÀıÇØ¼­
-// margin-left¸¦ ÀÛ°ÔÇÏ¸é ¾ÆÀÌÅÛµéÀÌ ¿ŞÂÊÀ¸·Î ¿òÁ÷ÀÌ°í, margin-left¸¦ Å©°ÔÇÏ¸é ¾ÆÀÌÅÛµéÀÌ ¿À¸¥ÂÊÀ¸·Î ¿òÁ÷ÀÌ´Â ¿ø¸®¸¦ »ç¿ëÇÕ´Ï´Ù.
-// margin-left °ªÀ» Á¶ÀıÇÒ ¶§ jQueryÀÇ animate ¸Ş¼­µå¸¦ »ç¿ëÇØ¼­ container°¡ ½½¶óÀÌµùÇÏ´Â °ÍÃ³·³ º¸ÀÌ°Ô ÇÕ´Ï´Ù.
-// ±×¸®°í À§ ¹æ½ÄÀÇ °æ¿ì ÇöÀç Ã¹ ¹øÂ° ¾ÆÀÌÅÛÀ» º¸°í ÀÖ´Âµ¥ margin-left¸¦ Å©°ÔÇÏ°Å³ª, ¸¶Áö¸· ¾ÆÀÌÅÛÀ» º¸°í ÀÖ´Âµ¥ margin-left¸¦ ÀÛ°ÔÇÏ¸é
-// º¸¿©ÁÙ ¾ÆÀÌÅÛÀÌ ¾ø°Ô µÇ´Â Çö»óÀÌ ¹ß»ıÇÏ¹Ç·Î, htmlÄÚµå¿¡ ÀÖ´Â ¿øº» ¾ÆÀÌÅÛ ¸ñ·Ï Áß µÚÂÊ°ú ¾ÕÂÊ¿¡ ÀÖ´Â ¾ÆÀÌÅÛµéÀ» º¹»çÇÏ¿©
-// ¿øº» ¾ÆÀÌÅÛ ¸ñ·ÏÀÇ ¾Õ°ú µÚ¿¡ ºÙ¿©³Ö¾î¼­ »õ·Î¿î ¾ÆÀÌÅÛ ¸ñ·ÏÀ» ¸¸µå´Â ¹æ¹ıÀ» »ç¿ëÇÕ´Ï´Ù. ÀÌ¶§ ¾ÕµÚ¿¡ º¹»çÇØ¼­ ºÙ¿©³Ö´Â ¾ÆÀÌÅÛÀÇ °¢ °³¼ö´Â
-// È­¸é¿¡ º¸¿©Áú ¾ÆÀÌÅÛÀÇ ¼ö¿Í °°°Ô ÇØÁİ´Ï´Ù.(options¿¡¼­ display Ç×¸ñÀÔ´Ï´Ù.)
+// cfSliderì˜ ì‘ë™ ë°©ì‹ì„ directionì´ horizontalì¸ ê²½ìš°ì— ëŒ€í•´ ì„¤ëª…ë“œë¦¬ë©´(ê°€ë¡œ ìŠ¬ë¼ì´ë“œ, directionì´ verticalì´ë©´ ì„¸ë¡œ ìŠ¬ë¼ì´ë“œ)
+// ì•„ì´í…œë“¤ì„ ê°ì‹¸ê³  ìˆëŠ” containerì˜ margin-left ê°’ì„ ì¡°ì ˆí•´ì„œ
+// margin-leftë¥¼ ì‘ê²Œí•˜ë©´ ì•„ì´í…œë“¤ì´ ì™¼ìª½ìœ¼ë¡œ ì›€ì§ì´ê³ , margin-leftë¥¼ í¬ê²Œí•˜ë©´ ì•„ì´í…œë“¤ì´ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì›€ì§ì´ëŠ” ì›ë¦¬ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤.
+// margin-left ê°’ì„ ì¡°ì ˆí•  ë•Œ jQueryì˜ animate ë©”ì„œë“œë¥¼ ì‚¬ìš©í•´ì„œ containerê°€ ìŠ¬ë¼ì´ë”©í•˜ëŠ” ê²ƒì²˜ëŸ¼ ë³´ì´ê²Œ í•©ë‹ˆë‹¤.
+// ê·¸ë¦¬ê³  ìœ„ ë°©ì‹ì˜ ê²½ìš° í˜„ì¬ ì²« ë²ˆì§¸ ì•„ì´í…œì„ ë³´ê³  ìˆëŠ”ë° margin-leftë¥¼ í¬ê²Œí•˜ê±°ë‚˜, ë§ˆì§€ë§‰ ì•„ì´í…œì„ ë³´ê³  ìˆëŠ”ë° margin-leftë¥¼ ì‘ê²Œí•˜ë©´
+// ë³´ì—¬ì¤„ ì•„ì´í…œì´ ì—†ê²Œ ë˜ëŠ” í˜„ìƒì´ ë°œìƒí•˜ë¯€ë¡œ, htmlì½”ë“œì— ìˆëŠ” ì›ë³¸ ì•„ì´í…œ ëª©ë¡ ì¤‘ ë’¤ìª½ê³¼ ì•ìª½ì— ìˆëŠ” ì•„ì´í…œë“¤ì„ ë³µì‚¬í•˜ì—¬
+// ì›ë³¸ ì•„ì´í…œ ëª©ë¡ì˜ ì•ê³¼ ë’¤ì— ë¶™ì—¬ë„£ì–´ì„œ ìƒˆë¡œìš´ ì•„ì´í…œ ëª©ë¡ì„ ë§Œë“œëŠ” ë°©ë²•ì„ ì‚¬ìš©í•©ë‹ˆë‹¤. ì´ë•Œ ì•ë’¤ì— ë³µì‚¬í•´ì„œ ë¶™ì—¬ë„£ëŠ” ì•„ì´í…œì˜ ê° ê°œìˆ˜ëŠ”
+// í™”ë©´ì— ë³´ì—¬ì§ˆ ì•„ì´í…œì˜ ìˆ˜ì™€ ê°™ê²Œ í•´ì¤ë‹ˆë‹¤.(optionsì—ì„œ display í•­ëª©ì…ë‹ˆë‹¤.)
 
 ; (function ($, window, document, undefined) {
 
 
-	// plugin ÀÌ¸§, default option ¼³Á¤
+	// plugin ì´ë¦„, default option ì„¤ì •
 	var pluginName = 'cfSlider',
 		defaults = {
-		    container: '.container',	// ¾ÆÀÌÅÛµéÀ» °¡Áö°í ÀÖ´Â ¿¤¸®¸ÕÆ®ÀÇ jQuery ¼¿·ºÅÍ
-			item: '.item',				// ¾ÆÀÌÅÛ ¿¤¸®¸ÕÆ®ÀÇ jQuery ¼¿·ºÅÍ
-			display: 1,					// È­¸é¿¡ º¸¿©Áö´Â ¾ÆÀÌÅÛÀÇ ¼ö
-			move: 1,					// ÇÑ ¹ø¿¡ ½½¶óÀÌµåµÉ(ÀÌµ¿ÇÒ) ¾ÆÀÌÅÛÀÇ ¼ö
-			direction: 'horizontal',	// °¡·Î½½¶óÀÌµå: horizontal, ¼¼·Î½½¶óÀÌµå: vertical
-			speed: 400,					// ½½¶óÀÌµù ¼Óµµ, ¹Ğ¸®¼¼ÄÁµå ´ÜÀ§ÀÇ ¼ıÀÚ ¶Ç´Â jQuery.animate()¿¡ »ç¿ë°¡´ÉÇÑ 'slow', 'fast' µî ¹®ÀÚ¿­
-			prevBtn: '.prev',			// ÀÌÀü ¹öÆ°ÀÇ jQuery ¼¿·ºÅÍ(²À ¹öÆ° ÇüÅÂÀÏ ÇÊ¿ä ¾øÀ½)
-			nextBtn: '.next',			// ´ÙÀ½ ¹öÆ°ÀÇ jQuery ¼¿·ºÅÍ(²À ¹öÆ° ÇüÅÂÀÏ ÇÊ¿ä ¾øÀ½)
-			eventType: 'click',			// slider¸¦ ÀÛµ¿½ÃÅ³ ¶§ ÇÊ¿äÇÑ ÀÌº¥Æ®. Áï, ÀÌÀü/´ÙÀ½ ¹öÆ°¿¡ ÀÌ ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é slider ÀÛµ¿
-			prevEventType: null,		// prev, next·Î ÀÌµ¿ÇÒ ¶§ »ç¿ëÇÒ Æ¯º°ÇÑ ÀÌº¥Æ® Å¸ÀÔ µî·Ï
-			nextEventType: null,		// È°¿ë¿¹) ¸ğ¹ÙÀÏÀ¥ °³¹ßÇÒ ¶§ ÅÍÄ¡ swipe(ÇÃ¸®Å·)À¸·Î slider¸¦ ÀÛµ¿½ÃÅ°°í ½ÍÀ¸¸é ÀÌ ÀÚ¸®¿¡ ÀûÀıÇÑ
-										// Ä¿½ºÅÒ ÀÌº¥Æ® Å¸ÀÔÀ» µî·ÏÇÏ°í, ÅÍÄ¡¸¦ ÇÒ ¶§ ±× Ä¿½ºÅÒ ÀÌº¥Æ®¸¦ cfSlider¸¦ ½ÇÇà½ÃÅ³ ¿¤¸®¸ÕÆ®¿¡¼­ ¹ß»ı½ÃÅ°¸é µÊ
-			callback: null				// ½½¶óÀÌµå ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³ª°í ½ÇÇàµÉ Äİ¹éÇÔ¼ö, ÀÎÀÚ·Î ÇöÀç È­¸é¿¡ º¸ÀÌ°í ÀÖ´Â ¾ÆÀÌÅÛµéÀÇ DOM°´Ã¼¸¦ ¹Ş°Ô µÊ
+		    container: '.container',	// ì•„ì´í…œë“¤ì„ ê°€ì§€ê³  ìˆëŠ” ì—˜ë¦¬ë¨¼íŠ¸ì˜ jQuery ì…€ë ‰í„°
+			item: '.item',				// ì•„ì´í…œ ì—˜ë¦¬ë¨¼íŠ¸ì˜ jQuery ì…€ë ‰í„°
+			display: 1,					// í™”ë©´ì— ë³´ì—¬ì§€ëŠ” ì•„ì´í…œì˜ ìˆ˜
+			move: 1,					// í•œ ë²ˆì— ìŠ¬ë¼ì´ë“œë (ì´ë™í• ) ì•„ì´í…œì˜ ìˆ˜
+			direction: 'horizontal',	// ê°€ë¡œìŠ¬ë¼ì´ë“œ: horizontal, ì„¸ë¡œìŠ¬ë¼ì´ë“œ: vertical
+			speed: 400,					// ìŠ¬ë¼ì´ë”© ì†ë„, ë°€ë¦¬ì„¸ì»¨ë“œ ë‹¨ìœ„ì˜ ìˆ«ì ë˜ëŠ” jQuery.animate()ì— ì‚¬ìš©ê°€ëŠ¥í•œ 'slow', 'fast' ë“± ë¬¸ìì—´
+			prevBtn: '.prev',			// ì´ì „ ë²„íŠ¼ì˜ jQuery ì…€ë ‰í„°(ê¼­ ë²„íŠ¼ í˜•íƒœì¼ í•„ìš” ì—†ìŒ)
+			nextBtn: '.next',			// ë‹¤ìŒ ë²„íŠ¼ì˜ jQuery ì…€ë ‰í„°(ê¼­ ë²„íŠ¼ í˜•íƒœì¼ í•„ìš” ì—†ìŒ)
+			eventType: 'click',			// sliderë¥¼ ì‘ë™ì‹œí‚¬ ë•Œ í•„ìš”í•œ ì´ë²¤íŠ¸. ì¦‰, ì´ì „/ë‹¤ìŒ ë²„íŠ¼ì— ì´ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ slider ì‘ë™
+			prevEventType: null,		// prev, nextë¡œ ì´ë™í•  ë•Œ ì‚¬ìš©í•  íŠ¹ë³„í•œ ì´ë²¤íŠ¸ íƒ€ì… ë“±ë¡
+			nextEventType: null,		// í™œìš©ì˜ˆ) ëª¨ë°”ì¼ì›¹ ê°œë°œí•  ë•Œ í„°ì¹˜ swipe(í”Œë¦¬í‚¹)ìœ¼ë¡œ sliderë¥¼ ì‘ë™ì‹œí‚¤ê³  ì‹¶ìœ¼ë©´ ì´ ìë¦¬ì— ì ì ˆí•œ
+										// ì»¤ìŠ¤í…€ ì´ë²¤íŠ¸ íƒ€ì…ì„ ë“±ë¡í•˜ê³ , í„°ì¹˜ë¥¼ í•  ë•Œ ê·¸ ì»¤ìŠ¤í…€ ì´ë²¤íŠ¸ë¥¼ cfSliderë¥¼ ì‹¤í–‰ì‹œí‚¬ ì—˜ë¦¬ë¨¼íŠ¸ì—ì„œ ë°œìƒì‹œí‚¤ë©´ ë¨
+			callback: null				// ìŠ¬ë¼ì´ë“œ ì• ë‹ˆë©”ì´ì…˜ì´ ëë‚˜ê³  ì‹¤í–‰ë  ì½œë°±í•¨ìˆ˜, ì¸ìë¡œ í˜„ì¬ í™”ë©´ì— ë³´ì´ê³  ìˆëŠ” ì•„ì´í…œë“¤ì˜ DOMê°ì²´ë¥¼ ë°›ê²Œ ë¨
 			// callback: function(items) {
-				// console.log(items);	// ÀÌ·± ½ÄÀ¸·Î »ç¿ëÇÏ½Ã¸é µË´Ï´Ù.
+				// console.log(items);	// ì´ëŸ° ì‹ìœ¼ë¡œ ì‚¬ìš©í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
 			// }
 		};
 
@@ -58,10 +58,10 @@
 			$container = slider.find(options.container),
 			$items = $container.find(options.item).not('.cfslider_clone'),
 			itemLength = $items.length,
-			$afterItems = $items.slice(0, options.display).clone(),		// ¾ÆÀÌÅÛµé Áß¿¡¼­ ¾Õ¿¡¼­ ºÎÅÍ options.display ¸¸Å­ º¹»ç
-			$beforeItems = $items.slice(itemLength - options.display, itemLength).clone(),	// ¾ÆÀÌÅÛµé Áß¿¡¼­ µÚ¿¡¼­ ºÎÅÍ options.display ¸¸Å­ º¹»ç
-			itemSize = options.direction === 'horizontal' ? $items.first().width() : $items.first().height(),		// ¾ÆÀÌÅÛ ÇÏ³ªÀÇ ³Êºñ ¶Ç´Â ³ôÀÌ¸¦ ±¸ÇÔ
-			marginType = options.direction === 'horizontal' ? 'marginLeft' : 'marginTop',	// ½½¶óÀÌµù È¿°ú¿¡ »ç¿ëÇÒ marginÀÇ Á¾·ù
+			$afterItems = $items.slice(0, options.display).clone(),		// ì•„ì´í…œë“¤ ì¤‘ì—ì„œ ì•ì—ì„œ ë¶€í„° options.display ë§Œí¼ ë³µì‚¬
+			$beforeItems = $items.slice(itemLength - options.display, itemLength).clone(),	// ì•„ì´í…œë“¤ ì¤‘ì—ì„œ ë’¤ì—ì„œ ë¶€í„° options.display ë§Œí¼ ë³µì‚¬
+			itemSize = options.direction === 'horizontal' ? $items.first().width() : $items.first().height(),		// ì•„ì´í…œ í•˜ë‚˜ì˜ ë„ˆë¹„ ë˜ëŠ” ë†’ì´ë¥¼ êµ¬í•¨
+			marginType = options.direction === 'horizontal' ? 'marginLeft' : 'marginTop',	// ìŠ¬ë¼ì´ë”© íš¨ê³¼ì— ì‚¬ìš©í•  marginì˜ ì¢…ë¥˜
 			$prevBtn = $(options.prevBtn),
 			$nextBtn = $(options.nextBtn);
 
@@ -82,24 +82,24 @@
 		});
 
 
-		slider.css('overflow', 'hidden');	// ÇÊ¼ö css ¼Ó¼º, cssÂÊ¿¡¼­ Á¤ÀÇ¾ÈÇÏ´Â °æ¿ì¸¦ ´ëºñÇØ ¼³Á¤, ½ÇÁ¦ ¿òÁ÷ÀÌ´Â $container¸¦ ½Î°í ÀÖ´Â slider°¡ overflow:hidden ¼Ó¼ºÀ» °¡Áö°í ÀÖ¾î¾ß ÀÚ½ÅÀÇ Å©±â¸¸Å­¸¸ »ç¿ëÀÚ¿¡°Ô º¸¿©ÁÙ¼ö ÀÖ±â ¶§¹®
+		slider.css('overflow', 'hidden');	// í•„ìˆ˜ css ì†ì„±, cssìª½ì—ì„œ ì •ì˜ì•ˆí•˜ëŠ” ê²½ìš°ë¥¼ ëŒ€ë¹„í•´ ì„¤ì •, ì‹¤ì œ ì›€ì§ì´ëŠ” $containerë¥¼ ì‹¸ê³  ìˆëŠ” sliderê°€ overflow:hidden ì†ì„±ì„ ê°€ì§€ê³  ìˆì–´ì•¼ ìì‹ ì˜ í¬ê¸°ë§Œí¼ë§Œ ì‚¬ìš©ìì—ê²Œ ë³´ì—¬ì¤„ìˆ˜ ìˆê¸° ë•Œë¬¸
 
 
 		$container.empty();
-		$container.append($beforeItems, $items, $afterItems);	// ±âÁ¸ ¾ÆÀÌÅÛµéÀÇ ¾Õ¿¡´Â beforeItems¸¦ Ãß°¡ÇÏ°í µÚ¿¡´Â afterItems¸¦ Ãß°¡ÇÔ
-																// Áï, ¿ø·¡ ¾ÆÀÌÅÛ ¸ñ·ÏÀÌ '1-°¡','2-³ª','3-´Ù','4-¶ó','5-¸¶' ÀÌ°í move°¡ 3ÀÌ¶ó¸é ¾Æ·¡¿Í °°ÀÌµÊ
-																// ==> '1-´Ù','2-¶ó','3-¸¶','4-°¡','5-³ª','6-´Ù','7-¶ó','8-¸¶','9-°¡','10-³ª','11-´Ù'
-																// ÁÂ¿ì ÀÌµ¿À» À§ÇØ¼­ ¿ø·¡ htmlÄÚµå¿¡ ÀÖ´ø ¾ÆÀÌÅÛ ¸ñ·ÏÀÇ ¾ÕµÚ¿¡ º¹»ç(clone)ÇÑ ¾ÆÀÌÅÛµéÀ» ´õ ºÙ¿© ÁÖ´Â °Í
+		$container.append($beforeItems, $items, $afterItems);	// ê¸°ì¡´ ì•„ì´í…œë“¤ì˜ ì•ì—ëŠ” beforeItemsë¥¼ ì¶”ê°€í•˜ê³  ë’¤ì—ëŠ” afterItemsë¥¼ ì¶”ê°€í•¨
+																// ì¦‰, ì›ë˜ ì•„ì´í…œ ëª©ë¡ì´ '1-ê°€','2-ë‚˜','3-ë‹¤','4-ë¼','5-ë§ˆ' ì´ê³  moveê°€ 3ì´ë¼ë©´ ì•„ë˜ì™€ ê°™ì´ë¨
+																// ==> '1-ë‹¤','2-ë¼','3-ë§ˆ','4-ê°€','5-ë‚˜','6-ë‹¤','7-ë¼','8-ë§ˆ','9-ê°€','10-ë‚˜','11-ë‹¤'
+																// ì¢Œìš° ì´ë™ì„ ìœ„í•´ì„œ ì›ë˜ htmlì½”ë“œì— ìˆë˜ ì•„ì´í…œ ëª©ë¡ì˜ ì•ë’¤ì— ë³µì‚¬(clone)í•œ ì•„ì´í…œë“¤ì„ ë” ë¶™ì—¬ ì£¼ëŠ” ê²ƒ
 
 
 
 
-		// ±×¸®°í ³ª¼­ $containerÀÇ width¸¦ »õ·Î º¹»çÇØ³ÖÀº ¾ÆÀÌÅÛµé±îÁö Æ÷ÇÔÇÑ width·Î ¸¸µé¾îÁÖ°í
-		// ¿ø·¡ htmlÄÚµå¿¡ ÀÖ´ø Ã¹ ¹øÂ° ¾ÆÀÌÅÛÀÌ º¸ÀÌ°Ô ÇÏ±âÀ§ÇØ $containerÀÇ marginLeft °ªÀ» Á¶Á¤ÇÔ
-		// ¿¹) itemLength = 5, itemSize = 100, move = 3 ÀÎ »óÈ²ÀÌ¾ú´Ù¸é
-		// 		$containerÀÇ width´Â ¾Õ¿¡ 3°³, ¿ø·¡ 5°³, µÚ¿¡ 3°³ ÀÌ·¸°Ô 11°³ÀÇ ¾ÆÀÌÅÛÀÌ¶ó 1100ÀÌ µÇ°í
-		//		¿ø·¡ 5°³ Áß Ã¹ ¹øÂ°°¡ Á¦ÀÏ Ã³À½¿¡ º¸ÀÌ°Ô ÇÏ±âÀ§ÇØ ¾Õ¿¡ 3°³ width ¸¸Å­À» -marginLeft Ã³¸®ÇÔ
-		// * À§ ¼³¸íÀº directionÀÌ horizontalÀÏ °æ¿ì¿¡ ÇØ´çÇÕ´Ï´Ù. verticalÀÏ °æ¿ì¿¡´Â $containerÀÇ width´Â itemSizeÀÌ°í marginLeft´ë½Å marginTopÀ» »ç¿ëÇÕ´Ï´Ù.
+		// ê·¸ë¦¬ê³  ë‚˜ì„œ $containerì˜ widthë¥¼ ìƒˆë¡œ ë³µì‚¬í•´ë„£ì€ ì•„ì´í…œë“¤ê¹Œì§€ í¬í•¨í•œ widthë¡œ ë§Œë“¤ì–´ì£¼ê³ 
+		// ì›ë˜ htmlì½”ë“œì— ìˆë˜ ì²« ë²ˆì§¸ ì•„ì´í…œì´ ë³´ì´ê²Œ í•˜ê¸°ìœ„í•´ $containerì˜ marginLeft ê°’ì„ ì¡°ì •í•¨
+		// ì˜ˆ) itemLength = 5, itemSize = 100, move = 3 ì¸ ìƒí™©ì´ì—ˆë‹¤ë©´
+		// 		$containerì˜ widthëŠ” ì•ì— 3ê°œ, ì›ë˜ 5ê°œ, ë’¤ì— 3ê°œ ì´ë ‡ê²Œ 11ê°œì˜ ì•„ì´í…œì´ë¼ 1100ì´ ë˜ê³ 
+		//		ì›ë˜ 5ê°œ ì¤‘ ì²« ë²ˆì§¸ê°€ ì œì¼ ì²˜ìŒì— ë³´ì´ê²Œ í•˜ê¸°ìœ„í•´ ì•ì— 3ê°œ width ë§Œí¼ì„ -marginLeft ì²˜ë¦¬í•¨
+		// * ìœ„ ì„¤ëª…ì€ directionì´ horizontalì¼ ê²½ìš°ì— í•´ë‹¹í•©ë‹ˆë‹¤. verticalì¼ ê²½ìš°ì—ëŠ” $containerì˜ widthëŠ” itemSizeì´ê³  marginLeftëŒ€ì‹  marginTopì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
 		var containerCss = {};
 		containerCss['width'] = options.direction === 'horizontal' ? itemSize * (itemLength + options.display * 2) : itemSize;
 		containerCss[marginType] = -(itemSize * options.display);
@@ -107,7 +107,7 @@
 		$container.css(containerCss);
 
 
-		// ÀÌÀü ¹öÆ°¿¡ ÀÌº¥Æ® ¹ß»ı½Ã ½ÇÇà
+		// ì´ì „ ë²„íŠ¼ì— ì´ë²¤íŠ¸ ë°œìƒì‹œ ì‹¤í–‰
 		$prevBtn
 			.unbind(options.eventType + '.cfSlider')
 			.bind(options.eventType + '.cfSlider', function() {
@@ -115,7 +115,7 @@
 			});
 
 
-		// ´ÙÀ½ ¹öÆ°¿¡ ÀÌº¥Æ® ¹ß»ı½Ã ½ÇÇà
+		// ë‹¤ìŒ ë²„íŠ¼ì— ì´ë²¤íŠ¸ ë°œìƒì‹œ ì‹¤í–‰
 		$nextBtn
 			.unbind(options.eventType + '.cfSlider')
 			.bind(options.eventType + '.cfSlider', function() {
@@ -123,7 +123,7 @@
 			});
 
 
-		// Ä¿½ºÅÒ ÀÌº¥Æ® Å¸ÀÔÀÌ µî·ÏµÇ¾úÀ» °æ¿ì
+		// ì»¤ìŠ¤í…€ ì´ë²¤íŠ¸ íƒ€ì…ì´ ë“±ë¡ë˜ì—ˆì„ ê²½ìš°
 		if (options.prevEventType) {
 			slider
 				.unbind(options.prevEventType + '.cfSlider')
@@ -142,25 +142,25 @@
 		}
 	};
 
-	// ½½¶óÀÌµå ÇÔ¼ö
+	// ìŠ¬ë¼ì´ë“œ í•¨ìˆ˜
 	function go(direction, $container, marginType, itemSize, itemLength, options, currentMargin) {
 
-		if ($container.is(':animated')) {		// ¾Ö´Ï¸ŞÀÌ¼Ç ÁøÇàÁßÀÏ ¶§ ´©¸£¸é ¹İÀÀ ¾øµµ·Ï Ã³¸®
+		if ($container.is(':animated')) {		// ì• ë‹ˆë©”ì´ì…˜ ì§„í–‰ì¤‘ì¼ ë•Œ ëˆ„ë¥´ë©´ ë°˜ì‘ ì—†ë„ë¡ ì²˜ë¦¬
 			return;
 		}
 
-		var obj = {},	// animate¿¡ ³Ñ±æ parameter¸¦ ¸¸µé±â À§ÇÑ ÀÓ½Ã °´Ã¼
-			currentMargin = currentMargin === undefined ? parseInt($container.css(marginType)) : currentMargin;	// $containerÀÇ ÇöÀç margin
+		var obj = {},	// animateì— ë„˜ê¸¸ parameterë¥¼ ë§Œë“¤ê¸° ìœ„í•œ ì„ì‹œ ê°ì²´
+			currentMargin = currentMargin === undefined ? parseInt($container.css(marginType)) : currentMargin;	// $containerì˜ í˜„ì¬ margin
 
 		if (direction === 'prev') {
-			var targetMargin = currentMargin + itemSize * options.move;		// ÀÌµ¿ÇÒ margin
+			var targetMargin = currentMargin + itemSize * options.move;		// ì´ë™í•  margin
 			obj[marginType] = targetMargin;
 
-			// ½½¶óÀÌµå ½ÇÇà
+			// ìŠ¬ë¼ì´ë“œ ì‹¤í–‰
 			$container.animate(obj, options.speed, function() {
-				if ((Math.abs(currentMargin) / itemSize) <= (options.move > options.display ? options.move : options.display)) {	// ´ÙÀ½ À§Ä¡¿¡ ¾ÆÀÌÅÛÀÌ moveÇÒ ¾ÆÀÌÅÛº¸´Ù Àû°Ô ³²¾ÆÀÖÀ» °æ¿ì
-					targetMargin = targetMargin - (itemSize * itemLength);	// ÀÌµ¿ÇÒ margin Àç¼³Á¤
-					$container.css(marginType, targetMargin);	// itemSize * itemLength ¸¸Å­ marginÀ» Á¶Á¤ -> ÀÌ·¸°Ô ÇÏ±â À§ÇØ ¾ÆÀÌÅÛµéÀ» clone()ÇØ¼­ ¿øº»ÀÇ ¾ÕµÚ¿¡ ºÙ¿©³ù´ø °Í -> ¼ø°£ÀûÀ¸·Î marginÀÌ Á¶Á¤µÇ°í º¸ÀÌ´Â ¾ÆÀÌÅÛ Ç×¸ñÀº °°±â ¶§¹®¿¡ »ç¿ëÀÚ´Â ÀÎÁöÇÏÁö ¸øÇÔ
+				if ((Math.abs(currentMargin) / itemSize) <= (options.move > options.display ? options.move : options.display)) {	// ë‹¤ìŒ ìœ„ì¹˜ì— ì•„ì´í…œì´ moveí•  ì•„ì´í…œë³´ë‹¤ ì ê²Œ ë‚¨ì•„ìˆì„ ê²½ìš°
+					targetMargin = targetMargin - (itemSize * itemLength);	// ì´ë™í•  margin ì¬ì„¤ì •
+					$container.css(marginType, targetMargin);	// itemSize * itemLength ë§Œí¼ marginì„ ì¡°ì • -> ì´ë ‡ê²Œ í•˜ê¸° ìœ„í•´ ì•„ì´í…œë“¤ì„ clone()í•´ì„œ ì›ë³¸ì˜ ì•ë’¤ì— ë¶™ì—¬ë†¨ë˜ ê²ƒ -> ìˆœê°„ì ìœ¼ë¡œ marginì´ ì¡°ì •ë˜ê³  ë³´ì´ëŠ” ì•„ì´í…œ í•­ëª©ì€ ê°™ê¸° ë•Œë¬¸ì— ì‚¬ìš©ìëŠ” ì¸ì§€í•˜ì§€ ëª»í•¨
 				}
 
 
@@ -180,14 +180,14 @@
 			} catch (e) {}
 
 		} else if (direction === 'next') {
-			var targetMargin = currentMargin - itemSize * options.move;		// ÀÌµ¿ÇÒ margin
+			var targetMargin = currentMargin - itemSize * options.move;		// ì´ë™í•  margin
 			obj[marginType] = targetMargin;
 
-			// ½½¶óÀÌµå ½ÇÇà
+			// ìŠ¬ë¼ì´ë“œ ì‹¤í–‰
 			$container.animate(obj, options.speed, function() {
-				if (itemLength + options.display * 2 - (Math.abs(currentMargin) / itemSize + options.display) <= (options.move > options.display ? options.move : options.display)) {	// ´ÙÀ½ À§Ä¡¿¡ ¾ÆÀÌÅÛÀÌ moveÇÒ ¾ÆÀÌÅÛº¸´Ù Àû°Ô ³²¾ÆÀÖÀ» °æ¿ì
-					targetMargin = targetMargin + (itemSize * itemLength);	// ÀÌµ¿ÇÒ margin Àç¼³Á¤
-					$container.css(marginType, targetMargin);	// itemSize * itemLength ¸¸Å­ marginÀ» Á¶Á¤ -> ÀÌ·¸°Ô ÇÏ±â À§ÇØ ¾ÆÀÌÅÛµéÀ» clone()ÇØ¼­ ¿øº»ÀÇ ¾ÕµÚ¿¡ ºÙ¿©³ù´ø °Í -> ¼ø°£ÀûÀ¸·Î marginÀÌ Á¶Á¤µÇ°í º¸ÀÌ´Â ¾ÆÀÌÅÛ Ç×¸ñÀº °°±â ¶§¹®¿¡ »ç¿ëÀÚ´Â ÀÎÁöÇÏÁö ¸øÇÔ
+				if (itemLength + options.display * 2 - (Math.abs(currentMargin) / itemSize + options.display) <= (options.move > options.display ? options.move : options.display)) {	// ë‹¤ìŒ ìœ„ì¹˜ì— ì•„ì´í…œì´ moveí•  ì•„ì´í…œë³´ë‹¤ ì ê²Œ ë‚¨ì•„ìˆì„ ê²½ìš°
+					targetMargin = targetMargin + (itemSize * itemLength);	// ì´ë™í•  margin ì¬ì„¤ì •
+					$container.css(marginType, targetMargin);	// itemSize * itemLength ë§Œí¼ marginì„ ì¡°ì • -> ì´ë ‡ê²Œ í•˜ê¸° ìœ„í•´ ì•„ì´í…œë“¤ì„ clone()í•´ì„œ ì›ë³¸ì˜ ì•ë’¤ì— ë¶™ì—¬ë†¨ë˜ ê²ƒ -> ìˆœê°„ì ìœ¼ë¡œ marginì´ ì¡°ì •ë˜ê³  ë³´ì´ëŠ” ì•„ì´í…œ í•­ëª©ì€ ê°™ê¸° ë•Œë¬¸ì— ì‚¬ìš©ìëŠ” ì¸ì§€í•˜ì§€ ëª»í•¨
 				}
 
 				if (options.callback != null) {
@@ -207,10 +207,10 @@
 	}
 
 
-	// go ÇÔ¼ö¸¦ cfSlider ÀÎ½ºÅÏ½ºÀÇ ¸Ş¼­µå·Î ¸¸µë
+	// go í•¨ìˆ˜ë¥¼ cfSlider ì¸ìŠ¤í„´ìŠ¤ì˜ ë©”ì„œë“œë¡œ ë§Œë“¬
 	Plugin.prototype.go = go;
 
-	// jQuery °´Ã¼¿Í elementÀÇ data¿¡ pluginÀ» ³ÖÀ½
+	// jQuery ê°ì²´ì™€ elementì˜ dataì— pluginì„ ë„£ìŒ
 	$.fn[pluginName] = function(options) {
 		return this.each(function() {
 			if ( ! $.data(this, 'plugin_' + pluginName)) {
